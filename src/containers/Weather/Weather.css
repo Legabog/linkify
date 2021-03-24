@@ -1,0 +1,18 @@
+.weather-wrapper {
+    display: flex;
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat,sans-serif;
+}
+
+.weather {
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background-size: 100% 100%;
+    background-image: url("../../assets/backgrounds/weather-background/background.jpg");
+    border: 1px solid #CED0D4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}

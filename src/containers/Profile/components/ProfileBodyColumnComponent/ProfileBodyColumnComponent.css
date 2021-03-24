@@ -1,0 +1,145 @@
+.profile-body-column-component {
+    width: 360px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.profile-body-column-component__description {
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+
+.profile-body-column-component__link {
+    padding: 10px;
+    margin-left: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-body-column-component__link:hover {
+    background-color: #eff2f5;
+    border-radius: 6px;
+}
+
+.profile-body-column-component__link a {
+    text-align: right;
+    color: #1876F2;
+    word-break: break-word;
+    line-height: 1.1765;
+    font-size: 1.0625rem;
+    text-decoration: none;
+}
+
+.profile-body-column-component__description span {
+    word-break: break-word;
+    color: #050505;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.profile-body-column-component__button-info {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 12px;
+    height: 36px;
+    background-color: #E4E6EB;
+    border-radius: 6px;
+}
+
+.profile-body-column-component__button-info:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.profile-body-column-component__button-info:active {
+    transform: scale(0.95);
+    filter: brightness(95%);
+}
+
+.profile-body-column-component__button-info span {
+    color: #050505;
+    font-weight: 600;
+    font-size: .9375rem;
+    line-height: 1.3333;
+}
+
+.profile-body-column-component__photo-container {
+    padding: 6px;
+    padding-left: 10px;
+    max-width: 340px;
+    min-width: 340px;
+    max-height: 340px;
+    display: inline-block;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-body-column-component__photo-container img {
+    object-fit: cover;
+    width: 105px;
+    height: 105px;
+    border-radius: 6px;
+    margin-right: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.profile-body-column-component__photo-container img:hover {
+    cursor: pointer;
+    filter: brightness(90%)
+}
+
+.profile-body-column-component__photo-container img:active {
+    transform: scale(0.95);
+    filter: brightness(95%);
+}
+
+.profile-body-column-component__hobbies-section {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.profile-body-column-component__hobbies-button {
+    display: flex;
+    margin-top: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 60px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #ECF3FF;
+    border-radius: 999px;
+}
+
+.profile-body-column-component__hobbies-button:hover {
+    cursor: pointer;
+    filter: brightness(90%)
+}
+
+.profile-body-column-component__hobbies-button:active {
+    transform: scale(0.95);
+    filter: brightness(95%);
+}
+
+.profile-body-column-component__hobbies-button > span {
+    white-space: nowrap;
+    font-weight: 600;
+    color: #1877F2;
+}

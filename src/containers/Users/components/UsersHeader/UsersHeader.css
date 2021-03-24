@@ -1,0 +1,13 @@
+.users-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.users-header__title > span {
+  word-break: break-word;
+  color: #050505;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1667;
+}

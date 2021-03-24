@@ -1,0 +1,50 @@
+.weather-header__place {
+    width: fit-content;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 7px;
+
+}
+
+.weather-header__place > svg {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    color: #F62A54;
+    animation: bounce 1s ease-out infinite;
+}
+
+
+.weather-header__place > span {
+    padding-left: 5px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: -3px;
+    }
+
+    50% {
+        top: -6px;
+    }
+
+    75% {
+        top: -3px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+

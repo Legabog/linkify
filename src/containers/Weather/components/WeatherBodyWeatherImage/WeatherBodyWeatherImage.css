@@ -1,0 +1,10 @@
+.weather-body-weather-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-body-weather-image > img {
+    width: 150px;
+    height: 150px;
+}

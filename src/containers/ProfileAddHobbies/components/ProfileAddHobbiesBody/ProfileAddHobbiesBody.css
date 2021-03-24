@@ -1,0 +1,7 @@
+.profile-add-hobbies-body {
+    max-height: 470px;
+    min-height: 250px;
+    overflow: auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}

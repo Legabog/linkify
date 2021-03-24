@@ -1,0 +1,25 @@
+.weather-switcher-temperature-wrapper {
+    margin-left: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.weather-switcher-temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-switcher-temperature__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.weather-switcher-temperature__description > span {
+    text-align: center;
+    min-width: 176px;
+    color: #fff;
+}

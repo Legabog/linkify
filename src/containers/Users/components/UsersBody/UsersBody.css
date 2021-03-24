@@ -1,0 +1,10 @@
+.users-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.users-container {
+  width: 80%;
+}

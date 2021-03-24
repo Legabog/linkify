@@ -1,0 +1,14 @@
+.terminal-header {
+  display: flex;
+  align-items: center;
+  background-color: #CCCC;
+  height: 5vh;
+} 
+
+.terminal-header__title {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-right: 100px;
+}

@@ -1,0 +1,1155 @@
+{
+  "title": {},
+  "authorized": {
+  "header": {
+    "header-left": {
+    "input": {
+      "placeholder": "Search"
+    },
+    "searches-block": {
+      "header": {
+      "h4": "Updates on COVID-19",
+      "span": "coronavirus updates"
+      },
+      "body": {
+      "header": {
+        "h4": "Recent Searches",
+        "span": "Edit"
+      },
+      "item-1": "games",
+      "item-2": "video streams",
+      "item-3": "coronovirus updates"
+      }
+    }
+    },
+    "header-center": {
+    "header-navigation-bar": {
+      "help-1": "Home",
+      "help-2": "Friends",
+      "help-3": "Groups"
+    }
+    },
+    "header-right": {
+    "button-find-friends": {
+      "span": "Find Friends"
+    },
+    "button-create": {
+      "menu": {
+      "h2": "Create",
+      "section-1": {
+        "category": "Post",
+        "help": "Share a post on News Feed."
+      },
+      "section-2": {
+        "category": "Story",
+        "help": "Share a photo or write something."
+      },
+      "section-3": {
+        "category": "Life event",
+        "help": "Add a life event to your profile."
+      },
+      "section-4": {
+        "category": "Page",
+        "help": "Connect and share with customers and fans."
+      },
+      "section-5": {
+        "category": "Group",
+        "help": "Connect with people who share your interests."
+      },
+      "section-6": {
+        "category": "Event",
+        "help": "Bring people together with a public or private event."
+      }
+      },
+      "help": "Create"
+    },
+    "button-messenger": {
+      "menu": {
+      "h2": "Messenger",
+      "panel": {
+        "help-1": "See All in messenger",
+        "help-2": "Create new room",
+        "help-3": "New message",
+        "help-4": "Options"
+      },
+      "input": {
+        "placeholder": "Search Messenger"
+      },
+      "searches": {
+        "focused": {
+        "span-1": "No Found",
+        "span-2": "We couldn't find any matches for '.' Try checking for typos or using complete words."
+        },
+        "unfocused": {
+        "span": "No messages found.",
+        "navLink": "See All in Messenger"
+        }
+      }
+      },
+      "help": "Messenger"
+    },
+    "button-notifications": {
+      "menu": {
+      "h1": "Notifications",
+      "sections": {
+        "item-1": "Mark all as read",
+        "item-2": "Notifications settings",
+        "item-3": "Open Notifications"
+      },
+      "span": "You have no notifications"
+      },
+      "help": "Notifications"
+    },
+    "button-account": {
+      "description": "See your profile",
+      "help": "Account",
+      "online-section": {
+      "online": "online",
+      "offline": "offline"
+      },
+      "sections": {
+      "item-1": {
+        "span-1": "Give Feedback",
+        "span-2": "Help us improve this Social Network."
+      },
+      "item-2": {
+        "span-1": "Settings & Privacy",
+        "span-2": "Set everything up for yourself."
+      },
+      "item-3": {
+        "span-1": "Help & Support",
+        "span-2": "Ask your questions."
+      },
+      "item-4": {
+        "span-1": "Dark mode",
+        "span-2": "Switcher"
+      },
+      "item-5": {
+        "span-1": "Log Out",
+        "span-2": "Sign out of the account."
+      }
+      }
+    }
+    }
+  },
+  "sidebar": {
+    "title-section": "Some deployed projects",
+    "rows": {
+    "row-1": "Welcome",
+    "row-2": "Music",
+    "row-3": "Social network VK-version",
+    "row-4": "Vue.js, Node.js, Socket.io chat",
+    "row-5": "ALEKSEY SURVIVE GAME, Phaser3",
+    "row-6": "VKR project",
+    "row-7": "COVID-19 Information Center",
+    "row-8": "Friends",
+    "row-9": "Messenger",
+    "row-10": "Users",
+    "row-11": "Events",
+    "row-12": "Saved",
+    "row-13": "Videos",
+    "row-14": "Games",
+    "row-15": "Esports Streams",
+    "row-16": "Jobs",
+    "row-17": "Pages",
+    "row-18": "Weather",
+    "row-19": "See Less",
+    "row-20": "See More",
+    "row-21": "Terminal"
+    }
+  },
+  "feed": {
+    "story-reel": {
+    "title-1": "Konstantin Kostyashin",
+    "title-2": "Oleg Dosov",
+    "title-3": "Aleksey Alyab'ev",
+    "title-4": "Dmitriy Shurov",
+    "title-5": "Vadim Fenin"
+    },
+    "message-sender": {
+    "top": {
+      "input-1": {
+      "placeholder": "Type some message"
+      },
+      "input-2": {
+      "placeholder": "ImageURL"
+      }
+    },
+    "bottom": {
+      "h3-1": "Live Video",
+      "h3-2": "Photo/Video",
+      "h3-3": "Feeling/Activity"
+    }
+    },
+    "post": {
+    "options": {
+      "p-1": "Like",
+      "p-2": "Comment",
+      "p-3": "Share"
+    }
+    }
+  },
+  "toast-container": {
+    "toast-online": "Your internet connection was restored.",
+    "toast-offline": "You are currently offline.",
+    "button": "Refresh"
+  },
+  "welcome": {
+    "span": "Welcome to Social Network by legabog, ",
+    "search-section": {
+    "main": "Find People You Know",
+    "secondary": "Search by name or look for email.",
+    "input-placeholder": "Search by name or email"
+    },
+    "privacy-section": {
+    "main": "Get to know your privacy settings",
+    "secondary": "You control how you share your content with other people on this Social Network.",
+    "button": "Take a personal guide"
+    },
+    "privacy-guide": {
+    "header": {
+      "title": "Learn More About Privacy"
+    },
+    "body": {
+      "button-next_1": "Next",
+      "button-next_2": "Finish",
+      "state-1": {
+      "title": "How Tagging Works",
+      "description": "Tagging is an easy way to let people know when they're in photos. A tag creates a link to the person's timeline and may share your post with their friends."
+      },
+      "state-2": {
+      "title": "Your Privacy Shortcuts",
+      "description": "You can find the latest privacy updates, important settings and account tools by clicking the dropdown menu at the top of the page."
+      },
+      "state-3": {
+      "title": "Sharing with Apps, Games and Websites",
+      "description": "Control which apps and websites you've connected to social network can access your informaiton."
+      }
+    }
+    }
+  },
+  "weather": {  
+    "app-title": {
+      "button-back": "Back",
+      "title": "WEATHER"
+    },
+    "weather-conditions": {
+      "200":"Thunderstorm with light rain",
+      "201":"Thunderstorm with rain",
+      "202":"Thunderstorm with heavy rain",
+      "210":"Light thunderstorm",
+      "211":"Thunderstorm",
+      "212":"Heavy thunderstorm",
+      "221":"Ragged thunderstorm",
+      "230":"Thunderstorm with light drizzle",
+      "231":"Thunderstorm with drizzle",
+      "232":"Thunderstorm with heavy drizzle",
+
+      "300":"Light intensity drizzle",
+      "301":"Drizzle",
+      "302":"Heavy intensity drizzle",
+      "310":"Light intensity drizzle rain",
+      "311":"Drizzle rain",
+      "312":"Heavy intensity drizzle rain",
+      "313":"Shower rain and drizzle",
+      "314":"Heavy shower rain and drizzle",
+      "321":"Shower drizzle",
+
+      "500":"Light rain",
+      "501":"Moderate rain",
+      "502":"Heavy intensity rain",
+      "503":"Very heavy rain",
+      "504":"Extreme rain",
+      "511":"Freezing rain",
+      "520":"Light intensity shower rain",
+      "521":"Shower rain",
+      "522":"Heavy intensity shower rain",
+      "531":"Ragged shower rain",
+
+      "600":"Light snow",
+      "601":"Snow",
+      "602":"Heavy snow",
+      "611":"Sleet",
+      "612":"Light shower sleet",
+      "613":"Shower sleet",
+      "615":"Light rain and snow",
+      "616":"Rain and snow",
+      "620":"Light shower snow",
+      "621":"Shower snow",
+      "622":"Heavy shower snow",
+
+      "701":"Mist",
+      "711":"Smoke",
+      "721":"Haze",
+      "731":"Sand/dust whirls",
+      "741":"Fog",
+      "751":"Sand",
+      "761":"Dust",
+      "762":"Volcanic ash",
+      "771":"Squalls",
+      "781":"Tornado",
+
+      "800":"Clear sky",
+
+      "801":"Few clouds",
+      "802":"Scattered clouds",
+      "803":"Broken clouds",
+      "804":"Overcast clouds"
+    },
+    "weather-body-secondary-info": {
+      "item-1": "Hight",
+      "item-2": "Low",
+      "item-3": "Feels like"
+    },
+    "weather-body-secondary-info-2": {
+      "item-1": "Humidity",
+      "item-2": "Pressure",
+      "item-3": "Wind",
+      "item-2-units": "mm",
+      "item-3-units": "m/s"
+    },
+    "powered-by": "Powered by",
+    "and": "and",
+    "switcher-description": "Units of measure",
+    "help-messages": [
+      "Celsius",
+      "Fahrenheit",
+      "Kelvin"
+    ],
+    "forecast": "Forecast",
+    "day-of-week": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "month": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "weather-header": {
+      "h2": "Weather in"
+    }
+  },
+  "music-player": {
+    "start-screen": {
+    "h1": "Music Player",
+    "h2": "click to Enter"
+    },
+    "music-list": {
+    "header": "Library",
+    "body": {
+      "title-1": "Artists",
+      "title-2": "Albums",
+      "title-3": "Playlists"
+    },
+    "footer": {
+      "h3": "Recently played: "
+    }
+    },
+    "artists": {
+    "header": {
+      "h3": "Library",
+      "h1": "Artists"
+    }
+    },
+    "artist-item-router": {
+    "header": {
+      "h3": "Artists"
+    }
+    },
+    "albums": {
+    "header": {
+      "h3": "Library",
+      "h1": "Albums"
+    }
+    },
+    "playlists": {
+    "header": {
+      "h3": "Library",
+      "h1": "Playlists"
+    },
+    "body": {
+      "h3": "Create new playlist",
+      "h2": "Now, you have not any playlists."
+    }
+    },
+    "own-playlists-router": {
+    "header": {
+      "h3": "Playlists"
+    },
+    "body": {
+      "action-switcher": {
+      "h3": "Delete from playlist"
+      }
+    }
+    },
+    "create-playlist": {
+    "button-back": {
+      "h3": "Cancel"
+    },
+    "button-done": {
+      "h3": "Done"
+    },
+    "title": "Create new playlist",
+    "input_1": {
+      "placeholder": "New playlist name"
+    },
+    "input_2": {
+      "placeholder": "Description"
+    }
+    },
+    "music-player": {
+    "header": {
+      "h3_1": "Albums",
+      "h3_2": "Library"
+    },
+    "body": {
+      "action-switcher": {
+      "h3": "Add to a Playlist"
+      }
+    }
+    }
+  },
+  "music-player-panel": {
+    "close": {
+    "h3": "Not Playing"
+    },
+    "open": {
+    "h3": "Not Playing"
+    }
+  },
+  "profile": {
+    "header": {
+    "button-add-background": {
+      "span": "Add Cover Photo"
+    },
+    "background-window": {
+      "section_1": "Select Photo",
+      "section_2": "Upload Photo",
+      "section_3": "Remove"
+    },
+    "confirm-change-avatar-background": {
+      "description": "Your cover photo is public",
+      "cancel-button": "Cancel",
+      "save-button": "Save Changes"
+    },
+    "confirm-remove-background": {
+      "header": {
+      "title": "Remove Cover Photo"
+      },
+      "body": {
+      "description": "Are you sure you want to remove your cover photo?",
+      "cancel-button": "Cancel",
+      "save-button": "Confirm"
+      }
+    },
+    "avatar-window": {
+      "section-1": "View Profile Picture",
+      "section-2": "Update Profile Picture"
+    },
+    "bio": {
+      "header": {
+      "state-1-span": "Add Bio",
+      "state-2-span": "Edit"
+      }
+    },
+    "active-bio": {
+      "textarea-placeholder": "Describe who are you",
+      "characters": "characters remaining",
+      "public": "Public",
+      "cancel-button": "Cancel",
+      "save-button": "Save"
+    },
+    "navigation": {
+      "item-1": {
+      "title": "Timeline"
+      },
+      "item-2": {
+      "title": "About"
+      },
+      "item-3": {
+      "title": "Friends"
+      },
+      "item-4": {
+      "title": "Photos"
+      },
+      "item-5": {
+      "title": "Archive"
+      },
+      "item-6": {
+      "title": "Videos"
+      },
+      "item-7": {
+      "title": "More"
+      },
+      "button-1": {
+      "title": "Edit profile"
+      }
+    }
+    },
+    "body": {
+    "title": "Intro",
+    "item-1": {
+      "title-1": "Position:",
+      "title-2": "Company:"
+    },
+    "item-2": {
+      "title": "Studied at"
+    },
+    "item-3": {
+      "title": "Went to"
+    },
+    "item-4": {
+      "title": "Lives in"
+    },
+    "item-5": {
+      "title": "From"
+    },
+    "item-6": {
+      "title": "Status:"
+    },
+    "button-1": "Edit Details",
+    "button-2": {
+      "span-1": "Edit Hobbies",
+      "span-2": "Add Hobbies"
+    },
+    "button-3": "Edit Featured",
+    "title-2": "Photos",
+    "title-3": "Friends",
+    "link": "See all",
+    "see-all-hide": {
+      "see-all": "See all",
+      "hide": "Hide"
+    }
+    },
+    "profile-update-avatar": {
+    "header": {
+      "title": "Update Profile Avatar",
+      "upload-button": "Upload Photo"
+    },
+    "body": {
+      "section-1": "Recents Uploads",
+      "section-2": "Profile Pictures",
+      "section-3": "Cover Photos"
+    },
+    "confirm-upload": {
+      "description": "Your profile picture is public",
+      "cancel-button": "Cancel",
+      "save-button": "Save"
+    },
+    "discard-window": {
+      "header": {
+      "title": "Discard Changes"
+      },
+      "body": {
+      "description": "Are you sure want to discard your changes?",
+      "cancel-button": "Cancel",
+      "discard-button": "Discard"
+      }
+    }
+    },
+    "select-avatar-background": {
+    "header": {
+      "title-1": "Select Photo",
+      "title-2": "Profile Pictures",
+      "title-3": "Cover Photos"
+    },
+    "body": {
+      "navigation": {
+      "item-1": "Recent Photos",
+      "item-2": "Photo Albums"
+      }
+    },
+    "uploads": "Uploads"
+    },
+    "add-hobbies": {
+    "header": {
+      "state-1": {
+      "main": "Add Hobbies",
+      "secondary": "What do you love to do? Choose from the popular hobbies below or add others."
+      },
+      "state-2": {
+      "main": "Add Hobbies"
+      }
+    },
+    "body": {
+      "state-1": {
+      "title": "RECOMMENDED HOBBIES",
+      "description": "Search for other"
+      },
+      "state-2": {
+      "input-placeholder": "What do you do for fun?",
+      "selected-hobbies": "SELECTED HOBBIES",
+      "results-for": "RESULTS FOR",
+      "not-found": "This hobby is not currently available. Please try searching for another."
+      }
+    },
+    "footer": {
+      "description": "Hobbies are Public",
+      "cancel-button": "Cancel",
+      "update-button": "Update"
+    },
+    "recommended-hobbies": [
+      "Business",
+      "Investments",
+      "Shares",
+      "Flights",
+      "Travels",
+      "Airplanes",
+      "Money",
+      "Money-making",
+      "Money-making in internet",
+      "Listening to Music",
+      "Playing Music",
+      "Creating Music",
+      "Reading",
+      "Studing",
+      "Learning",
+      "Book Collection",
+      "Writing",
+      "Creative Writing",
+      "Video Games",
+      "Games",
+      "Game Streams",
+      "E-sport",
+      "Sports",
+      "Football",
+      "American Football",
+      "Basketball",
+      "Baseball",
+      "Cricet",
+      "Golf",
+      "Handball",
+      "Hockey",
+      "MMA",
+      "Tennis",
+      "Volleyball",
+      "Rowling",
+      "Gym",
+      "Art",
+      "Portrait Art",
+      "Glass Art",
+      "Screenprinting",
+      "Landscape Painting",
+      "Photography",
+      "Macro Photography",
+      "Portrait Photography",
+      "Nature Photography",
+      "Fashion Photography",
+      "Landscape Photography",
+      "Watching Movies",
+      "Vlogging",
+      "Videography",
+      "Chatting",
+      "Chatting with friends",
+      "Trolling in chat",
+      "Instagram",
+      "Github",
+      "LinkedIn",
+      "Reddit",
+      "Twitter",
+      "Facebook",
+      "Coding",
+      "Learning Code"
+    ]
+    },
+    "edit-details": {
+    "header": {
+      "title": "Edit Details"
+    },
+    "body": {
+      "main": "Customize Your Intro",
+      "secondary": "Details you select will be public and won't post to News Feed",
+      "section-1": {
+      "title": "Add a workplace",
+      "title-bold": "Work"
+      },
+      "section-2": {
+      "title": "Add a high school or college",
+      "title-bold": "Education"
+      },
+      "section-3": {
+      "title": "Change your current city",
+      "title-bold": "Current City"
+      },
+      "section-4": {
+      "title": "Change your hometown",
+      "title-bold": "Hometown"
+      },
+      "section-5": {
+      "title": "Change your relationship",
+      "title-bold": "Relationship"
+      }
+    },
+    "footer": {
+      "cancel-button": "Cancel",
+      "update-button": "Update Your Information"
+    }
+    }
+  },
+  "about": {
+    "left-section": {
+      "span": "About",
+      "nav-bar": {
+        "item-1": "Overview",
+        "item-2": "Work and Education",
+        "item-3": "Places Lived",
+        "item-4": "Contact and Basic Info",
+        "item-5": "Family and Relationships",
+        "item-6": "Details About You",
+        "item-7": "Life Events"
+      }
+    },
+    "right-section": {
+      "array-keys": [
+        "company",
+        "position",
+        "city",
+        "description"
+      ],
+      "component-1": {
+        "section-1": {
+           "edit-title": "Add a workplace", 
+           "delete-title": "Delete a workplace",
+           "title": "Add a workplace",
+           "input-placeholder-1": "Company",
+           "input-placeholder-2": "Position",
+           "input-placeholder-3": "City/Town",
+           "input-placeholder-4": "Description"
+        },
+        "section-2": {
+          "edit-title": "Add a high school", 
+          "delete-title": "Delete a high school",
+          "title": "Add a high school",
+          "input-placeholder-1": "High School",
+          "input-placeholder-2": "Description"
+         },
+         "section-3": {
+          "edit-title": "Add a college", 
+          "delete-title": "Delete a college",
+          "title": "Add a college",
+          "input-placeholder-1": "College",
+          "input-placeholder-2": "Description"
+         },
+         "section-4": {
+          "edit-title": "Edit current city", 
+          "delete-title": "Delete current city",
+          "title": "Add current city",
+          "input-placeholder-1": "Current City"
+         },
+         "section-5": {
+          "edit-title": "Edit hometown", 
+          "delete-title": "Delete hometown",
+          "title": "Add hometown",
+          "input-placeholder-1": "Hometown"
+         },
+         "section-6": {
+          "edit-title": "Edit a relationship status", 
+          "delete-title": "Delete a relationship status",
+          "title": "Add a relationship status",
+          "input-placeholder-1": "Relationship status"
+         }
+      },
+      "component-2": {
+        "section-1": {
+           "edit-title": "Add a workplace", 
+           "delete-title": "Delete a workplace",
+           "title": "Add a workplace",
+           "input-placeholder-1": "Company",
+           "input-placeholder-2": "Position",
+           "input-placeholder-3": "City/Town",
+           "input-placeholder-4": "Description"
+        },
+        "section-2": {
+          "edit-title": "Add a high school", 
+          "delete-title": "Delete a high school",
+          "title": "Add a high school",
+          "input-placeholder-1": "High School",
+          "input-placeholder-2": "Description"
+         },
+         "section-3": {
+          "edit-title": "Add a college", 
+          "delete-title": "Delete a college",
+          "title": "Add a college",
+          "input-placeholder-1": "College",
+          "input-placeholder-2": "Description"
+         }
+      },
+      "component-3": {
+        "section-1": {
+          "edit-title": "Edit current city", 
+          "delete-title": "Delete current city",
+          "title": "Add current city",
+          "input-placeholder-1": "Current City"
+         },
+         "section-2": {
+          "edit-title": "Edit hometown", 
+          "delete-title": "Delete hometown",
+          "title": "Add hometown",
+          "input-placeholder-1": "Hometown"
+         },
+         "section-3": {
+          "edit-title": "Add city", 
+          "delete-title": "Delete city",
+          "title": "Add city",
+          "title-bold": "Cities",
+          "input-placeholder-1": "City",
+          "input-placeholder-2": "Description"
+         }
+      },
+      "component-4": {
+        "section-1": {
+          "edit-title": "Edit your address", 
+          "delete-title": "Delete your address",
+          "title": "Add your address",
+          "title-bold": "Contact Info",
+          "input-placeholder-1": "Your address"
+         },
+         "section-2": {
+          "edit-title": "Add another mobile phone", 
+          "delete-title": "Delete your mobile phone",
+          "title": "Add your mobile phone",
+          "input-placeholder-1": "Your mobile phone",
+          "input-placeholder-2": "Description"
+         },
+         "section-3": {
+          "edit-title": "Add a website", 
+          "delete-title": "Delete a website",
+          "title": "Add a website",
+          "title-bold": "Websites and Social links",
+          "input-placeholder-1": "Website link",
+          "input-placeholder-2": "Description"
+         },
+         "section-4": {
+          "edit-title": "Add a social link", 
+          "delete-title": "Delete a social link",
+          "title": "Add a social link",
+          "input-placeholder-1": "Social link",
+          "input-placeholder-2": "Description"
+         },
+         "section-5": {
+          "edit-title": "Edit your gender", 
+          "delete-title": "Delete your gender",
+          "title": "Add your gender",
+          "title-bold": "Basic Info",
+          "input-placeholder-1": "Gender"
+         },
+         "section-6": {
+          "edit-title": "Edit your language", 
+          "delete-title": "Delete your language",
+          "title": "Add your language",
+          "input-placeholder-1": "Language"
+         },
+         "section-7": {
+          "edit-title": "Edit your religion views", 
+          "delete-title": "Delete your religion views",
+          "title": "Add your religion views",
+          "input-placeholder-1": "Religion views"
+         },
+         "section-8": {
+          "edit-title": "Edit your political views", 
+          "delete-title": "Delete your political views",
+          "title": "Add your political views",
+          "input-placeholder-1": "Political views"
+         },
+         "section-9": {
+          "edit-title": "Edit", 
+          "delete-title": "Delete",
+          "title": "Add who you're interested in",
+          "input-placeholder-1": "Interested in"
+         },
+         "section-10": {
+          "edit-title": "Edit your birth date", 
+          "delete-title": "Delete your birth date",
+          "title": "Add your birth date",
+          "input-placeholder-1": "Your birth date"
+         }
+      },
+      "component-5": {
+        "section-1": {
+          "edit-title": "Edit a relationship status", 
+          "delete-title": "Delete a relationship status",
+          "title": "Add a relationship status",
+          "title-bold": "Relationship",
+          "input-placeholder-1": "Relationship status"
+         },
+         "section-2": {
+          "edit-title": "Add a family member", 
+          "delete-title": "Delete a family member",
+          "title": "Add a family member",
+          "title-bold": "Family Members",
+          "input-placeholder-1": "Name",
+          "input-placeholder-2": "Sername",
+          "input-placeholder-3": "Status"
+         }
+      },
+      "component-6": {
+        "section-1": {
+          "edit-title": "Edit some details about yourself", 
+          "delete-title": "Delete details about yourself",
+          "title": "Write some details about yourself",
+          "title-bold": "About you",
+          "input-placeholder-1": "Information about you"
+         },
+         "section-2": {
+          "edit-title": "Add a name pronunciation", 
+          "delete-title": "Delete a name pronunciation",
+          "title": "Add a name pronunciation",
+          "title-bold": "Name Pronunciation",
+          "input-placeholder-1": "Name Pronunciation"
+         },
+         "section-3": {
+          "edit-title": "Add a nickname", 
+          "delete-title": "Delete a nickname",
+          "title": "Add a nickname",
+          "title-bold": "Other Names",
+          "input-placeholder-1": "Nickname"
+         },
+         "section-4": {
+          "edit-title": "Edit your favorite quotes", 
+          "delete-title": "Delete your favorite quotes",
+          "title": "Add your favorite quotes",
+          "title-bold": "Favorite Quotes",
+          "input-placeholder-1": "Favorite Quotes"
+         }
+      },
+      "component-7": {
+        "section": {
+          "edit-title": "Add your life event", 
+          "delete-title": "Delete your life event",
+          "title": "Add your life event",
+          "title-bold": "Life Events",
+          "input-placeholder-1": "Life event",
+          "input-placeholder-2": "Description"
+         },
+         "description": "No life events to show"
+      }
+    }
+  },
+  "terminal": {
+    "title": "Terminal",
+    "help-message-1": "Close",
+    "help-message-2": "Minimize",
+    "help-message-3": "Expand",
+    "welcome-message": "Welcome user! Type `help` for a list of all available commands.",
+    "list-of-commands": "List of commands: ",
+    "current-date": "The current date: ",
+    "press-any-key": "Press any key to continue...",
+    "invalid-command": "is not a command. Invalid command.",
+    "invalid-color": "Invalid color. There's no such color.",
+    "invalid-hex-color": "Invalid hex format. There's no such color.",
+    "invalid-rgb-color": "Invalid rgb format. There's no such color.",
+    "invalid-rgba-color": "Invalid rgba format. There's no such color.",
+    "symbols-for-matrix": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789§!#$%&<=>^~?",
+    "commands": [
+      {
+        "command": "help",
+        "action": "Show a list of all commands."
+      },
+      {
+        "command": "cls",
+        "action": "Clear the command line."
+      },
+      {
+        "command": "color",
+        "action": "Change the text color. Example: 'color red'."
+      },
+      {
+        "command": "background-color",
+        "action": "Change background color. Example: 'background-color red'"
+      },
+      {
+        "command": "default-color",
+        "action": "Set default color to text and background."
+      },
+      {
+        "command": "date",
+        "action": "Show current date."
+      },
+      {
+        "command": "echo",
+        "action": "Output messages."
+      },
+      {
+        "command": "doc",
+        "action": "Go to project documentation."
+      },
+      {
+        "command": "github",
+        "action": "Go to project owner's github."
+      },
+      {
+        "command": "pause",
+        "action": "Pause the command line."
+      },
+      {
+        "command": "exit",
+        "action": "Exit the command line."
+      }
+    ]
+  }    
+  },
+  "unauthorized": {
+  "login": {
+    "main-block": {
+    "description": {
+      "h1": "Social-network by legabog",
+      "h2": "This social network helps you always stay in touch and communicate with your friends."
+    },
+    "signin-block": {
+      "login-input": "Email",
+      "password-input": "Password",
+      "login-button": "Login",
+      "restore-password": "Forgotten password?",
+      "registration-button": "Create an account",
+      "help": {
+      "navLink": "Create a page",
+      "description": "of a celebrity, music band or company."
+      }
+    }
+    }
+  },
+  "login-route": {
+    "header": {
+    "h1": "Social network by legabog"
+    },
+    "body": {
+    "body-header": {
+      "span": "Log in to Social network by legabog"
+    },
+    "form": {
+      "login-input": "Email",
+      "error-info": {
+      "description": "The email address that you've entered doesn't match any account.",
+      "navLink": "Sign up for an account."
+      },
+      "password-input": "Password",
+      "login-button": "Login",
+      "restore-account": "Forgotten account?",
+      "or": "or",
+      "create-account-button": "Create an account"
+    }
+    }
+  },
+  "registration-block": {
+    "header": {
+    "description-1": "Sign Up",
+    "description-2": "It's quick and easy."
+    },
+    "body": {
+    "registration-error": {
+      "description-1": "We could not create your account.",
+      "description-2": "We were not able to register you on our Social network.",
+      "description-3": "It is possible that an account with such mail already exists."
+    },
+    "field-1": {
+      "placeholder": "First name",
+      "error": "What's your name?"
+    },
+    "field-2": {
+      "placeholder": "Surname",
+      "error": "What's your surname?"
+    },
+    "field-3": {
+      "placeholder": "Telephone number",
+      "error": "Enter telephone number without spaces, started from + 7."
+    },
+    "field-4": {
+      "placeholder": "Email",
+      "error": "Enter your email correctly without spaces."
+    },
+    "field-5": {
+      "placeholder": "Password",
+      "error": "Enter a combination of at least six numbers, letters and punctuation."
+    },
+    "field-6": {
+      "placeholder": "Confirm password",
+      "error": "The password you typed must be the same."
+    },
+    "field-birthday": {
+      "description": "Date of birth",
+      "option-1": "Day",
+      "option-2": "Month",
+      "option-3": "Year",
+      "month-1": "Jan",
+      "month-2": "Feb",
+      "month-3": "Mar",
+      "month-4": "Apr",
+      "month-5": "May",
+      "month-6": "Jun",
+      "month-7": "Jul",
+      "month-8": "Aug",
+      "month-9": "Sep",
+      "month-10": "Oct",
+      "month-11": "Nov",
+      "month-12": "Dec",
+      "error": "It looks like you've entered the wrong info. Please make sure that you use your real date of birth.",
+      "help": "Providing your date of birth helps make sure that you get the right experience for your age. If you want to change who sees this, go to the About section of your Profile. For more details, please visit our Data Policy.",
+      "close-button": "Close"
+    },
+    "field-gender": {
+      "description": "Gender",
+      "input-1": "Female",
+      "input-2": "Male",
+      "input-3": "Other",
+      "error": "Please choose a gender. You can change who can see this later.",
+      "help": "You can change who sees your gender on your profile later. Select Other to choose another gender, or if you'd rather not say.",
+      "close-button": "Close"
+    },
+    "policy-message": {
+      "p": "By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time."
+    },
+    "registration-button": "Sign Up"
+    }
+  },
+  "error-route": {
+    "header": {
+    "h1": "Oops, this page is not available"
+    },
+    "body": {
+    "h2": "You may have used an invalid link or a page may have been deleted."
+    },
+    "button-back": {
+    "navLink": "Go to home"
+    }
+  },
+  "confirm-email-route": {
+    "header": {
+    "h1": "Verify your account"
+    },
+    "body": {
+    "h2-1": "To complete registration, you have received an e-mail message.",
+    "h2-2": "Go to the specified url."
+    },
+    "button-back": {
+    "navLink": "Back to main page"
+    }
+  },
+  "confirmed-email-route": {
+    "header": {
+    "h1": "Thank you for registration"
+    },
+    "body": {
+    "h2-1": "Finally, your account was created.",
+    "h2-2": "Now, you can log in."
+    },
+    "button-back": {
+    "navLink": "Log in page"
+    }
+  }
+  }
+}

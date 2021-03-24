@@ -1,0 +1,42 @@
+.profile-body-column-component-hobbie {
+    margin-top: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #E4E6EB;
+    border-radius: 100px;
+    padding: 6px 12px;
+}
+
+.profile-body-column-component-hobbie:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+
+.profile-body-column-component-hobbie:active {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.profile-body-column-component-hobbie__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1877F2;
+}
+
+.profile-body-column-component-hobbie__description {
+    display: flex;
+    margin-left: 5px;
+}
+
+.profile-body-column-component-hobbie__description > span {
+    white-space: nowrap;
+    color: #050505;
+    font-weight: 600;
+    font-size: .9375rem;
+    line-height: 1.3333;
+}

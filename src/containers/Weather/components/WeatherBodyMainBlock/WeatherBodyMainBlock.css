@@ -1,0 +1,19 @@
+.weather-body-main-block {
+    display: flex;
+}
+
+.weather-body-main-block_section-1 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-body-main-block_section-2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}

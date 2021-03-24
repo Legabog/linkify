@@ -1,0 +1,46 @@
+.weather-header-app-title {
+    display: flex;
+    align-items: center;
+}
+
+.weather-header-app-title > a {
+    text-decoration: none;
+}
+
+.weather-header-app-title__button-back {
+    display: flex;
+    justify-content: center;
+    min-width: 70px;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.weather-header-app-title__button-back:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.weather-header-app-title__button-back:active {
+    transform: scale(0.9);
+}
+
+.weather-header-app-title__button-back > span {
+    font-weight: 400;
+    color: #fff;
+}
+
+.weather-header-app-title__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-header-app-title__title > span {
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+}

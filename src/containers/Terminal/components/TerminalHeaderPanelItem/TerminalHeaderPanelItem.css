@@ -1,0 +1,28 @@
+.terminal-header-panel__item {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.terminal-header-panel__item:hover {
+  cursor: pointer;
+  filter: brightness(0.95);
+}
+
+.terminal-header-panel__item:active {
+  transform: scale(0.9);
+}
+
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}

@@ -1,0 +1,39 @@
+.weather-body-temperature {
+    height: fit-content;
+    align-self: center;
+}
+
+.weather-body-temperature__block-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.weather-body-temperature__span > span {
+    font-size: 4rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.weather-body-temperature__sup > p {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-top: -1.3rem;
+}
+
+.weather-body-temperature__description {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.weather-body-temperature__description > span {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

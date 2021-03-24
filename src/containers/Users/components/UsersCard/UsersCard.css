@@ -1,0 +1,37 @@
+.users-card {
+  border-radius: 8px;
+  padding: 8px;
+  margin: 20px 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.users-card-namesurname > span {
+  padding-left: 10px;
+  word-break: break-word;
+  color: #050505;
+  font-size: 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.users-avatar {
+  display: flex;
+}
+
+.users-avatar > img {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -30px;
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.users-card-info {
+  display: block;
+}
