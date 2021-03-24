@@ -87,7 +87,7 @@ List of available scripts:
    ```shell
    npm run flow
    ```   
-6. **eject** - this CRA is not ejected. Previous version was ejected.
+6. **eject** - this CRA is not ejected. Previous version was.
 
    ```shell
    npm run eject
