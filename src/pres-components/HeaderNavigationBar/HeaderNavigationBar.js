@@ -42,18 +42,10 @@ export const HeaderNavigationBar = (props) => {
   };
 
   const toggleActiveLinkAfterRender = () => {
-    switch (props.location.pathname) {
-      case "/":
-        toggleActiveLink("/");
-        break;
-      case "/friends":
-        toggleActiveLink("/friends");
-        break;
-      case "/groups":
-        toggleActiveLink("/groups");
-        break;
-      default:
-        toggleActiveLink(props.location.pathname);
+    const availableRoutes = ["/", "/friends", "/groups"];
+
+    if (availableRoutes.includes(props.location.pathname)) {
+      toggleActiveLink(props.location.pathname)
     }
   };
 
