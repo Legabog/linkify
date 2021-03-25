@@ -35,8 +35,6 @@ export const HeaderNavigationBar = (props) => {
     hideGroupsHelpMessage,
   ] = useHelpMessage();
 
-  //-----------Active link focus
-
   const [activeLink, setActiveLink] = useState();
 
   const toggleActiveLink = (link) => {
@@ -44,22 +42,20 @@ export const HeaderNavigationBar = (props) => {
   };
 
   const toggleActiveLinkAfterRender = () => {
-    if (props.location.pathname === "/") {
-      toggleActiveLink("/");
-    } else {
-      if (props.location.pathname === "/friends") {
+    switch (props.location.pathname) {
+      case "/":
+        toggleActiveLink("/");
+        break;
+      case "/friends":
         toggleActiveLink("/friends");
-      } else {
-        if (props.location.pathname === "/groups") {
-          toggleActiveLink("/groups");
-        } else {
-          toggleActiveLink(props.location.pathname);
-        }
-      }
+        break;
+      case "/groups":
+        toggleActiveLink("/groups");
+        break;
+      default:
+        toggleActiveLink(props.location.pathname);
     }
   };
-
-  //
 
   useEffect(() => {
     toggleActiveLinkAfterRender();

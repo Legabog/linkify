@@ -1,6 +1,20 @@
 import "./HeaderNavigationBarItem.css";
 
 export const HeaderNavigationBarItem = (props) => {
+
+  const navigationBarItemHandler = {
+    clicHandler() {
+      props.toggleActiveLink(props.link);
+      props.hideHelp();
+    },
+    mouseEnter() {
+      props.showHelp();
+    },
+    mouseLeave() {
+      props.hideHelp();
+    }
+  }
+
   return (
     <div
       className={
@@ -8,16 +22,9 @@ export const HeaderNavigationBarItem = (props) => {
           ? "header-navigation-bar__item_active"
           : "header-navigation-bar__item"
       }
-      onClick={() => {
-        props.toggleActiveLink(props.link);
-        props.hideHelp();
-      }}
-      onMouseEnter={() => {
-        props.showHelp();
-      }}
-      onMouseLeave={() => {
-        props.hideHelp();
-      }}
+      onClick={navigationBarItemHandler.clicHandler}
+      onMouseEnter={navigationBarItemHandler.mouseEnter}
+      onMouseLeave={navigationBarItemHandler.mouseLeave}
     >
       <div
         className={
