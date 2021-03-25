@@ -16,7 +16,7 @@ export const OpenMusicPlayerVolumeBar = (props) => {
           <div className={"music-player-panel_open__mute"}>
             <MicOffIcon
               onClick={() => {
-                if (props.activeTrack !== null) {
+                if (props.musicPlayerActiveTrack !== null) {
                   props.volumeH((audioRef.current.volume = 0));
                 }
               }}
@@ -24,7 +24,7 @@ export const OpenMusicPlayerVolumeBar = (props) => {
           </div>
 
           <input
-            disabled={props.activeTrack !== null ? false : true}
+            disabled={props.musicPlayerActiveTrack !== null ? false : true}
             id="volumeRange"
             type="range"
             ref={volumeRangeRef}
@@ -50,7 +50,7 @@ export const OpenMusicPlayerVolumeBar = (props) => {
           <div className={"music-player-panel_open__unmute"}>
             <MicIcon
               onClick={() => {
-                if (props.activeTrack !== null) {
+                if (props.musicPlayerActiveTrack !== null) {
                   props.volumeH((audioRef.current.volume = 1));
                 }
               }}

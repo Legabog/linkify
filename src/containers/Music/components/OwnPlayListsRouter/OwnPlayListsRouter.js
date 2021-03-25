@@ -6,12 +6,12 @@ import "./OwnPlayListsRouter.css";
 import {
   deleteOwnPlayList,
   deleteTrackFromPlayList,
-} from "redux/musicalplaylists-reducer";
+} from "redux/musical-playlists-reducer";
 import {
   setMusicForPlayer,
   playPlayer,
   setIndexOfTrack,
-} from "redux/musicplayer-reducer";
+} from "redux/music-player-reducer";
 
 import { HeaderOwnPlayListsRouter } from "../HeaderOwnPlayListsRouter";
 import { BodyOwnPlayListsRouter } from "../BodyOwnPlayListsRouter";
@@ -33,12 +33,14 @@ const OwnPlayListsRouter_ = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  deleteTrackFetch: state.musicPlayListReducer.deleteTrackFetch,
+  ownPlayListsFetchingDeleteTrackFetching:
+    state.musicPlayListReducer.ownPlayListsFetchingDeleteTrackFetching,
   musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList,
-  indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
-  isPlaying: state.musicPlayerReducer.isPlaying,
-  activeTrack: state.musicPlayerReducer.activeTrack,
-  disablerButtonPlay: state.musicPlayerReducer.disablerButtonPlay,
+  musicPlayerIndexOfPlayingTrack:
+    state.musicPlayerReducer.musicPlayerIndexOfPlayingTrack,
+  musicPlayerIsPlaying: state.musicPlayerReducer.musicPlayerIsPlaying,
+  musicPlayerActiveTrack: state.musicPlayerReducer.musicPlayerActiveTrack,
+  musicPlayerDisablerButtonPlay: state.musicPlayerReducer.musicPlayerDisablerButtonPlay,
 });
 
 export const OwnPlayListsRouter = compose(

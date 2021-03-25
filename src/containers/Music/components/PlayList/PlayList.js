@@ -13,10 +13,10 @@ export const PlayList = (props) => {
 
   return (
     <>
-      {props.playListSwitcher ? (
+      {props.ownPlayListsSwitcher ? (
         <>
           <NavLink
-            to={`/music-player/${props.tempTrack.author}/${props.tempTrack.albumTitle}`}
+            to={`/music-player/${props.ownPlayListsTempTrack.author}/${props.ownPlayListsTempTrack.albumTitle}`}
             onMouseOver={() => {
               setHover(1);
             }}
@@ -31,8 +31,8 @@ export const PlayList = (props) => {
 
                 props.tracks.map((e) => {
                   if (
-                    (e.title === props.tempTrack.title) &
-                    (e.author === props.tempTrack.author)
+                    (e.title === props.ownPlayListsTempTrack.title) &
+                    (e.author === props.ownPlayListsTempTrack.author)
                   ) {
                     i += 1;
                   }
@@ -41,7 +41,7 @@ export const PlayList = (props) => {
                 });
 
                 if (i === 0) {
-                  let payload = [...props.tracks, props.tempTrack];
+                  let payload = [...props.tracks, props.ownPlayListsTempTrack];
 
                   props.updatePlaylist(props.id, {
                     tracks: payload,

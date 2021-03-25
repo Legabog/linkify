@@ -5,13 +5,13 @@ export const OpenPlayerPanelDescription = (props) => {
     <>
       <img
         src={
-          props.activeTrack !== null ? props.activeTrack.albumCover : musicCover
+          props.musicPlayerActiveTrack !== null ? props.musicPlayerActiveTrack.albumCover : musicCover
         }
         alt={musicCover}
         onClick={props.toggleMusicPanel}
       />
       <h3 onClick={props.toggleMusicPanel}>
-        {props.activeTrack !== null ? props.activeTrack.title : "Not Playing"}
+        {props.musicPlayerActiveTrack !== null ? props.musicPlayerActiveTrack.title : "Not Playing"}
       </h3>
     </>
   );

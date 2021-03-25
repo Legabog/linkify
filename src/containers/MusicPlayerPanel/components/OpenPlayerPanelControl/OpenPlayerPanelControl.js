@@ -7,101 +7,106 @@ import SkipNextIcon from "@material-ui/icons/SkipNext";
 import { audioRef } from "containers/MusicPlayerPanel/AudioRef";
 
 export const OpenPlayerPanelControl = (props) => {
-
   return (
     <>
       <div className={"MusicPlayerPanel__close__controlPanel"}>
         <button
-          disabled={props.disablerButtonNext}
+          disabled={props.musicPlayerDisablerButtonNext}
           onClick={() => {
-            if (props.activeTrack !== null) {
+            if (props.musicPlayerActiveTrack !== null) {
               switch (props.repeatState) {
                 case 0:
-                  if (props.activeTrack !== null && audioRef.current.currentTime > 3) {
+                  if (
+                    props.musicPlayerActiveTrack !== null &&
+                    audioRef.current.currentTime > 3
+                  ) {
                     audioRef.current.currentTime = 0;
                   } else {
-                    if (props.indexOfPlayingTrack - 1 >= 0) {
+                    if (props.musicPlayerIndexOfPlayingTrack - 1 >= 0) {
                       props.previousTrack(
                         {
                           albumCover:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].albumCover !== undefined
                               ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack - 1
+                                  props.musicPlayerIndexOfPlayingTrack - 1
                                 ].albumCover
                               : props.musicPlayerPlayList.albumCover,
                           album:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].albumTitle !== undefined
                               ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack - 1
+                                  props.musicPlayerIndexOfPlayingTrack - 1
                                 ].albumTitle
                               : props.musicPlayerPlayList.title,
                           author:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].author !== undefined
                               ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack - 1
+                                  props.musicPlayerIndexOfPlayingTrack - 1
                                 ].author
                               : props.musicPlayerPlayList.author,
                           title:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].title,
                           trackUrl:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].trackUrl,
                         },
-                        props.indexOfPlayingTrack - 1
+                        props.musicPlayerIndexOfPlayingTrack - 1
                       );
                     }
                   }
                   break;
                 case 1:
-                  if (props.activeTrack !== null && audioRef.current.currentTime > 3) {
+                  if (
+                    props.musicPlayerActiveTrack !== null &&
+                    audioRef.current.currentTime > 3
+                  ) {
                     audioRef.current.currentTime = 0;
                   } else {
-                    if (props.indexOfPlayingTrack - 1 >= 0) {
+                    if (props.musicPlayerIndexOfPlayingTrack - 1 >= 0) {
                       props.previousTrack(
                         {
                           albumCover:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].albumCover !== undefined
                               ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack - 1
+                                  props.musicPlayerIndexOfPlayingTrack - 1
                                 ].albumCover
                               : props.musicPlayerPlayList.albumCover,
                           album:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].albumTitle !== undefined
                               ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack - 1
+                                  props.musicPlayerIndexOfPlayingTrack - 1
                                 ].albumTitle
                               : props.musicPlayerPlayList.title,
                           author:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].author !== undefined
                               ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack - 1
+                                  props.musicPlayerIndexOfPlayingTrack - 1
                                 ].author
                               : props.musicPlayerPlayList.author,
                           title:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].title,
                           trackUrl:
                             props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack - 1
+                              props.musicPlayerIndexOfPlayingTrack - 1
                             ].trackUrl,
                         },
-                        props.indexOfPlayingTrack - 1
+                        props.musicPlayerIndexOfPlayingTrack - 1
                       );
                     }
                   }
@@ -121,11 +126,11 @@ export const OpenPlayerPanelControl = (props) => {
         </button>
 
         <button
-          disabled={props.disablerButtonNext}
+          disabled={props.musicPlayerDisablerButtonNext}
           aria-label="music_panel_play_pause"
           onClick={() => {
-            if (props.activeTrack !== null) {
-              if (props.isPlaying) {
+            if (props.musicPlayerActiveTrack !== null) {
+              if (props.musicPlayerIsPlaying) {
                 audioRef.current.pause();
                 props.toggleIsPlaying(false);
               } else {
@@ -135,63 +140,63 @@ export const OpenPlayerPanelControl = (props) => {
             }
           }}
         >
-          {props.isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
+          {props.musicPlayerIsPlaying ? <PauseIcon /> : <PlayArrowIcon />}
         </button>
 
         <button
-          disabled={props.disablerButtonNext}
+          disabled={props.musicPlayerDisablerButtonNext}
           aria-label="music_panel_next"
           onClick={() => {
-            if (props.activeTrack !== null) {
+            if (props.musicPlayerActiveTrack !== null) {
               switch (props.repeatState) {
                 case 0:
                   if (
-                    props.indexOfPlayingTrack + 1 <
+                    props.musicPlayerIndexOfPlayingTrack + 1 <
                     props.musicPlayerPlayList.tracks.length
                   ) {
                     props.nextTrack(
                       {
                         albumCover:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumCover !== undefined
                             ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack + 1
+                                props.musicPlayerIndexOfPlayingTrack + 1
                               ].albumCover
                             : props.musicPlayerPlayList.albumCover,
                         album:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumTitle !== undefined
                             ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack + 1
+                                props.musicPlayerIndexOfPlayingTrack + 1
                               ].albumTitle
                             : props.musicPlayerPlayList.title,
                         author:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].author !== undefined
                             ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack + 1
+                                props.musicPlayerIndexOfPlayingTrack + 1
                               ].author
                             : props.musicPlayerPlayList.author,
                         title:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].title,
                         trackUrl:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].trackUrl,
                       },
-                      props.indexOfPlayingTrack + 1
+                      props.musicPlayerIndexOfPlayingTrack + 1
                     );
                   }
 
                   break;
                 case 1:
                   if (
-                    props.indexOfPlayingTrack ===
+                    props.musicPlayerIndexOfPlayingTrack ===
                     props.musicPlayerPlayList.tracks.length - 1
                   ) {
                     props.nextTrack(
@@ -221,38 +226,38 @@ export const OpenPlayerPanelControl = (props) => {
                       {
                         albumCover:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumCover !== undefined
                             ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack + 1
+                                props.musicPlayerIndexOfPlayingTrack + 1
                               ].albumCover
                             : props.musicPlayerPlayList.albumCover,
                         album:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumTitle !== undefined
                             ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack + 1
+                                props.musicPlayerIndexOfPlayingTrack + 1
                               ].albumTitle
                             : props.musicPlayerPlayList.title,
                         author:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].author !== undefined
                             ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack + 1
+                                props.musicPlayerIndexOfPlayingTrack + 1
                               ].author
                             : props.musicPlayerPlayList.author,
                         title:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].title,
                         trackUrl:
                           props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].trackUrl,
                       },
-                      props.indexOfPlayingTrack + 1
+                      props.musicPlayerIndexOfPlayingTrack + 1
                     );
                   }
 

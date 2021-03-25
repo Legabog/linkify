@@ -12,7 +12,7 @@ export const BodyPlayLists = (props) => {
   const { t } = useTranslation();
   return (
     <div className={"playlists-body"}>
-      {props.playListSwitcher ? null : (
+      {props.ownPlayListsSwitcher ? null : (
         <NavLink to="/music-list/playlists/create">
           <div className={"playlists-body__create-playlist"}>
             <img src={PhotoAdd} alt="descripion" />
@@ -20,7 +20,7 @@ export const BodyPlayLists = (props) => {
           </div>
         </NavLink>
       )}
-      {props.fetch ? (
+      {props.ownPlayListsFetching ? (
         <PlaylistPreloader />
       ) : props.ownPlayLists.length === 0 ? (
         <div className={"playlists-body__no-playlists"}>
@@ -36,9 +36,9 @@ export const BodyPlayLists = (props) => {
             description={e.description}
             id={e._id}
             tracks={e.tracks}
-            tempTrack={props.tempTrack}
+            ownPlayListsTempTrack={props.ownPlayListsTempTrack}
             updatePlaylist={props.updatePlaylist}
-            playListSwitcher={props.playListSwitcher}
+            ownPlayListsSwitcher={props.ownPlayListsSwitcher}
             addTrackToPlayList={props.addTrackToPlayList}
             switchStateOfPlayLists={props.switchStateOfPlayLists}
           />

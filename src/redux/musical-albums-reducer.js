@@ -2,7 +2,7 @@ import { musicApi } from "api/music-api";
 
 const SET_MUSIC_ALBUMS_DATA = "SET_MUSIC_ALBUMS_DATA";
 const TOGGLE_MUSICAL_ALBUMS_FETCHING = "TOGGLE_MUSICAL_ALBUMS_FETCHING";
-const SWITCHER = "SWITCHER";
+const TOGGLE_MUSICAL_ALBUMS_SWITCHER = "TOGGLE_MUSICAL_ALBUMS_SWITCHER";
 const PUSH_ALBUM_TO_RECENTLY_PLAYED = "PUSH_ALBUM_TO_RECENTLY_PLAYED";
 const PUSH_TITLE_TO_DISABLED_ARRAY = "PUSH_TITLE_TO_DISABLED_ARRAY";
 const PUSH_AUTHOR_TO_DISABLED_ARRAY = "PUSH_AUTHOR_TO_DISABLED_ARRAY";
@@ -11,9 +11,9 @@ let initialState = {
   musicAlbums: [],
   musicAlbumsFetching: false,
   musicAlbumsSwitcher: 1,
-  recentlyPlayed: [],
-  disabledTitles: [],
-  disabledAuthors: [],
+  musicAlbumsRecentlyPlayed: [],
+  musicAlbumsDisabledTitles: [],
+  musicAlbumsDisabledAuthors: [],
 };
 
 const musicAlbumsReducer = (state = initialState, action) => {
@@ -31,19 +31,19 @@ const musicAlbumsReducer = (state = initialState, action) => {
     case PUSH_ALBUM_TO_RECENTLY_PLAYED:
       return {
         ...state,
-        recentlyPlayed: [...state.recentlyPlayed, action.data],
+        musicAlbumsRecentlyPlayed: [...state.musicAlbumsRecentlyPlayed, action.data],
       };
     case PUSH_TITLE_TO_DISABLED_ARRAY:
       return {
         ...state,
-        disabledTitles: [...state.disabledTitles, action.title],
+        musicAlbumsDisabledTitles: [...state.musicAlbumsDisabledTitles, action.title],
       };
     case PUSH_AUTHOR_TO_DISABLED_ARRAY:
       return {
         ...state,
-        disabledAuthors: [...state.disabledAuthors, action.author],
+        musicAlbumsDisabledAuthors: [...state.musicAlbumsDisabledAuthors, action.author],
       };
-    case SWITCHER:
+    case TOGGLE_MUSICAL_ALBUMS_SWITCHER:
       return {
         ...state,
         musicAlbumsSwitcher: action.switcher,
@@ -61,10 +61,10 @@ export const setMusicAlbumsData = (payload) => {
   };
 };
 
-export const pushAlbumToRecentlyPlayed = (img, title, author) => {
+export const pushAlbumToRecentlyPlayed = (data) => {
   return {
     type: PUSH_ALBUM_TO_RECENTLY_PLAYED,
-    data: { img, title, author },
+    data
   };
 };
 
@@ -91,16 +91,16 @@ export const toggleFetching = (Fetching) => {
 
 export const toggleSwitcher = (switcher) => {
   return {
-    type: SWITCHER,
+    type: TOGGLE_MUSICAL_ALBUMS_SWITCHER,
     switcher,
   };
 };
 
-export const pushToRecentlyPlayed = (img, title, author) => {
+export const pushToRecentlyPlayed = (data) => {
   return (dispatch) => {
-    dispatch(pushAlbumToRecentlyPlayed(img, title, author));
-    dispatch(pushTitleToDisabledArray(title));
-    dispatch(pushAuthorToDisabledArray(author));
+    dispatch(pushAlbumToRecentlyPlayed(data));
+    dispatch(pushTitleToDisabledArray(data.title));
+    dispatch(pushAuthorToDisabledArray(data.author));
   };
 };
 

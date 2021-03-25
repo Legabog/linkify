@@ -29,7 +29,7 @@ export const OpenMusicPlayerTrackBar = (props) => {
       <div className={"music-player-panel_open__track-bar"}>
         <div className={"music-player-panel_open__track-bar-input"}>
           <input
-            disabled={props.activeTrack !== null ? false : true}
+            disabled={props.musicPlayerActiveTrack !== null ? false : true}
             id="trackBarRange"
             ref={trackBarRef}
             type="range"

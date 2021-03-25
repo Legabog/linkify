@@ -4,12 +4,12 @@ import "../MusicPlayerPanel.css"
 export const ClosePlayerPanelDescription = (props) => {
   return (
     <>
-      {props.isPlaying ? (
+      {props.musicPlayerIsPlaying ? (
         <div className={"MusicPlayerPanel__open__avatarIsPlaying"}>
           <img
             src={
-              props.activeTrack !== null
-                ? props.activeTrack.albumCover
+              props.musicPlayerActiveTrack !== null
+                ? props.musicPlayerActiveTrack.albumCover
                 : musicCover
             }
             alt={musicCover}
@@ -19,8 +19,8 @@ export const ClosePlayerPanelDescription = (props) => {
         <div className={"MusicPlayerPanel__open__avatar"}>
           <img
             src={
-              props.activeTrack !== null
-                ? props.activeTrack.albumCover
+              props.musicPlayerActiveTrack !== null
+                ? props.musicPlayerActiveTrack.albumCover
                 : musicCover
             }
             alt={musicCover}
@@ -30,15 +30,15 @@ export const ClosePlayerPanelDescription = (props) => {
       <div className={"MusicPlayerPanel__open__description"}>
         <div className={"MusicPlayerPanel__open__songName"}>
           <h3>
-            {props.activeTrack !== null
-              ? props.activeTrack.title
+            {props.musicPlayerActiveTrack !== null
+              ? props.musicPlayerActiveTrack.title
               : "Not Playing"}
           </h3>
         </div>
         <div className={"MusicPlayerPanel__open__authorNameAlbumName"}>
           <h3>
-            {props.activeTrack !== null
-              ? props.activeTrack.author + " - " + props.activeTrack.album
+            {props.musicPlayerActiveTrack !== null
+              ? props.musicPlayerActiveTrack.author + " - " + props.musicPlayerActiveTrack.album
               : ""}
           </h3>
         </div>

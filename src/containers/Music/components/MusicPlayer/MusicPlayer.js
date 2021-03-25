@@ -1,9 +1,7 @@
-import "./MusicPlayer.css"
-
+import "./MusicPlayer.css";
 
 import { HeaderMusicPlayer } from "../HeaderMusicPlayer";
 import { BodyMusicPlayer } from "../BodyMusicPlayer";
-
 
 import { connect } from "react-redux";
 import {
@@ -12,24 +10,24 @@ import {
   pushToRecentlyPlayed,
   pushTitleToDisabledArray,
   pushAuthorToDisabledArray,
-} from "redux/musicalbums-reducer";
+} from "redux/musical-albums-reducer";
 
 import {
   switchStateOfPlayLists,
   addTrackToPlayList,
-} from "redux/musicalplaylists-reducer";
+} from "redux/musical-playlists-reducer";
 import {
   setMusicForPlayer,
   playPlayer,
   setIndexOfTrack,
-} from "redux/musicplayer-reducer";
+} from "redux/music-player-reducer";
 
 const MusicPlayer_ = (props) => {
   return (
     <div className={"music-player"}>
       <HeaderMusicPlayer
         nameArtist={props.nameArtist}
-        switcher={props.musicAlbumsSwitcher}
+        musicAlbumsSwitcher={props.musicAlbumsSwitcher}
         toggleSwitcher={props.toggleSwitcher}
       />
       <BodyMusicPlayer
@@ -38,24 +36,28 @@ const MusicPlayer_ = (props) => {
         title={props.albumTitle}
         musicAlbums={props.musicAlbums}
         img={props.img}
-      /> 
+      />
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-     // muisc player reducer
+    // muisc player reducer
     musicAlbums: state.musicAlbumsReducer.musicAlbums,
     musicAlbumsSwitcher: state.musicAlbumsReducer.musicAlbumsSwitcher,
-    recentlyPlayed: state.musicAlbumsReducer.recentlyPlayed,
-    disabledTitles: state.musicAlbumsReducer.disabledTitles,
-    disabledAuthors: state.musicAlbumsReducer.disabledAuthors,
-    isPlaying: state.musicPlayerReducer.isPlaying,
+    musicAlbumsRecentlyPlayed:
+      state.musicAlbumsReducer.musicAlbumsRecentlyPlayed,
+    musicAlbumsDisabledTitles:
+      state.musicAlbumsReducer.musicAlbumsDisabledTitles,
+    musicAlbumsDisabledAuthors:
+      state.musicAlbumsReducer.musicAlbumsDisabledAuthors,
+    musicPlayerIsPlaying: state.musicPlayerReducer.musicPlayerIsPlaying,
     musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList,
-    indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
-    activeTrack: state.musicPlayerReducer.activeTrack,
-    disablerButtonPlay: state.musicPlayerReducer.disablerButtonPlay,
+    musicPlayerIndexOfPlayingTrack:
+      state.musicPlayerReducer.musicPlayerIndexOfPlayingTrack,
+    musicPlayerActiveTrack: state.musicPlayerReducer.musicPlayerActiveTrack,
+    disablerBmusicPlayerDisablerButtonPlayuttonPlay: state.musicPlayerReducer.musicPlayerDisablerButtonPlay,
   };
 };
 

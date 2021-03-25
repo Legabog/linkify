@@ -15,7 +15,7 @@ export const BodyOwnPlayListsRouterTrackItem = (props) => {
                 (e) => e.title === SearchElement
               );
 
-              if (!props.disablerButtonPlay) {
+              if (!props.musicPlayerDisablerButtonPlay) {
                 props.playPlayer(
                   {
                     albumCover: props.albumCover,

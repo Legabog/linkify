@@ -2,14 +2,13 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import appReducer from "./app-reducer";
 import registrationBlockReducer from "./registration-block-reducer";
 import userReducer from "./user-reducer";
 import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
-import musicAlbumsReducer from "./musicalbums-reducer";
-import musicPlayListReducer from "./musicalplaylists-reducer";
-import musicPlayerReducer from "./musicplayer-reducer";
+import musicAlbumsReducer from "./musical-albums-reducer";
+import musicPlayListReducer from "./musical-playlists-reducer";
+import musicPlayerReducer from "./music-player-reducer";
 import profileUpdateAvatarReducer from "./profile-update-avatar-reducer";
 import profileSelectAvatarBackgroundReducer from "./profile-select-avatar-background-reducer";
 import welcomeComponentReducer from "./welcome-component-reducer";
@@ -22,7 +21,6 @@ import weatherReducer from "./weather-reducer";
 import terminalReducer from "./terminal-reducer";
 
 let rootReducer = combineReducers({
-  appReducer,
   registrationBlockReducer,
   userReducer,
   usersReducer,

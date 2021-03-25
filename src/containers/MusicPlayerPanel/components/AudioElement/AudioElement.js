@@ -12,45 +12,45 @@ export const AudioElement = (props) => {
           switch (props.repeatState) {
             case 0:
               if (
-                props.indexOfPlayingTrack + 1 <
+                props.musicPlayerIndexOfPlayingTrack + 1 <
                 props.musicPlayerPlayList.tracks.length
               ) {
                 props.nextTrack(
                   {
                     albumCover:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].albumCover !== undefined
                         ? props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumCover
                         : props.musicPlayerPlayList.albumCover,
                     album:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].albumTitle !== undefined
                         ? props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumTitle
                         : props.musicPlayerPlayList.title,
                     author:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].author !== undefined
                         ? props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].author
                         : props.musicPlayerPlayList.author,
                     title:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].title,
                     trackUrl:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].trackUrl,
                   },
-                  props.indexOfPlayingTrack + 1
+                  props.musicPlayerIndexOfPlayingTrack + 1
                 );
               } else {
                 props.setActiveTrackAndPlayerPlayListNull();
@@ -59,7 +59,7 @@ export const AudioElement = (props) => {
               break;
             case 1:
               if (
-                props.indexOfPlayingTrack ===
+                props.musicPlayerIndexOfPlayingTrack ===
                 props.musicPlayerPlayList.tracks.length - 1
               ) {
                 props.nextTrack(
@@ -88,38 +88,38 @@ export const AudioElement = (props) => {
                   {
                     albumCover:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].albumCover !== undefined
                         ? props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumCover
                         : props.musicPlayerPlayList.albumCover,
                     album:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].albumTitle !== undefined
                         ? props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].albumTitle
                         : props.musicPlayerPlayList.title,
                     author:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].author !== undefined
                         ? props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
+                            props.musicPlayerIndexOfPlayingTrack + 1
                           ].author
                         : props.musicPlayerPlayList.author,
                     title:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].title,
                     trackUrl:
                       props.musicPlayerPlayList.tracks[
-                        props.indexOfPlayingTrack + 1
+                        props.musicPlayerIndexOfPlayingTrack + 1
                       ].trackUrl,
                   },
-                  props.indexOfPlayingTrack + 1
+                  props.musicPlayerIndexOfPlayingTrack + 1
                 );
               }
               break;

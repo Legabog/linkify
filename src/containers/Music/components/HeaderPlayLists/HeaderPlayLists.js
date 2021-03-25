@@ -15,10 +15,10 @@ export const HeaderPlayLists = (props) => {
 
   return (
     <>
-      {props.playListSwitcher ? (
+      {props.ownPlayListsSwitcher ? (
         <div className={"playlists-header"}>
           <NavLink
-            to={`/music-player/${props.tempTrack.author}/${props.tempTrack.albumTitle}`}
+            to={`/music-player/${props.ownPlayListsTempTrack.author}/${props.ownPlayListsTempTrack.albumTitle}`}
             onMouseOver={() => {
               setHover(1);
             }}
@@ -33,7 +33,7 @@ export const HeaderPlayLists = (props) => {
               ) : (
                 <ArrowBackIosIcon style={{ color: "#1877F2" }} />
               )}
-              <h3>{props.tempTrack.albumTitle}</h3>
+              <h3>{props.ownPlayListsTempTrack.albumTitle}</h3>
             </div>
           </NavLink>
           <h1>{t("authorized.music-player.playlists.header.h1")}</h1>

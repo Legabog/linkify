@@ -17,7 +17,7 @@ export const BodyArtists = (props) => {
 
   return (
     <div className={"artists-body"}>
-      {props.Fetching ? <ArtistsPreloader /> : null}
+      {props.musicAlbumsFetching ? <ArtistsPreloader /> : null}
       {resultArray.map((e) => (
         <ItemArtists
           key={_.uniqueId(e)}

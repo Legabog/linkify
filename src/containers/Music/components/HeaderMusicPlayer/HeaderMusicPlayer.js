@@ -23,9 +23,9 @@ export const HeaderMusicPlayer = (props) => {
       >
         <NavLink
           to={
-            props.switcher === 1
+            props.musicAlbumsSwitcher === 1
               ? `/music-list/artists/${props.nameArtist}`
-              : props.switcher === 2
+              : props.musicAlbumsSwitcher === 2
               ? "/music-list/albums"
               : "/music-list/"
           }
@@ -42,9 +42,9 @@ export const HeaderMusicPlayer = (props) => {
             <ArrowBackIosIcon style={{ color: "#1877F2" }} />
           )}
           <h3>
-            {props.switcher === 1
+            {props.musicAlbumsSwitcher === 1
               ? props.nameArtist
-              : props.switcher === 2
+              : props.musicAlbumsSwitcher === 2
               ? t("authorized.music-player.music-player.header.h3_1")
               : t("authorized.music-player.music-player.header.h3_2")}
           </h3>

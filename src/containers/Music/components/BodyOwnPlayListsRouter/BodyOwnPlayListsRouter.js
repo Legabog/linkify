@@ -28,7 +28,7 @@ export const BodyOwnPlayListsRouter = (props) => {
         <h1>{props.title}</h1>
         <h2>{props.description}</h2>
         <div className={"bodyOwnPlayListsRouter__playListTracks"}>
-          {props.deleteTrackFetch ? (
+          {props.ownPlayListsFetchingDeleteTrackFetching ? (
             <DeleteTrackPreloader />
           ) : (
             props.tracks.map((e) => (
@@ -47,10 +47,12 @@ export const BodyOwnPlayListsRouter = (props) => {
                 setMusicForPlayer={props.setMusicForPlayer}
                 setIndexOfTrack={props.setIndexOfTrack}
                 musicPlayerPlayList={props.musicPlayerPlayList}
-                indexOfPlayingTrack={props.indexOfPlayingTrack}
-                isPlaying={props.isPlaying}
-                activeTrack={props.activeTrack}
-                disablerButtonPlay={props.disablerButtonPlay}
+                musicPlayerIndexOfPlayingTrack={
+                  props.musicPlayerIndexOfPlayingTrack
+                }
+                musicPlayerIsPlaying={props.musicPlayerIsPlaying}
+                musicPlayerActiveTrack={props.musicPlayerActiveTrack}
+                musicPlayerDisablerButtonPlay={props.musicPlayerDisablerButtonPlay}
               />
             ))
           )}
@@ -59,4 +61,3 @@ export const BodyOwnPlayListsRouter = (props) => {
     </div>
   );
 };
-

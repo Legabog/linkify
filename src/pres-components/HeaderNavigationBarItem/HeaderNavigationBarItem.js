@@ -3,7 +3,7 @@ import "./HeaderNavigationBarItem.css";
 export const HeaderNavigationBarItem = (props) => {
 
   const navigationBarItemHandler = {
-    clicHandler() {
+    clickHandler() {
       props.toggleActiveLink(props.link);
       props.hideHelp();
     },
@@ -22,7 +22,7 @@ export const HeaderNavigationBarItem = (props) => {
           ? "header-navigation-bar__item_active"
           : "header-navigation-bar__item"
       }
-      onClick={navigationBarItemHandler.clicHandler}
+      onClick={navigationBarItemHandler.clickHandler}
       onMouseEnter={navigationBarItemHandler.mouseEnter}
       onMouseLeave={navigationBarItemHandler.mouseLeave}
     >

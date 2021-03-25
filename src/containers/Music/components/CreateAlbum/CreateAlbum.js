@@ -5,7 +5,7 @@ import "./CreateAlbum.css"
 
 import {
   createNewPlayList,
-} from "redux/musicalplaylists-reducer";
+} from "redux/musical-playlists-reducer";
 
 import { HeaderCreateAlbum } from "../HeaderCreateAlbum";
 

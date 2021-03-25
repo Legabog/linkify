@@ -7,8 +7,8 @@ import { FooterMusicList } from "../FooterMusicList";
 import { connect } from "react-redux";
 import {
   toggleSwitcher,
-} from "../../../../redux/musicalbums-reducer";
-import {switchStateOfPlayLists} from "../../../../redux/musicalplaylists-reducer"
+} from "../../../../redux/musical-albums-reducer";
+import {switchStateOfPlayLists} from "../../../../redux/musical-playlists-reducer"
 
 
 const MusicList_ = (props) => {
@@ -25,7 +25,7 @@ const MusicList_ = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    recentlyPlayed: state.musicAlbumsReducer.recentlyPlayed,
+    musicAlbumsRecentlyPlayed: state.musicAlbumsReducer.musicAlbumsRecentlyPlayed,
   };
 };
 

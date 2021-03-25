@@ -2,13 +2,15 @@ import { NavLink } from "react-router-dom";
 import "./AlbumItem.css";
 
 export const AlbumItem = (props) => {
+  const clickHandler = () => {
+    props.toggleSwitcher(2);
+  }
+
   return (
     <NavLink to={`/music-player/${props.author}/${props.title}`}>
       <div
         className={"albums-body__item"}
-        onClick={() => {
-          props.toggleSwitcher(2);
-        }}
+        onClick={clickHandler}
       >
         <img src={props.img} alt="description" />
         <div className={"albums-body__discription"}>

@@ -11,7 +11,7 @@ export const FooterMusicList = memo((props) => {
   return (
     <div className={"music-list-footer"}>
       <h3>{t("authorized.music-player.music-list.footer.h3")}</h3>
-      {props.recentlyPlayed.map((e) => (
+      {props.musicAlbumsRecentlyPlayed.map((e) => (
         <FooterItem
           key={_.uniqueId(e)}
           img={e.img}

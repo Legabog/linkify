@@ -11,7 +11,7 @@ import {
   switchStateOfPlayLists,
   getMyOwnPlayLists,
   updatePlaylist,
-} from "../../../../redux/musicalplaylists-reducer";
+} from "../../../../redux/musical-playlists-reducer";
 
 const PlayLists_ = (props) => {
 
@@ -30,9 +30,9 @@ const PlayLists_ = (props) => {
 const mapStateToProps = (state) => {
   return {
     ownPlayLists: state.musicPlayListReducer.ownPlayLists,
-    tempTrack: state.musicPlayListReducer.tempTrack,
-    playListSwitcher: state.musicPlayListReducer.playListSwitcher,
-    fetch: state.musicPlayListReducer.fetch,
+    ownPlayListsTempTrack: state.musicPlayListReducer.ownPlayListsTempTrack,
+    ownPlayListsSwitcher: state.musicPlayListReducer.ownPlayListsSwitcher,
+    ownPlayListsFetching: state.musicPlayListReducer.ownPlayListsFetching,
   };
 };
 

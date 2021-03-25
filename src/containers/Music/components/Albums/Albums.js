@@ -4,8 +4,8 @@ import { HeaderAlbums } from "../HeaderAlbums";
 import { BodyAlbums } from "../BodyAlbums";
 
 import { connect } from "react-redux";
-import { getMusicAlbumsData } from "redux/musicalbums-reducer";
-import { toggleSwitcher } from "redux/musicalbums-reducer";
+import { getMusicAlbumsData } from "redux/musical-albums-reducer";
+import { toggleSwitcher } from "redux/musical-albums-reducer";
 
 const AlbumsList_ = (props) => {
   return (
@@ -14,9 +14,8 @@ const AlbumsList_ = (props) => {
         <HeaderAlbums />
         <BodyAlbums
           musicAlbums={props.musicAlbums}
-          isFetching={props.isFetching}
+          musicAlbumsFetching={props.musicAlbumsFetching}
           toggleSwitcher={props.toggleSwitcher}
-          Fetching={props.Fetching}
         />
       </div>
     </>
@@ -26,8 +25,7 @@ const AlbumsList_ = (props) => {
 const mapStateToProps = (state) => {
   return {
     musicAlbums: state.musicAlbumsReducer.musicAlbums,
-    Fetching: state.musicAlbumsReducer.Fetching,
-    toggleSwitcher: state.musicAlbumsReducer.toggleSwitcher,
+    musicAlbumsFetching: state.musicAlbumsReducer.musicAlbumsFetching,
   };
 };
 

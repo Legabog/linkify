@@ -12,15 +12,15 @@ export const BodyMusicPlayerTrackItem = (props) => {
               <h2
                 onClick={() => {
                   if (
-                    props.disabledAuthors.includes(props.author) &&
-                    props.disabledTitles.includes(props.title)
+                    props.musicAlbumsDisabledAuthors.includes(props.author) &&
+                    props.musicAlbumsDisabledTitles.includes(props.title)
                   ) {
                   } else {
-                    props.pushToRecentlyPlayed(
-                      props.img,
-                      props.title,
-                      props.author
-                    );
+                    props.pushToRecentlyPlayed({
+                      img: props.img,
+                      title: props.title,
+                      author: props.author,
+                    });
                   }
 
                   //-------------------Set music for player
@@ -30,7 +30,7 @@ export const BodyMusicPlayerTrackItem = (props) => {
                     (e) => e.title === SearchElement
                   );
 
-                  if (!props.disablerButtonPlay) {
+                  if (!props.musicPlayerDisablerButtonPlay) {
                     props.playPlayer(
                       {
                         albumCover: props.img,
@@ -68,4 +68,3 @@ export const BodyMusicPlayerTrackItem = (props) => {
     </div>
   );
 };
-

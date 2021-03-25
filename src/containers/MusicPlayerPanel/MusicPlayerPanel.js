@@ -14,7 +14,7 @@ import {
   previousTrack,
   shuffleMusic,
   setActiveTrackAndPlayerPlayListNull,
-} from "redux/musicplayer-reducer";
+} from "redux/music-player-reducer";
 
 import { BackDrop } from "pres-components/BackDrop";
 import { AudioElement } from "./components/AudioElement";
@@ -43,13 +43,13 @@ const MusicPlayerPanel_ = (props) => {
 
   useEffect(() => {
     const upd = setInterval(() => {
-      if (props.isPlaying) {
+      if (props.musicPlayerIsPlaying) {
         setAudioCurrentTime(audioRef.current.currentTime);
       }
     }, 100);
 
     return () => clearInterval(upd);
-  }, [props.isPlaying]);
+  }, [props.musicPlayerIsPlaying]);
 
   let [volume, volumeH] = useState(1);
 
@@ -132,12 +132,15 @@ const MusicPlayerPanel_ = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  isPlaying: state.musicPlayerReducer.isPlaying,
+  musicPlayerIsPlaying: state.musicPlayerReducer.musicPlayerIsPlaying,
   musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList,
-  indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
-  activeTrack: state.musicPlayerReducer.activeTrack,
-  disablerButtonNext: state.musicPlayerReducer.disablerButtonNext,
-  disablerButtonPlay: state.musicPlayerReducer.disablerButtonPlay,
+  musicPlayerIndexOfPlayingTrack:
+    state.musicPlayerReducer.musicPlayerIndexOfPlayingTrack,
+  musicPlayerActiveTrack: state.musicPlayerReducer.musicPlayerActiveTrack,
+  musicPlayerDisablerButtonNext:
+    state.musicPlayerReducer.musicPlayerDisablerButtonNext,
+  musicPlayerDisablerButtonPlay:
+    state.musicPlayerReducer.musicPlayerDisablerButtonPlay,
 });
 
 export const MusicPlayerPanel = compose(

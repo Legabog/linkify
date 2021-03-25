@@ -9,7 +9,7 @@ export const OpenMusicPlayerShuffleAndRepeatButton = (props) => {
       <div className={"music-player-panel_open__shuffle-and-repeat-button"}>
         <div className={"music-player-panel_open__shuffle-and-repeat"}>
           <button
-            disabled={props.activeTrack !== null ? false : true}
+            disabled={props.musicPlayerActiveTrack !== null ? false : true}
             onClick={props.setRepeatState}
           >
             {props.repeatState === 0 ? (

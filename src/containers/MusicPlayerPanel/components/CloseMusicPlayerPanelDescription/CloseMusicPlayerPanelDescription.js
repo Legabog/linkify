@@ -7,14 +7,14 @@ export const CloseMusicPlayerPanelDescription = (props) => {
     <>
       <img
         src={
-          props.activeTrack !== null ? props.activeTrack.albumCover : musicCover
+          props.musicPlayerActiveTrack !== null ? props.musicPlayerActiveTrack.albumCover : musicCover
         }
         alt={musicCover}
         onClick={props.toggleMusicPanel}
       />
       <h3 onClick={props.toggleMusicPanel}>
-        {props.activeTrack !== null
-          ? props.activeTrack.title
+        {props.musicPlayerActiveTrack !== null
+          ? props.musicPlayerActiveTrack.title
           : t("authorized.music-player-panel.close.h3")}
       </h3>
     </>

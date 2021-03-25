@@ -172,7 +172,7 @@ const App = (props) => {
               </>
             )}
           />
-          {props.musicAlbums.map((e, index) => (
+          {props.musicAlbums.map((e) => (
             <Route
               key={_.uniqueId(`d-r1_${e}`)}
               path={`${Routes.MUSIC_LIST_ARTISTS}/${e.author}`}
@@ -189,7 +189,7 @@ const App = (props) => {
               )}
             />
           ))}
-          {props.musicAlbums.map((e, index) => (
+          {props.musicAlbums.map((e) => (
             <Route
               key={_.uniqueId(`d-r2_${e}`)}
               path={`${Routes.MUSIC_PLAYER}/${e.author}/${e.title}`}
@@ -210,7 +210,7 @@ const App = (props) => {
               )}
             />
           ))}
-          {props.ownPlayLists.map((e, index) => (
+          {props.ownPlayLists.map((e) => (
             <Route
               key={_.uniqueId(`d-r3_${e}`)}
               path={`/music-playlists/${e.title}/`}
@@ -332,7 +332,7 @@ const App = (props) => {
               </>
             )}
           />
-          {Routes.PROFILE_ABOUT.map((e, index) => (
+          {Routes.PROFILE_ABOUT.map((e) => (
             <Route
               key={_.uniqueId(`d-r4_${e}`)}
               path={e}

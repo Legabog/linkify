@@ -81,13 +81,13 @@ export const BodyMusicPlayerActionSwitcher = (props) => {
         <MenuItem
           onClick={() => {
             props.switchStateOfPlayLists(true);
-            props.addTrackToPlayList(
-              props.title,
-              props.author,
-              props.trackUrl,
-              props.albumTitle,
-              props.albumCover
-            );
+            props.addTrackToPlayList({
+              title: props.title,
+              author: props.author,
+              trackUrl: props.trackUrl,
+              albumTitle: props.albumTitle,
+              albumCover: props.albumCover,
+            });
           }}
         >
           <NavLink

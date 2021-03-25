@@ -1,8 +1,8 @@
 import db from "utils/firebase/firebase";
 import { storage, addToArray } from "utils/firebase/firebase";
 import { setFullUserInfoAbout } from "redux/about-component-reducer";
-import { getMusicAlbumsData } from "redux/musicalbums-reducer";
-import { getMyOwnPlayLists } from "redux/musicalplaylists-reducer";
+import { getMusicAlbumsData } from "redux/musical-albums-reducer";
+import { getMyOwnPlayLists } from "redux/musical-playlists-reducer";
 import {
   closeHandlerProfileUpdate,
   setTempAvatar,
