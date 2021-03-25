@@ -10,7 +10,6 @@ import { HeaderCenter } from "./components/HeaderCenter";
 import { HeaderRight } from "./components/HeaderRight";
 
 const Header_ = (props) => {
-  // console.log(props)
   return (
     <div className="header">
       <HeaderLeft />
@@ -30,5 +29,3 @@ export const Header = compose(
     logoutButton,
   })
 )(Header_)
-
-// Header.whyDidYouRender = true

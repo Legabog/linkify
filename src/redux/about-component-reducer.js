@@ -125,7 +125,6 @@ const aboutComponentReducer = (state = initialState, action) => {
     case OVERVIEW_ADD_A_WORKPLACE:
       return {
         ...state,
-
         fullUserInfoAbout: {
           ...state.fullUserInfoAbout,
           WorkAndEducation: {

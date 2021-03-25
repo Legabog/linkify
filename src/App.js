@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { Route, Switch, withRouter } from "react-router-dom";
 import _ from "lodash/core";
-import { autoLogin } from "redux/auth-reducer"; // Last changes
+import { autoLogin } from "redux/auth-reducer";
 // ---------Main Components
 import { Root } from "containers/Root";
 // --------Logged in user

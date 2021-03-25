@@ -3,6 +3,7 @@
     height: 60px;
     display: flex;
     justify-content: space-evenly;
+    transition: linear;
 }
 
 .header__left_active {
@@ -12,6 +13,7 @@
     background-color: #fff;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    transition: linear;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
 }  
 

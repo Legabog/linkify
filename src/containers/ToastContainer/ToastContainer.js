@@ -23,7 +23,6 @@ const ToastContainer_ = (props) => {
       {props.list !== null ? (
         <Toast
           id={props.list.id}
-          // toastRef={toastRef}
           className={props.list.className}
           Icon={props.list.Icon}
           description={

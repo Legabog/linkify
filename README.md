@@ -108,7 +108,7 @@ List of available scripts:
 
 * **[Material-UI](https://material-ui.com/)**
 
-## Backend
+## Backend (Serverless)
 
 * **[Firebase](https://firebase.google.com/)**
 

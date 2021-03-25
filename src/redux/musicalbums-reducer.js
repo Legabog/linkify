@@ -33,19 +33,16 @@ const musicAlbumsReducer = (state = initialState, action) => {
         ...state,
         recentlyPlayed: [...state.recentlyPlayed, action.data],
       };
-
     case PUSH_TITLE_TO_DISABLED_ARRAY:
       return {
         ...state,
         disabledTitles: [...state.disabledTitles, action.title],
       };
-
     case PUSH_AUTHOR_TO_DISABLED_ARRAY:
       return {
         ...state,
         disabledAuthors: [...state.disabledAuthors, action.author],
       };
-
     case SWITCHER:
       return {
         ...state,
@@ -116,7 +113,7 @@ export const getMusicAlbumsData = () => {
         dispatch(setMusicAlbumsData(response));
       })
       .catch((e) => console.log(`Can't get music albums data: ${e}`))
-      .finally(() => dispatch(toggleFetching(false)))
+      .finally(() => dispatch(toggleFetching(false)));
   };
 };
 

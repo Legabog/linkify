@@ -7,7 +7,7 @@ const ADD_TO_TOAST_CONTAINER = "ADD_TO_TOAST_CONTAINER";
 const CLEAR_TOAST_CONTAINER = "CLEAR_TOAST_CONTAINER";
 
 let initialState = {
-  toasts: [
+  toastState: [
     {
       id: 1,
       className: "toast_online",
@@ -70,7 +70,7 @@ export const addAndDeleteToastAsync = (index) => {
         if (updatedState.list !== null) {
           dispatch(clearToastContainer());
           delay(1500).then(() => {
-            dispatch(addToToastContainer(updatedState.toasts[index]));
+            dispatch(addToToastContainer(updatedState.toastState[index]));
           });
         }
       });
@@ -85,12 +85,12 @@ export const addAndDeleteToastAsync = (index) => {
         if (updatedState.list !== null) {
           dispatch(clearToastContainer());
           delay(1500).then(() => {
-            dispatch(addToToastContainer(updatedState.toasts[index]));
+            dispatch(addToToastContainer(updatedState.toastState[index]));
           });
         }
       });
     } else {
-      dispatch(addToToastContainer(updatedState.toasts[index]));
+      dispatch(addToToastContainer(updatedState.toastState[index]));
     }
   };
 };
