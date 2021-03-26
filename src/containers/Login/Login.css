@@ -2,19 +2,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .login__main-block {
     width: 100%;
+    padding-bottom: 112px;
+    padding-top: 72px;
+    min-width: 500px;
 }
 
+/* @media (max-width: 980px) {
+    .login__main-block {
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 880px) {
+    .login__main-block {
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 680px) {
+    .login__main-block {
+        max-width: 550px;
+    }
+} */
+
 .login__block {
+    max-width: 980px;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     position: relative;
-    width: 80%;
+    width: 100%;
 }
 
 .login__description {
