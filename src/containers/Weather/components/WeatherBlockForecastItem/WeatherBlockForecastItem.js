@@ -3,7 +3,7 @@ import "./WeatherBlockForecastItem.css";
 
 export const WeatherBlockForecastItem = (props) => {
   const temperature = useTemperatureMeasure(
-    props.unitsOfMeasure,
+    props.weatherUnitsOfMeasure,
     props.temperature
   );
   return (

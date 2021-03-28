@@ -5,15 +5,15 @@ import "./WeatherBodySecondaryInfo.css";
 export const WeatherBodySecondaryInfo = (props) => {
   const { t } = useTranslation();
   const temperature_max = useTemperatureMeasure(
-    props.unitsOfMeasure,
+    props.weatherUnitsOfMeasure,
     props.weatherToday !== null ? props.weatherToday.main.temp_max : null
   );
   const temperature_min = useTemperatureMeasure(
-    props.unitsOfMeasure,
+    props.weatherUnitsOfMeasure,
     props.weatherToday !== null ? props.weatherToday.main.temp_min : null
   );
   const temperature_feels = useTemperatureMeasure(
-    props.unitsOfMeasure,
+    props.weatherUnitsOfMeasure,
     props.weatherToday !== null ? props.weatherToday.main.feels_like : null
   );
   return (

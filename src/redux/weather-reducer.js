@@ -9,15 +9,15 @@ const WEATHER_SET_FORECAST_5DAYS = "WEATHER_SET_FORECAST_5DAYS";
 const WEATHER_SET_UNITS_OF_MEASURE = "WEATHER_SET_UNITS_OF_MEASURE";
 
 let initialState = {
-  coordinates: {
+  weatherCoordinates: {
     latitude: null,
     longitude: null,
   },
-  address: null,
-  weatherFetch: false,
+  weatherAddress: null,
+  weatherFetching: false,
   weatherToday: null,
-  forecast5Days: null,
-  unitsOfMeasure: "C",
+  weatherForecast5Days: null,
+  weatherUnitsOfMeasure: "C",
 };
 
 const weatherReducer = (state = initialState, action) => {
@@ -25,20 +25,17 @@ const weatherReducer = (state = initialState, action) => {
     case WEATHER_SET_COORDINATES:
       return {
         ...state,
-        coordinates: {
-          latitude: action.latitude,
-          logitude: action.longitude,
-        },
+        weatherCoordinates: action.coordinates,
       };
     case WEATHER_SET_ADDRESS:
       return {
         ...state,
-        address: action.address,
+        weatherAddress: action.address,
       };
     case WEATHER_TOGGLE_FETCH:
       return {
         ...state,
-        weatherFetch: action.boolean,
+        weatherFetching: action.boolean,
       };
     case WEATHER_SET_WEATHER_TODAY:
       return {
@@ -49,13 +46,13 @@ const weatherReducer = (state = initialState, action) => {
     case WEATHER_SET_FORECAST_5DAYS:
       return {
         ...state,
-        forecast5Days: action.forecast,
+        weatherForecast5Days: action.forecast,
       };
 
     case WEATHER_SET_UNITS_OF_MEASURE:
       return {
         ...state,
-        unitsOfMeasure: action.units,
+        weatherUnitsOfMeasure: action.units,
       };
     default:
       return state;
@@ -86,15 +83,14 @@ export const setForecast5Days = (forecast) => {
 export const setUnitsOfMeasure = (units) => {
   return {
     type: WEATHER_SET_UNITS_OF_MEASURE,
-    units
-  }
-}
+    units,
+  };
+};
 
-export const setCoorginates = (latitude, longitude) => {
+export const setCoordinates = (coordinates) => {
   return {
     type: WEATHER_SET_COORDINATES,
-    latitude,
-    longitude,
+    coordinates,
   };
 };
 
@@ -118,7 +114,7 @@ export const getCoordinatesAddressWeather = () => {
     function success(pos) {
       const { latitude, longitude } = pos.coords;
 
-      dispatch(setCoorginates(latitude, longitude));
+      dispatch(setCoordinates({ latitude, longitude }));
 
       Promise.all([
         addressApi

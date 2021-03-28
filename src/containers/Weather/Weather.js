@@ -17,7 +17,7 @@ const Weather_ = (props) => {
 
   return (
     <div className={"weather-wrapper"}>
-      {props.weatherFetch ? (
+      {props.weatherFetching ? (
         <CirclePreloader margin_left={"50px"} margin_top={"30px"} />
       ) : (
         <div className={"weather"}>
@@ -30,14 +30,12 @@ const Weather_ = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  time: state.weatherReducer.time,
-  date: state.weatherReducer.date,
-  coordinates: state.weatherReducer.coordinates,
-  address: state.weatherReducer.address,
+  weatherCoordinates: state.weatherReducer.weatherCoordinates,
+  weatherAddress: state.weatherReducer.weatherAddress,
   weatherToday: state.weatherReducer.weatherToday,
-  forecast5Days: state.weatherReducer.forecast5Days,
-  weatherFetch: state.weatherReducer.weatherFetch,
-  unitsOfMeasure: state.weatherReducer.unitsOfMeasure
+  weatherForecast5Days: state.weatherReducer.weatherForecast5Days,
+  weatherFetching: state.weatherReducer.weatherFetching,
+  weatherUnitsOfMeasure: state.weatherReducer.weatherUnitsOfMeasure
 });
 
 export const Weather = compose(

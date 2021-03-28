@@ -13,7 +13,6 @@ export const WeatherBodyMainBlock = (props) => {
           <WeatherBodyWeatherImage {...props} />
           <WeatherBodyTemperature {...props} />
         </div>
-
         <div className={"weather-body-main-block_section-2"}>
           <WeatherBodySecondaryInfo {...props} />
           <WeatherBodySecondaryInfo2 {...props} />

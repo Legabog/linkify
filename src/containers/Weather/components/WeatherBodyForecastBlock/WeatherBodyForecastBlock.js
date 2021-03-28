@@ -12,8 +12,8 @@ export const WeatherBodyForecastBlock = (props) => {
         <span>{t("authorized.weather.forecast")}</span>
       </div>
       <div className={"weather-body-forecast-block__slider"}>
-        {props.forecast5Days !== null
-          ? props.forecast5Days.map((e) => {
+        {props.weatherForecast5Days !== null
+          ? props.weatherForecast5Days.map((e) => {
               return (
                 <WeatherBlockForecastItem
                   key={_.uniqueId(e)}

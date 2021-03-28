@@ -11,19 +11,19 @@ export const WeatherSwitcherTemperatureItem = (props) => {
     hideHelpMessage,
   ] = useHelpMessage();
 
-  const clickHandler = (units) => {
-    props.setUnitsOfMeasure(units)
+  const clickHandler = () => {
+    props.setUnitsOfMeasure(props.units)
     hideHelpMessage();
   }
   return (
     <>
       <div
         className={
-          props.unitsOfMeasure === props.units
+          props.weatherUnitsOfMeasure === props.units
             ? "weather-switcher-temperature__item_active"
             : "weather-switcher-temperature__item"
         }
-        onClick={() => clickHandler(props.units)}
+        onClick={clickHandler}
         onMouseEnter={showHelpMessage}
         onMouseLeave={hideHelpMessage}
       >

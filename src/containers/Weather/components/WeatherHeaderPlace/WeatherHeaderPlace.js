@@ -7,14 +7,14 @@ export const WeatherHeaderPlace = (props) => {
     <div className={"weather-header__place"}>
       <LocationOnIcon />
       <span>
-        {props.address !== null
-          ? props.address.city !== undefined
-            ? props.address.city
-            : props.address.state !== undefined
-            ? props.address.state
-            : props.address.town
+        {props.weatherAddress !== null
+          ? props.weatherAddress.city !== undefined
+            ? props.weatherAddress.city
+            : props.weatherAddress.state !== undefined
+            ? props.weatherAddress.state
+            : props.weatherAddress.town
           : null}
-        , {props.address !== null ? props.address.country : null}
+        , {props.weatherAddress !== null ? props.weatherAddress.country : null}
       </span>
     </div>
   );

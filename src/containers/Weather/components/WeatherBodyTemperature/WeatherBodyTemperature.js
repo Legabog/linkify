@@ -7,7 +7,7 @@ import { WeatherSwitcherTemperature } from "containers/Weather/components/Weathe
 export const WeatherBodyTemperature = (props) => {
   const { t } = useTranslation();
   const temperature = useTemperatureMeasure(
-    props.unitsOfMeasure,
+    props.weatherUnitsOfMeasure,
     props.weatherToday !== null ? props.weatherToday.main.temp : null
   );
   return (
