@@ -7,68 +7,52 @@ import { useTranslation } from "react-i18next";
 
 export const WelcomePrivacyGuide = (props) => {
   const { t } = useTranslation();
+
+  const clickBackDropHandler = () => {
+    props.togglePrivacyGuide(false);
+  };
+
   return (
     <div
       className={"welcome-privacy-guide__wrapper"}
       style={{
-        visibility: `${props.privacyGuideVisibility}`,
-        opacity: `${props.privacyGuideOpacity}`,
+        visibility: `${props.welcomePrivacyGuideVisibility}`,
+        opacity: `${props.welcomePrivacyGuideOpacity}`,
       }}
     >
       <div className={"welcome-privacy-guide"}>
-        {props.privacyGuideState === 0 ? (
-          <WelcomePrivacyGuideHeader {...props} />
-        ) : props.privacyGuideState === 1 ? (
-          <WelcomePrivacyGuideHeader arrowBack={true} {...props} />
-        ) : props.privacyGuideState === 2 ? (
-          <WelcomePrivacyGuideHeader arrowBack={true} {...props} />
-        ) : null}
+        <WelcomePrivacyGuideHeader
+          arrowBack={props.welcomePrivacyGuideState !== 0 ? true : false}
+          {...props}
+        />
 
-        {props.privacyGuideState === 0 ? (
-          <WelcomePrivacyGuideBody
-            title={t("authorized.welcome.privacy-guide.body.state-1.title")}
-            description={t(
-              "authorized.welcome.privacy-guide.body.state-1.description"
-            )}
-            slideUrl={
-              "https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/privacy-guide-slides%2FPrivacy-Guide-Slide_1.jpg?alt=media"
-            }
-            buttonNext={true}
-            {...props}
-          />
-        ) : props.privacyGuideState === 1 ? (
-          <WelcomePrivacyGuideBody
-            title={t("authorized.welcome.privacy-guide.body.state-2.title")}
-            description={t(
-              "authorized.welcome.privacy-guide.body.state-2.description"
-            )}
-            slideUrl={
-              "https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/privacy-guide-slides%2FPrivacu-Guide-Slide_2.jpg?alt=media"
-            }
-            buttonNext={true}
-            {...props}
-          />
-        ) : props.privacyGuideState === 2 ? (
-          <WelcomePrivacyGuideBody
-            title={t("authorized.welcome.privacy-guide.body.state-3.title")}
-            description={t(
-              "authorized.welcome.privacy-guide.body.state-3.description"
-            )}
-            slideUrl={
-              "https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/privacy-guide-slides%2FPrivacy-Guide-Slide_3.jpg?alt=media"
-            }
-            buttonNext={false}
-            {...props}
-          />
-        ) : null}
+        <WelcomePrivacyGuideBody
+          title={
+            props.welcomePrivacyGuideState === 0
+              ? t("authorized.welcome.privacy-guide.body.state-1.title")
+              : props.welcomePrivacyGuideState === 1
+              ? t("authorized.welcome.privacy-guide.body.state-2.title")
+              : t("authorized.welcome.privacy-guide.body.state-3.title")
+          }
+          description={
+            props.welcomePrivacyGuideState === 0
+              ? t("authorized.welcome.privacy-guide.body.state-1.description")
+              : props.welcomePrivacyGuideState === 1
+              ? t("authorized.welcome.privacy-guide.body.state-2.description")
+              : t("authorized.welcome.privacy-guide.body.state-3.description")
+          }
+          slideUrl={
+            props.welcomePrivacyGuideState === 0
+              ? process.env.REACT_APP_PRIVACY_GUIDE_SLIDE_1
+              : props.welcomePrivacyGuideState === 1
+              ? process.env.REACT_APP_PRIVACY_GUIDE_SLIDE_2
+              : process.env.REACT_APP_PRIVACY_GUIDE_SLIDE_3
+          }
+          buttonNext={props.welcomePrivacyGuideState !== 2 ? true : false}
+          {...props}
+        />
       </div>
-      <BackDrop
-        zIndex={100}
-        onClick={() => {
-          props.togglePrivacyGuide(false);
-          props.togglePrivacyGuideState(0);
-        }}
-      />
+      <BackDrop zIndex={100} onClick={clickBackDropHandler} />
     </div>
   );
 };

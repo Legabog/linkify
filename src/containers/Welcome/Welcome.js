@@ -14,7 +14,7 @@ import { WelcomeSearchSection } from "./components/WelcomeSearchSection";
 import { useTranslation } from "react-i18next";
 
 const Welcome_ = (props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <div className={"welcome__wrapper"}>
       <div className={"welcome"}>
@@ -27,24 +27,26 @@ const Welcome_ = (props) => {
       </div>
 
       <WelcomeSearchSection />
-      <WelcomePrivacySection {...props}/>
-      <WelcomePrivacyGuide {...props}/>
+      <WelcomePrivacySection {...props} />
+      <WelcomePrivacyGuide {...props} />
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
   user: state.userReducer.user,
-  privacyGuideState: state.welcomeComponentReducer.privacyGuideState,
-  privacyGuideVisibility:
-    state.welcomeComponentReducer.privacyGuideVisibility,
-  privacyGuideOpacity: state.welcomeComponentReducer.privacyGuideOpacity,
+  welcomePrivacyGuideState:
+    state.welcomeComponentReducer.welcomePrivacyGuideState,
+  welcomePrivacyGuideVisibility:
+    state.welcomeComponentReducer.welcomePrivacyGuideVisibility,
+  welcomePrivacyGuideOpacity:
+    state.welcomeComponentReducer.welcomePrivacyGuideOpacity,
 });
 
 export const Welcome = compose(
   withRouter,
   connect(mapStateToProps, {
     togglePrivacyGuide,
-    togglePrivacyGuideState
+    togglePrivacyGuideState,
   })
 )(Welcome_);

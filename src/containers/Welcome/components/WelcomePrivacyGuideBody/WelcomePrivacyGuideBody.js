@@ -3,6 +3,21 @@ import "./WelcomePrivacyGuideBody.css";
 
 export const WelcomePrivacyGuideBody = (props) => {
   const { t } = useTranslation();
+
+  const clickButtonNextHandler = () => {
+    props.welcomePrivacyGuideState === 0
+      ? props.togglePrivacyGuideState(1)
+      : props.togglePrivacyGuideState(2);
+  };
+
+  const clickButtonFinishHandler = () => {
+    props.togglePrivacyGuide(false);
+  };
+
+  const clickButtonHandler = () => {
+    props.buttonNext ? clickButtonNextHandler() : clickButtonFinishHandler();
+  };
+
   return (
     <div className={"welcome-privacy-guide-body__wrapper"}>
       <div className={"welcome-privacy-guide-body"}>
@@ -20,51 +35,30 @@ export const WelcomePrivacyGuideBody = (props) => {
             className={"welcome-privacy-guide-body__progress-line"}
             style={{
               width:
-                props.privacyGuideState === 0
+                props.welcomePrivacyGuideState === 0
                   ? "33%"
-                  : props.privacyGuideState === 1
+                  : props.welcomePrivacyGuideState === 1
                   ? "66%"
-                  : props.privacyGuideState === 2
+                  : props.welcomePrivacyGuideState === 2
                   ? "100%"
                   : null,
-              borderRadius: props.privacyGuideState === 2 ? "500px" : null,
+              borderRadius:
+                props.welcomePrivacyGuideState === 2 ? "500px" : null,
             }}
           ></div>
         </div>
-        {props.buttonNext ? (
-          <div className={"welcome-privacy-guide-body__footer"}>
-            <div
-              className={"welcome-privacy-guide-body__button-next"}
-              onClick={() => {
-                if (props.privacyGuideState === 0) {
-                  props.togglePrivacyGuideState(1);
-                } else {
-                  if (props.privacyGuideState === 1) {
-                    props.togglePrivacyGuideState(2);
-                  }
-                }
-              }}
-            >
-              <span>
-                {t("authorized.welcome.privacy-guide.body.button-next_1")}
-              </span>
-            </div>
+        <div className={"welcome-privacy-guide-body__footer"}>
+          <div
+            className={"welcome-privacy-guide-body__button"}
+            onClick={clickButtonHandler}
+          >
+            <span>
+              {props.buttonNext
+                ? t("authorized.welcome.privacy-guide.body.button-next_1")
+                : t("authorized.welcome.privacy-guide.body.button-next_2")}
+            </span>
           </div>
-        ) : (
-          <div className={"welcome-privacy-guide-body__footer"}>
-            <div
-              className={"welcome-privacy-guide-body__button-finish"}
-              onClick={() => {
-                props.togglePrivacyGuide(false);
-                props.togglePrivacyGuideState(0);
-              }}
-            >
-              <span>
-                {t("authorized.welcome.privacy-guide.body.button-next_2")}
-              </span>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );

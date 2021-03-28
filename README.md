@@ -55,6 +55,12 @@ You can set up the project locally on your machine with these steps:
 
     # Openstreetmap.org
     REACT_APP_ADDRESS_URL = "https://nominatim.openstreetmap.org"
+
+    # Welcome compoenent Privacy Guide slides
+   REACT_APP_PRIVACY_GUIDE_SLIDE_1 = "https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/privacy-guide-slides%2FPrivacy-Guide-Slide_1.jpg?alt=media"
+   REACT_APP_PRIVACY_GUIDE_SLIDE_2 = "https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/privacy-guide-slides%2FPrivacu-Guide-Slide_2.jpg?alt=media"
+   REACT_APP_PRIVACY_GUIDE_SLIDE_3 = "https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/privacy-guide-slides%2FPrivacy-Guide-Slide_3.jpg?alt=media"   
+    
     ```
 ## **Basic Scripts**
 

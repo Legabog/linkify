@@ -6,21 +6,22 @@ import { useTranslation } from "react-i18next";
 
 export const WelcomePrivacyGuideHeader = (props) => {
   const { t } = useTranslation();
+
+  const backButtonHandler = () => {
+    props.welcomePrivacyGuideState === 1
+      ? props.togglePrivacyGuideState(0)
+      : props.togglePrivacyGuideState(1);
+  };
+
+  const closeButtonHandler = () => {
+    props.togglePrivacyGuide(false);
+  };
+
   return (
     <div className={"WelcomePrivacyGuideHeader"}>
       {props.arrowBack ? (
         <div className={"WelcomePrivacyGuideHeader__backIcon"}>
-          <IconButton
-            onClick={() => {
-              if (props.privacyGuideState === 1) {
-                props.togglePrivacyGuideState(0);
-              } else {
-                if (props.privacyGuideState === 2) {
-                  props.togglePrivacyGuideState(1);
-                }
-              }
-            }}
-          >
+          <IconButton onClick={backButtonHandler}>
             <ArrowBackIcon />
           </IconButton>
         </div>
@@ -29,12 +30,7 @@ export const WelcomePrivacyGuideHeader = (props) => {
         <span>{t("authorized.welcome.privacy-guide.header.title")}</span>
       </div>
       <div className={"WelcomePrivacyGuideHeader__closeIcon"}>
-        <IconButton
-          onClick={() => {
-            props.togglePrivacyGuide(false);
-            props.togglePrivacyGuideState(0);
-          }}
-        >
+        <IconButton onClick={closeButtonHandler}>
           <CloseOutlinedIcon />
         </IconButton>
       </div>
