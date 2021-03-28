@@ -1,10 +1,12 @@
-.error-route {
-    display: block;
+.error-route-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
     height: 100vh;
 }
 
 .error-route__header {
-    padding-top: 100px;
     text-align: center;
 }
 
@@ -23,7 +25,7 @@
     font-size: 1.5em;
     font-weight: bold;
     font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: normal;
     line-height: 32px;
 }
@@ -65,3 +67,4 @@
 .button-back:focus {
     outline: none;
 }
+

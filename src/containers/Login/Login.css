@@ -6,58 +6,37 @@
 }
 
 .login__main-block {
-    width: 100%;
-    padding-bottom: 112px;
-    padding-top: 72px;
-    min-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-/* @media (max-width: 980px) {
-    .login__main-block {
-        max-width: 850px;
-    }
-}
-
-@media (max-width: 880px) {
-    .login__main-block {
-        max-width: 650px;
-    }
-}
-
-@media (max-width: 680px) {
-    .login__main-block {
-        max-width: 550px;
-    }
-} */
 
 .login__block {
-    max-width: 980px;
+    width: 100%;
     padding: 20px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     position: relative;
-    width: 100%;
 }
 
 .login__description {
     display: inline-block;
     box-sizing: border-box;
-    margin-right: 0;
-    padding-right: 32px;
-    width: 580px;
+    /* padding-right: 32px; */
+    width: 50%;
     vertical-align: top;
 }
 
 .login__description > h1 {
     color: #2e81f4;
     font-weight: 800;
-    padding: 112px 0 16px;
 }
 
 .login__description > h2 {
     display: block;
-    padding: 0 0 20px;
+    padding: 15px 0;
     margin-top: 0;
     color: #1c1e21;
     font-size: 1.5em;
@@ -66,13 +45,13 @@
     font-size: 28px;
     font-weight: normal;
     line-height: 32px;
-    width: 500px;
+    max-width: 500px;
 }
 
 .login__signin-block {
     display: block;
-    height: 456px;
-    width: 396px;
+    width: 50%;
+    padding: 100px;
 }
 
 .login__signin-block__form {
@@ -87,23 +66,22 @@
     box-sizing: border-box;
     margin: 40px 0 0;
     padding: 20px 0 28px;
-    width: 396px;
+    width: 100%;
     text-align: center;
 }
 
 .login__signin-block__inputs {
-    margin: auto;
     padding: 6px 0;
     text-align: center;
     font-size: 17px;
-    width: 364px;
+    width: 100%;
 }
 
 .signin-block__input {
     border-radius: 6px;
     font-size: 17px;
     padding: 14px 16px;
-    width: 330px;
+    width: 85%;
     background: #FFFFFF repeat-x;
     border: 1px solid #dddfe2;
     color: #1d2129;
@@ -147,7 +125,7 @@
     font-size: 20px;
     line-height: 48px;
     padding: 0 16px;
-    width: 332px;
+    width: 85%;
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
@@ -253,4 +231,21 @@
 
 .login__signin-block__help > a:hover {
     text-decoration: underline;
+}
+
+
+@media only screen  and (max-width:1250px) {
+    .login__description {
+        width: 20%;
+    }
+
+    .login__description > h2 {
+        font-size: 20px;
+    }
+}
+
+@media only screen  and (max-width:950px) {
+    .login__description {
+        width: 0%;
+    }
 }

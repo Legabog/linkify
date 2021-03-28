@@ -1,6 +1,6 @@
 import db from "utils/firebase/firebase";
 
-const SET_USERS = "SET_USERS";
+const USERS_SET_USERS = "USERS_SET_USERS";
 
 let initialState = {
   users: [],
@@ -9,7 +9,7 @@ let initialState = {
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_USERS:
+    case USERS_SET_USERS:
       return {
         ...state,
         users: [...state.users, { id: action.id, data: action.payload }],
@@ -22,7 +22,7 @@ const usersReducer = (state = initialState, action) => {
 
 export const setUsers = (id, payload) => {
   return {
-    type: SET_USERS,
+    type: USERS_SET_USERS,
     id,
     payload,
   };
