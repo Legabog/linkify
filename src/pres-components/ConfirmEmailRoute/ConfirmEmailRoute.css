@@ -1,13 +1,13 @@
 .confirm-email-route__wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 0 50px;
     height: 100vh;
 }
 
 .confirm-email-route {
-    margin-top: 50px;
-    width: 900px;
-    height: 330px;
+    width: 100%;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
@@ -35,7 +35,6 @@
 .confirm-email-route__body {
     padding: 5px 5px;
     text-align: center;
-    height: 100px;
 }
 
 .confirm-email-route__body > h2 {
@@ -49,7 +48,7 @@
 }
 
 .confirm-email-route__button-back {
-    padding-top: 20px;
+    padding: 20px 0;
     display: block;
     text-align: center;
     font-size: 12px;

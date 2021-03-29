@@ -1,16 +1,17 @@
 .registration-block__wrapper {
     opacity: 1;
-    min-width: 472px;
     padding-top: 5px;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     min-height: 100%;
     position: absolute;
     right: 0;
     top: 0;
-    display: table;
     height: 100% !important;
-    table-layout: fixed;
-    width: 100%;
+    
     outline: none;
     background: transparent;
     transition: opacity 200ms linear, visibility 200ms linear;

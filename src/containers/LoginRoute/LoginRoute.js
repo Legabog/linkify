@@ -33,45 +33,56 @@ const LoginRoute_ = (props) => {
             </span>
           </div>
           <div className="login-route__body__form">
-            <div className="login-route__body__input">
-              <div className="login-route__body__input_error">
-                <input
-                  type="text"
-                  name="email"
-                  id="login-route-email"
-                  placeholder={t(
-                    "unauthorized.login-route.body.form.login-input"
-                  )}
-                  className="login-route__input"
-                  value={email}
-                  ref={emailRef}
-                  onChange={emailChangeHandler}
-                  style={{
-                    borderColor: props.loginError ? "red" : null,
-                  }}
-                />
-                <WarningRoundedIcon
-                  className="login-route__warning-icon"
-                  style={{
-                    display: props.loginError ? null : "none",
-                  }}
-                />
-              </div>
-              <div
-                className="login-route__error-info"
-                style={{ display: props.loginError ? null : "none" }}
-              >
-                {t("unauthorized.login-route.body.form.error-info.description")}
-                <NavLink
-                  to={"/login"}
-                  onClick={props.displayRegistrationBlockTrue}
-                >
-                  {t("unauthorized.login-route.body.form.error-info.navLink")}
-                </NavLink>
+            <div className="login-route__body__input-wrapper">
+              <div className="login-route__body__input">
+                <div className="login-route__body__input_error">
+                  <input
+                    type="text"
+                    name="email"
+                    id="login-route-email"
+                    placeholder={t(
+                      "unauthorized.login-route.body.form.login-input"
+                    )}
+                    autoComplete="off"
+                    className="login-route__input"
+                    value={email}
+                    ref={emailRef}
+                    onChange={emailChangeHandler}
+                    style={{
+                      borderColor: props.loginError ? "red" : null,
+                    }}
+                  />
+                  <WarningRoundedIcon
+                    className="login-route__warning-icon"
+                    style={{
+                      display: props.loginError ? null : "none",
+                    }}
+                  />
+                </div>
+                <div className="login-route__error-info-wrapper">
+                  <div
+                    className="login-route__error-info"
+                    style={{ display: props.loginError ? null : "none" }}
+                  >
+                    <span>
+                      {t(
+                        "unauthorized.login-route.body.form.error-info.description"
+                      )}{" "}
+                      <NavLink
+                        to={"/login"}
+                        onClick={props.displayRegistrationBlockTrue}
+                      >
+                        {t(
+                          "unauthorized.login-route.body.form.error-info.navLink"
+                        )}
+                      </NavLink>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="login-route__body__input">
+            <div className="login-route__body__input-wrapper">
               <input
                 type="password"
                 name="password"
@@ -87,15 +98,12 @@ const LoginRoute_ = (props) => {
             </div>
 
             <div className="login-route__body__button">
-              <button
-                className="button-signin"
-                name="login"
-                type="submit"
-                id="loginButton"
+              <div
+                className="login-route__button-signin"
                 onClick={loginButtonSignInHandler}
               >
                 {t("unauthorized.login-route.body.form.login-button")}
-              </button>
+              </div>
             </div>
             <div className="login-route__body__restore-account">
               <NavLink to={"/login"}>
@@ -109,13 +117,16 @@ const LoginRoute_ = (props) => {
             </div>
 
             <div className="login-route__body__button">
-              <NavLink
-                className="button-create-account"
-                to={"/login"}
-                onClick={props.displayRegistrationBlockTrue}
-              >
-                {t("unauthorized.login-route.body.form.create-account-button")}
-              </NavLink>
+              <div className="login-route__button-create-account">
+                <NavLink
+                  to={"/login"}
+                  onClick={props.displayRegistrationBlockTrue}
+                >
+                  {t(
+                    "unauthorized.login-route.body.form.create-account-button"
+                  )}
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
