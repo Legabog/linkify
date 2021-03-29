@@ -22,7 +22,6 @@
 
 .error-route__body > h2 {
     color: #1c1e21;
-    font-size: 1.5em;
     font-weight: bold;
     font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
     font-size: 26px;
@@ -68,3 +67,67 @@
     outline: none;
 }
 
+@media only screen  and (max-width:615px) {
+    .error-route__header > h1 {
+        font-size: 1.5em;
+    }
+    .error-route__body > h2 {
+        font-size: 22px;
+    }
+    .button-back {
+        font-size: 15px;
+        line-height: 44px;
+    }
+}
+
+@media only screen  and (max-width:520px) {
+    .error-route__header > h1 {
+        font-size: 1.3em;
+    }
+    .error-route__body > h2 {
+        font-size: 18px;
+    }
+    .button-back {
+        font-size: 13px;
+        line-height: 40px;
+    }
+}
+
+@media only screen  and (max-width:420px) {
+    .error-route__header > h1 {
+        font-size: 1.3em;
+    }
+    .error-route__body > h2 {
+        font-size: 14px;
+    }
+    .button-back {
+        font-size: 11px;
+        line-height: 36px;
+    }
+}
+
+@media only screen  and (max-width:340px) {
+    .error-route__header > h1 {
+        font-size: 1em;
+    }
+    .error-route__body > h2 {
+        font-size: 12px;
+    }
+    .button-back {
+        font-size: 11px;
+        line-height: 32px;
+    }
+}
+
+@media only screen  and (max-width:300px) {
+    .error-route__header > h1 {
+        font-size: 0.8em;
+    }
+    .error-route__body > h2 {
+        font-size: 10px;
+    }
+    .button-back {
+        font-size: 11px;
+        line-height: 28px;
+    }
+}
