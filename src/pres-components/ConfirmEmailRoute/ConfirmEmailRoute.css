@@ -39,8 +39,6 @@
 
 .confirm-email-route__body > h2 {
     color: #1c1e21;
-    font-size: 1.5em;
-    font-weight: bold;
     font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
     font-size: 28px;
     font-weight: normal;
@@ -83,4 +81,46 @@
 
 .button-back:focus {
     outline: none;
+}
+
+@media only screen  and (max-width:835px) {
+    .confirm-email-route__header > h1 {
+        font-size: 1.5em;
+    }
+    .confirm-email-route__body > h2 {
+        font-size: 24px;
+    }
+    .button-back {
+        font-size: 15px;
+    }
+}
+
+@media only screen  and (max-width:745px) {
+    .confirm-email-route__header > h1 {
+        font-size: 1.3em;
+    }
+    .confirm-email-route__body > h2 {
+        font-size: 20px;
+    }
+    .button-back {
+        font-size: 13px;
+    }
+}
+
+@media only screen  and (max-width:630px) {
+    .confirm-email-route__header > h1 {
+        font-size: 1.2em;
+    }
+    .confirm-email-route__body > h2 {
+        font-size: 16px;
+    }
+    .button-back {
+        font-size: 11px;
+    }
+}
+
+@media only screen  and (max-width:525px) {
+    .confirm-email-route__body > h2 {
+        font-size: 14px;
+    }
 }
