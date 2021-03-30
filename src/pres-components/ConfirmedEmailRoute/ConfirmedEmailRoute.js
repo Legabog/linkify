@@ -20,7 +20,7 @@ export const ConfirmedEmailRoute = (props) => {
           </h2>
         </div>
         <div className="confirmed-email-route__button-back">
-          <NavLink className="button-back" to={"/login"}>
+          <NavLink className="button-back" to={"/signin"}>
             {t("unauthorized.confirmed-email-route.button-back.navLink")}
           </NavLink>
         </div>

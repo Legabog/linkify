@@ -31,7 +31,7 @@ const Login_ = (props) => {
   ] = useInput("");
 
   const loginButtonSignInHandler = () => {
-    props.signIn(email, password, props.history, "/login");
+    props.signIn(email, password, props.history, "/signin");
   };
 
   return (
@@ -45,6 +45,9 @@ const Login_ = (props) => {
           <div className="login__signin-block">
             <div className="login__signin-block__form">
               <form>
+                <div className="login__signin-block__secondary-header">
+                  <h1>{t("unauthorized.login.main-block.description.h1")}</h1>
+                </div>
                 <div className="login__signin-block__inputs">
                   <div className="login__signin-block__input">
                     <input
@@ -121,12 +124,20 @@ const Login_ = (props) => {
                 </div>
               </form>
             </div>
-            <div className="login__signin-block__help">
-              <NavLink to={"/"}>
-                {t("unauthorized.login.main-block.signin-block.help.navLink")}
-              </NavLink>
-              &nbsp;{" "}
-              {t("unauthorized.login.main-block.signin-block.help.description")}
+            <div className="login__signin-block__help-wrapper">
+              <div className="login__signin-block__help">
+                <span>
+                  <NavLink to={"/"}>
+                    {t(
+                      "unauthorized.login.main-block.signin-block.help.navLink"
+                    )}
+                  </NavLink>
+                  &nbsp;{" "}
+                  {t(
+                    "unauthorized.login.main-block.signin-block.help.description"
+                  )}
+                </span>
+              </div>
             </div>
           </div>
         </div>

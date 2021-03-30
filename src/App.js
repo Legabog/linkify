@@ -22,27 +22,18 @@ import { Preloader } from "pres-components/Preloader";
 import { ToastContainer } from "containers/ToastContainer";
 // ---------Not logged in user
 import { Login } from "containers/Login";
-import { RegistrationBlock } from "containers/RegistrationBlock";
 import { Users } from "containers/Users";
 // -----Lazy components
 const Weather = lazy(() => import("containers/Weather"));
 const Terminal = lazy(() => import("containers/Terminal"));
 const Music = lazy(() => import("containers/Music"));
-const MusicList = lazy(() =>
-  import("containers/Music/components/MusicList")
-);
-const ArtistsList = lazy(() =>
-  import("containers/Music/components/Artists")
-);
+const MusicList = lazy(() => import("containers/Music/components/MusicList"));
+const ArtistsList = lazy(() => import("containers/Music/components/Artists"));
 const ArtistItemRouter = lazy(() =>
   import("containers/Music/components/ArtistItemRouter")
 );
-const AlbumsList = lazy(() =>
-  import("containers/Music/components/Albums")
-);
-const PlayLists = lazy(() =>
-  import("containers/Music/components/PlayLists")
-);
+const AlbumsList = lazy(() => import("containers/Music/components/Albums"));
+const PlayLists = lazy(() => import("containers/Music/components/PlayLists"));
 const CreateAlbum = lazy(() =>
   import("containers/Music/components/CreateAlbum")
 );
@@ -53,6 +44,7 @@ const MusicPlayer = lazy(() =>
   import("containers/Music/components/MusicPlayer")
 );
 const LoginRoute = lazy(() => import("containers/LoginRoute"));
+const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"))
 const ConfirmEmailRoute = lazy(() =>
   import("pres-components/ConfirmEmailRoute")
 );
@@ -408,18 +400,27 @@ const App = (props) => {
                 render={() => (
                   <>
                     <Login />
-                    <RegistrationBlock />
                   </>
                 )}
               />
               <Route
-                path={Routes.LOGIN}
+                path={Routes.SIGNIN}
                 exact
                 render={() => (
                   <>
                     <Suspense fallback={<Preloader />}>
                       <LoginRoute />
-                      <RegistrationBlock />
+                    </Suspense>
+                  </>
+                )}
+              />
+              <Route
+                path={Routes.SIGNUP}
+                exact
+                render={() => (
+                  <>
+                    <Suspense fallback={<Preloader />}>
+                      <RegistrationRoute />
                     </Suspense>
                   </>
                 )}

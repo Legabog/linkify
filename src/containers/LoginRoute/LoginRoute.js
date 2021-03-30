@@ -17,7 +17,7 @@ const LoginRoute_ = (props) => {
   const [password, passwordRef, passwordChangeHandler] = useInput("");
 
   const loginButtonSignInHandler = (e) => {
-    props.signIn(email, password, props.history, "/login");
+    props.signIn(email, password, props.history, "/signin");
   };
 
   return (
@@ -69,7 +69,7 @@ const LoginRoute_ = (props) => {
                         "unauthorized.login-route.body.form.error-info.description"
                       )}{" "}
                       <NavLink
-                        to={"/login"}
+                        to={"/signin"}
                         onClick={props.displayRegistrationBlockTrue}
                       >
                         {t(
@@ -106,7 +106,7 @@ const LoginRoute_ = (props) => {
               </div>
             </div>
             <div className="login-route__body__restore-account">
-              <NavLink to={"/login"}>
+              <NavLink to={"/signin"}>
                 {t("unauthorized.login-route.body.form.restore-account")}
               </NavLink>
             </div>
@@ -119,7 +119,7 @@ const LoginRoute_ = (props) => {
             <div className="login-route__body__button">
               <div className="login-route__button-create-account">
                 <NavLink
-                  to={"/login"}
+                  to={"/signin"}
                   onClick={props.displayRegistrationBlockTrue}
                 >
                   {t(

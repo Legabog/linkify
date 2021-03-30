@@ -2,8 +2,8 @@ const DISPLAY_REGISTRATION_BLOCK_TRUE = "DISPLAY_REGISTRATION_BLOCK_TRUE";
 const DISPLAY_REGISTRATION_BLOCK_FALSE = "DISPLAY_REGISTRATION_BLOCK_FALSE";
 
 let initialState = {
-  visibilityRegistrationBlock: "hidden",
-  opacityRegistrationBlock: 0,
+  visibilityRegistrationBlock: "visible",
+  opacityRegistrationBlock: 1,
 };
 
 const registrationBlockReducer = (state = initialState, action) => {

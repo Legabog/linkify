@@ -2,7 +2,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
-import "./RegistrationBlock.css";
+import "./RegistrationRoute.css";
 
 import is from "is_js";
 
@@ -13,11 +13,10 @@ import {
 
 import { signUp } from "redux/auth-reducer";
 
-import { BackDrop } from "pres-components/BackDrop";
 import { RegistrationBlockHeader } from "./components/RegistrationBlockHeader";
 import { RegistrationBlockBody } from "./components/RegistrationBlockBody";
 
-const RegistrationBlock_ = (props) => {
+const RegistrationRoute_ = (props) => {
   // ----------Name input
   const [name, setName] = useState("");
   const [checkedName, setCheckedName] = useState(false);
@@ -292,10 +291,10 @@ const RegistrationBlock_ = (props) => {
   return (
     <div
       className="registration-block__wrapper"
-      style={{
-        visibility: `${props.visibilityRegistrationBlock}`,
-        opacity: `${props.opacityRegistrationBlock}`,
-      }}
+      // style={{
+      //   visibility: `${props.visibilityRegistrationBlock}`,
+      //   opacity: `${props.opacityRegistrationBlock}`,
+      // }}
     >
       <div className="registration-block__main-wrapper">
         <div className="registration-block__main-block">
@@ -306,9 +305,7 @@ const RegistrationBlock_ = (props) => {
               }
               setDefaultInputsValues={setDefaultInputsValues}
             />
-
             <hr />
-
             <RegistrationBlockBody
               {...props}
               name={name}
@@ -369,7 +366,6 @@ const RegistrationBlock_ = (props) => {
           </div>
         </div>
       </div>
-      <BackDrop />
     </div>
   );
 };
@@ -384,11 +380,11 @@ const mapStateToProps = (state) => ({
     state.registrationBlockReducer.opacityRegistrationBlock,
 });
 
-export const RegistrationBlock = compose(
+export const RegistrationRoute = compose(
   withRouter,
   connect(mapStateToProps, {
     signUp,
     displayRegistrationBlockTrue,
     displayRegistrationBlockFalse,
   })
-)(RegistrationBlock_);
+)(RegistrationRoute_);

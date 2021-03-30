@@ -1,41 +1,32 @@
 .registration-block__wrapper {
-    opacity: 1;
-    padding-top: 5px;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100% !important;
-    
-    outline: none;
-    background: transparent;
+    height: 100vh;
     transition: opacity 200ms linear, visibility 200ms linear;
 }
 
 .registration-block__main-wrapper {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 .registration-block__main-block {
-    display: inline-block;
-    position: relative;
-    text-align: left;
-    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .registration-block {
-    background-color: transparent;
-    overflow: visible;
-    padding: 0;
-    width: 432px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 455px;
     text-align: left;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
@@ -46,4 +37,6 @@
     border: none;
     border-top: 1px solid #f0ecec;
 }
+
+
 

@@ -41,7 +41,8 @@ export const Routes = {
   GROUPS: `/groups`,
   FRIENDS: `/friends`,
   // Unauthorized user
-  LOGIN: `/login`,
+  SIGNIN: `/signin`,
+  SIGNUP: `/signup`,
   CONFIRM_EMAIL: `/confirm_email`,
   CONFIRMED_EMAIL: `/confirmed_email`,
 };
@@ -71,7 +72,8 @@ export const authorizedUserRoutes = [
 
 export const unauthorizedUserRoutes = [
   Routes.MAIN,
-  Routes.LOGIN,
+  Routes.SIGNIN,
+  Routes.SIGNUP,
   Routes.CONFIRM_EMAIL,
   Routes.CONFIRMED_EMAIL,
 ];

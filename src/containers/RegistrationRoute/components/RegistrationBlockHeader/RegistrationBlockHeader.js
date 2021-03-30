@@ -7,6 +7,11 @@ import { useTranslation } from "react-i18next";
 export const RegistrationBlockHeader = (props) => {
   const { t } = useTranslation();
 
+  const clickHandler = () => {
+    props.displayRegistrationBlockFalse();
+    props.setDefaultInputsValues();
+  }
+
   return (
     <div className="registration-block__header">
       <div className="registration-block__header__description">
@@ -17,10 +22,7 @@ export const RegistrationBlockHeader = (props) => {
       </div>
       <div className="registration-block__header__close-icon">
         <IconButton
-          onClick={() => {
-            props.displayRegistrationBlockFalse();
-            props.setDefaultInputsValues();
-          }}
+          onClick={clickHandler}
         >
           <CloseOutlinedIcon />
         </IconButton>

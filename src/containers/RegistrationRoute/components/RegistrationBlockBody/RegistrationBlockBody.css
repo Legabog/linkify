@@ -1,0 +1,17 @@
+.registration-block__body {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #fff;
+}
+
+.registration-block__body__group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

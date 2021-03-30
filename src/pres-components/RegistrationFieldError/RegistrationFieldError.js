@@ -6,8 +6,6 @@ export const RegistrationFieldError = (props) => {
       className="registration-block__field-error"
       style={{
         display: props.display,
-        marginLeft: `${props.error_marginLeft}`,
-        marginTop: `${props.error_marginTop}`,
       }}
     >
       <div className="registration-block__field-error__label">
@@ -17,13 +15,6 @@ export const RegistrationFieldError = (props) => {
           </div>
           <i
             className="registration-block__field-error__icon"
-            style={{
-              backgroundPosition: `${props.error_backgroundPosition}`,
-              height: `${props.error_height}`,
-              top: `${props.error_top}`,
-              right: `${props.error_right}`,
-              width: `${props.error_width}`,
-            }}
           ></i>
         </div>
       </div>

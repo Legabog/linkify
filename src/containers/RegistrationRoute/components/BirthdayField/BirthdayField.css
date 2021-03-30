@@ -1,9 +1,11 @@
 .birthday-field {
-    padding-left: 16px;
+    width: 100%;
+    /* padding-left: 16px; */
 }
 
 .birthday-field__description {
     display: flex;
+    padding-left: 25px;
     align-items: center;
     color: #606770;
     font-family: SFProText-Medium, Helvetica, Arial, sans-serif;

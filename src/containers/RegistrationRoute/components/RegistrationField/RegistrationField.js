@@ -18,11 +18,13 @@ export const RegistrationField = (props) => {
 
   return (
     <div className="registration-block__input">
+      <RegistrationFieldError {...props} display={displayError} />
       <input
         type={props.type}
         className={`registration-block__input-${props.name}`}
         data-type="text"
         name={props.name}
+        autoComplete="off"
         id={`registration-block__input-${props.name}`}
         placeholder={props.placeholder}
         value={props.value}
@@ -50,7 +52,6 @@ export const RegistrationField = (props) => {
           focusInput(`registration-block__input-${props.name}`);
         }}
       />
-      <RegistrationFieldError {...props} display={displayError} />
     </div>
   );
 };

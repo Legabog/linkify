@@ -1,8 +1,6 @@
-
 .registration-block__field-error {
-    width: 300px;
-    /* right: 713px;
-    top: 276px; */
+    width: 200px;
+    margin-top: 50px;
     z-index: 400;
     opacity: 1;
     height: 0;
@@ -26,7 +24,7 @@
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
     max-width: 300px;
     padding: 13px;
     position: relative;
