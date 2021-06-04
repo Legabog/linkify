@@ -131,59 +131,6 @@ const Login_ = (props) => {
               &nbsp; {t("unauthorized.login.signin-block.help.description")}
             </span>
           </div>
-
-          {/* <div className="login__signin-block__form">
-            <form>
-              <div className="login__signin-block__inputs">
-                
-                
-              </div>
-              <div className="login__signin-block__button">
-                <button
-                  className="button-signin"
-                  name="login"
-                  type="submit"
-                  id="login__button"
-                  onClick={loginButtonSignInHandler}
-                >
-                  {t("unauthorized.login.signin-block.login-button")}
-                </button>
-              </div>
-              <div className="login__signin-block__restore-password">
-                <a href="/">
-                  {t(
-                    "unauthorized.login.signin-block.restore-password"
-                  )}
-                </a>
-              </div>
-              <div className="login__signin-block__hr"></div>
-              <div className="login__signin-block__button">
-                <NavLink
-                  className="button-create-account"
-                  to={"/"}
-                  onClick={props.displayRegistrationBlockTrue}
-                >
-                  {t(
-                    "unauthorized.login.signin-block.registration-button"
-                  )}
-                </NavLink>
-              </div>
-            </form>
-          </div>
-          <div className="login__signin-block__help-wrapper">
-            <div className="login__signin-block__help">
-              <span>
-                <NavLink to={"/"}>
-                  {t("unauthorized.login.signin-block.help.navLink")}
-                </NavLink>
-                &nbsp;{" "}
-                {t(
-                  "unauthorized.login.signin-block.help.description"
-                )}
-              </span>
-            </div>
-          </div>
-        </div> */}
         </div>
         <div className="login__part-image">
           <img src={part_image} alt="part-iamge" />

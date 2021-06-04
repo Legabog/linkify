@@ -1,6 +1,9 @@
 {
   "hosting": {
     "public": "./build",
+    "i18n": {
+      "root": "/locales"
+    },
     "ignore": [
       "firebase.json",
       "**/.*",
