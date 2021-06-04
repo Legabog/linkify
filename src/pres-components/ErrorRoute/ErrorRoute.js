@@ -134,7 +134,7 @@ export const ErrorRoute = (props) => {
         </div>
         <div className="error-route-footer">
           <NavLink to={"/"}>
-            <div className="error-route-footer__button">
+            <div className="error-route-footer__button-back">
               <span>{t("unauthorized.error-route.button-back.navLink")}</span>
             </div>
           </NavLink>

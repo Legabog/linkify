@@ -7,13 +7,11 @@
     background-color: #D6F6FF;
 }
 
-
 .error-route-header__logo {
     display: flex;
     justify-content: center;
     align-items: center;     
 }
-
 
 .error-route-header__title {
     display: flex;
@@ -32,13 +30,14 @@
 
 .error-route-footer > a {
     padding-top: 30px;
+    width: 30%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     text-decoration: none;
 }
 
-.error-route-footer__button {
+.error-route-footer__button-back {
     padding: 12px 20px;
     display: flex;
     justify-content: center;
@@ -48,7 +47,7 @@
     border: 3px solid #7FC8FF;
 }
 
-.error-route-footer__button > span {
+.error-route-footer__button-back > span {
     white-space: nowrap;
     color: #7FC8FF;
     font-weight: 500;
@@ -57,11 +56,11 @@
     text-overflow: ellipsis;
 }
 
-.error-route-footer__button:hover {
+.error-route-footer__button-back:hover {
     cursor: pointer;
 }
 
-.error-route-footer__button:active {
+.error-route-footer__button-back:active {
     transform: scale(0.95);
 }
 
@@ -99,10 +98,10 @@
     .error-route-footer > a {
         padding: 30px 12px;
     }
-    .error-route-footer__button {
+    .error-route-footer__button-back {
         padding: 6px 10px;
     }
-    .error-route-footer__button > span {
+    .error-route-footer__button-back > span {
         font-size: 14px;
     }
 }
