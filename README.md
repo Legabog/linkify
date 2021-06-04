@@ -1,6 +1,13 @@
-# [Linkify](https://social-network-legabog.web.app/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Legabog/social-network-v2.0.0_legabog/blob/master/LICENSE)
+<p align="center">
+  <a href="https://social-network-legabog.web.app/">
+    <img alt="Linkify-logo" src="https://user-images.githubusercontent.com/44378669/120789589-79f7f380-c53a-11eb-853e-f17039b5079a.jpg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Linkify &middot;  <img alt="MIT-logo" src="https://img.shields.io/badge/license-MIT-green.svg" /> 
+</h1>
 
-This social network was built by using the UI and style features of [Facebook](https://www.facebook.com/).
+The first versions of this social network were built by using the UI and style features of [Facebook](https://www.facebook.com/).
 
 * **The main concept** The main concept of this project is to try to create a social network as similar to [Facebook](https://www.facebook.com/) as possible.
 
