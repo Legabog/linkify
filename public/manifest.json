@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Linkify",
+  "name": "Linkify Sample",
   "icons": [
     {
-      "src": "turtle.ico",
+      "src": "linkify.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "turtle256.png",
+      "src": "linkify256.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "turtle512.png",
+      "src": "linkify512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

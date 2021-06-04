@@ -1,4 +1,4 @@
-# [Social network](https://social-network-legabog.web.app/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Legabog/social-network-v2.0.0_legabog/blob/master/LICENSE)
+# [Linkify](https://firebasestorage.googleapis.com/v0/b/social-network-legabog.appspot.com/o/trash%2Flinkify-logo.png?alt=media&token=21898316-b4eb-4ab7-a091-7559b508006c) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Legabog/social-network-v2.0.0_legabog/blob/master/LICENSE)
 
 This social network was built by using the UI and style features of [Facebook](https://www.facebook.com/).
 

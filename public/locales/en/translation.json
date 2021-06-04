@@ -1005,22 +1005,20 @@
   },
   "unauthorized": {
   "login": {
-    "main-block": {
     "description": {
-      "h1": "Social-network by legabog",
-      "h2": "This social network helps you always stay in touch and communicate with your friends."
+      "h2": "Social network",
+      "span": "This social network helps you always stay in touch and communicate with your friends"
     },
     "signin-block": {
       "login-input": "Email",
       "password-input": "Password",
-      "login-button": "Login",
-      "restore-password": "Forgotten password?",
-      "registration-button": "Create an account",
+      "login-button": "LOGIN",
+      "restore-password": "Forgot Password",
+      "registration-button": "SUGNUP",
       "help": {
       "navLink": "Create a page",
-      "description": "of a celebrity, music band or company."
+      "description": "of a celebrity, music band or company"
       }
-    }
     }
   },
   "login-route": {

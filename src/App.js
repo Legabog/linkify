@@ -44,7 +44,7 @@ const MusicPlayer = lazy(() =>
   import("containers/Music/components/MusicPlayer")
 );
 const LoginRoute = lazy(() => import("containers/LoginRoute"));
-const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"))
+const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"));
 const ConfirmEmailRoute = lazy(() =>
   import("pres-components/ConfirmEmailRoute")
 );

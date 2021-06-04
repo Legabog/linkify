@@ -1,187 +1,106 @@
-.login {
+.login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
+    background-color: #D6F6FF;
 }
 
-.login__main-block {
-    width: 100%;
+.login {
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.login__block {
-    width: 100%;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    width: 50%;
-}
-
-
-.login__description > h1 {
-    width: 100%;
-    color: #2e81f4;
-    font-weight: 800;
-    font-size: 40px;
-}
-
-.login__description > h2 {
-    display: flex;
-    padding: 15px 0;
-    margin-top: 0;
-    color: #1c1e21;
-    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
-    font-size: 28px;
-    font-weight: normal;
-    line-height: 32px;
-    width: 100%;
+    background-color: #ffff;
+    border-radius: 20px;
+    margin: 0px 40px;
 }
 
 .login__signin-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 50%;
-}
-
-.login__signin-block__form {
     display: flex;
-    width: 480px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 24px;
-    padding-top: 10px;
+    padding: 0 30px;
+}
+
+.login__signin-block__logo {
+    display: flex;
     align-items: center;
-    background-color: #fff;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    box-sizing: border-box;
-    margin: 40px 0 0;
-    padding: 20px 0 28px;
-    text-align: center;
+    align-self: start;
 }
 
-.login__signin-block__form > form {
+.login__signin-block__logo > span {
+    padding-left: 15px;
+    color: #4E6482;
+    font-weight: 700;
+}
+
+.login__signin-block__description {
+    padding-top: 50px;
+    display: flex;
+    align-self: start;
+    align-items: center;
+}
+
+.login__signin-block__description > h2 {
+    color: #4E6482;
+}
+
+.login__signin-block__description_2 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.login__signin-block__description_2 > span {
+    color: rgb(187,189,201);
+}
+
+.login__signin-block__inputs-wrapper {
     width: 100%;
-}
-
-.login__signin-block__secondary-header {
-    display: none;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.login__signin-block__secondary-header > h1 {
-    font-size: 24px;
-    color: #2e81f4;
-    font-weight: 500;
-    padding-bottom: 14px;
+    padding-top: 20px;
 }
 
 .login__signin-block__inputs {
-    padding: 6px 0;
-    text-align: center;
-    font-size: 17px;
     width: 100%;
+    padding-right: 15px;
 }
 
 .signin-block__input {
-    border-radius: 6px;
     font-size: 17px;
-    padding: 14px 16px;
-    width: 85%;
-    background: #FFFFFF repeat-x;
-    border: 1px solid #dddfe2;
+    width: 100%;
+    border: 2px solid #f8f8f8;
     color: #1d2129;
     height: 22px;
-    line-height: 16px;
-    vertical-align: middle;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    font: 400 13.3333px Arial;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
 }
 
-#login-password {
-    margin-top: 12px;
+.signin-block__input > input {
+    width: 100%;
 }
 
 .signin-block__input:focus {
     outline: none !important;
 }
 
-.login__signin-block__button {
-    display: block;
-    padding-top: 6px;
-    text-align: center;
-    font-size: 12px;
-}
-
-.button-signin {
-    background-color: #1877f2;
-    margin: 0;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    line-height: 48px;
-    padding: 0 16px;
-    width: 85%;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    white-space: nowrap;
-    box-sizing: content-box;
-    -webkit-font-smoothing: antialiased;
-    font-weight: bold;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    text-shadow: none;
-    vertical-align: middle;
-    transition: 200ms cubic-bezier(.08,.52,.52,1) background-color, 200ms cubic-bezier(.08,.52,.52,1) box-shadow, 200ms cubic-bezier(.08,.52,.52,1) transform;
-}
-
-.button-signin:hover {
-    background-color: #166fe5;
-}
-
-.button-signin:focus {
-    outline: none;
-}
-
 .login__signin-block__restore-password {
-    margin-top: 16px;
-    display: block;
-    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     font-size: 12px;
 }
 
 .login__signin-block__restore-password > a {
-    color: #1877f2;
+    color: #4E6482;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -189,71 +108,94 @@
     text-align: center;
 }
 
-.login__signin-block__restore-password > a:hover {
-    text-decoration: underline;
-}
-
-.login__signin-block__hr {
-    align-items: center;
-    border-bottom: 1px solid #dadde1;
+.login__signin-block__buttons {
+    width: 100%;
     display: flex;
-    margin: 20px 16px;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30px;
 }
 
-.button-create-account {
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    line-height: 48px;
-    padding: 0 16px;
-    cursor: pointer;
-    display: inline-block;
+.login__signin-block__buttons > a {
     text-decoration: none;
-    white-space: nowrap;
-    background-color: #42b72a;
-    color: #fff;
-    transition: 200ms cubic-bezier(.08,.52,.52,1) background-color, 200ms cubic-bezier(.08,.52,.52,1) box-shadow, 200ms cubic-bezier(.08,.52,.52,1) transform;
-    box-sizing: content-box;
-    -webkit-font-smoothing: antialiased;
-    font-weight: bold;
+    display: flex;
     justify-content: center;
-    position: relative;
-    text-align: center;
-    text-shadow: none;
-    vertical-align: middle;
+    align-items: center;
 }
 
-.button-create-account:hover {
-    background-color: #36a420;
+.login__signin-block__button-signin {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #7FC8FF;
 }
 
-.button-create-account:focus {
-    outline: none;
+.login__signin-block__button-signin > span {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.login__signin-block__button-signin:hover {
+    cursor: pointer;
+}
+
+.login__signin-block__button-signin:active {
+    transform: scale(0.95);
+}
+
+.login__signin-block__button-signup {
+    margin-left: 15px;
+    width: 100%;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 3px solid #7FC8FF;
+}
+
+.login__signin-block__button-signup > span {
+    white-space: nowrap;
+    color: #7FC8FF;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.login__signin-block__button-signup:hover {
+    cursor: pointer;
+}
+
+.login__signin-block__button-signup:active {
+    transform: scale(0.95);
 }
 
 .login__signin-block__help {
-    padding-top: 28px;
+    padding-top: 30px;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 }
 
-.login__signin-block__help {
-    display: flex;
-    width: 480px;
-    justify-content: center;
-    align-items: center;
-    border-top: none;
-    color: #1c1e21;
+.login__signin-block__help > span {
+    color: rgb(187,189,201);
     font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: normal;
 }
 
-.login__signin-block__help a {
-    color: #1c1e21;
+
+.login__signin-block__help > span > a {
+    color: #4E6482;
     font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -266,99 +208,74 @@
     text-decoration: underline;
 }
 
-
-@media only screen  and (max-width:1260px) {
-    .login__description > h1 {
-        font-size: 34px;
-    }
-    .login__description > h2 {
-        font-size: 22px;
-    }
+.login__part-image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-@media only screen  and (max-width:1090px) {
-    .login__description > h1 {
-        font-size: 30px;
-    }
-    .login__description > h2 {
-        font-size: 16px;
-    }
-    .login__signin-block__form {
-        width: 420px;
-    }
-    .login__signin-block__help {
-        width: 420px;
-        font-size: 12px;
-    }
-    .login__signin-block__help a {
-        font-size: 12px;
-    }
-    .button-signin {
-        font-size: 18px;
-    }
-    .button-create-account {
-        font-size: 18px;
-    }
+.login__part-image > img {
+    width: 100%;
+    height: 600px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    object-fit: cover;
+    padding-left: 30px;
 }
 
-@media only screen  and (max-width:980px) {
-    .login__description > h1 {
-        font-size: 26px;
-    }
-    .login__description > h2 {
-        font-size: 14px;
-    }
-}
 
-@media only screen  and (max-width:900px) {
-    .login__description {
+@media only screen  and (max-width:750px) {
+    .login__part-image {
         display: none;
-        width: 0%;
     }
     .login__signin-block {
         width: 100%;
     }
-    .login__signin-block__secondary-header {
-        display: flex;
-    }
-    .login__signin-block__form {
-        width: 380px;
-    }
-    .login__signin-block__help {
-        width: 380px;
-    }
-    .button-signin {
-        font-size: 16px;
-    }
-    .button-create-account {
-        font-size: 16px;
-    }
-
-}
-
-@media only screen  and (max-width:480px) {
-    .login__block {
-        padding: 5px;
-    }
-    .login__signin-block__form {
-        width: 100%;
-    }
-    .login__signin-block__secondary-header > h1 {
-        font-size: 20px;
-    }
-    .login__signin-block__help {
-        width: 100%;
-    }
-    .button-signin {
-        font-size: 14px;
-    }
-    .button-create-account {
-        font-size: 14px;
+    .login__signin-block {
+        padding: 30px 30px;
     }
 }
 
-@media only screen  and (max-width:280px) {
-    .login__signin-block__secondary-header > h1 {
-        font-size: 18px;
+@media only screen  and (max-width:600px) {
+    .login {
+        margin: 0px 10px;
+    }
+}
+
+@media only screen  and (max-width:400px) {
+    .login__signin-block {
+        padding: 30px 10px;
+    }
+    .login__signin-block {
+        width: 80%;
+    }
+    .login__signin-block__button-signin {
+        padding: 15px 20px;
+    }
+    .login__signin-block__button-signup {
+        padding: 12px 20px;
+    }
+}
+
+@media only screen  and (max-width:380px) {
+    .login__signin-block {
+        padding: 20px 0px;
+    }
+    .login__signin-block__button-signin {
+        padding: 10px 15px;
+    }
+    .login__signin-block__button-signup {
+        padding: 7px 5px;
+    }
+}
+
+@media only screen  and (max-width:320px) {
+    .login__signin-block__buttons {
+        display: block;
+    }
+    .login__signin-block__button-signup {
+        margin-left: 0px;
+        margin-top: 5px;
     }
 }
