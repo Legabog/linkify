@@ -30,7 +30,7 @@ You can set up the project locally on your machine with these steps:
 1. **Clone the "master" branch in the repository.**
 
    ```shell
-   git clone -b master https://github.com/Legabog/social-network-v2.0.0_legabog.git
+   git clone -b master https://github.com/Legabog/linkify.git
 
    ```
 2. **Install the packages using the command.**
