@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import "./Login.css";
 
 import { signIn } from "redux/auth-reducer";
-import { displayRegistrationBlockTrue } from "redux/registration-block-reducer";
 import { useInput } from "hooks/useInput";
 import { useTranslation } from "react-i18next";
 
@@ -146,6 +145,5 @@ export const Login = compose(
   withRouter,
   connect(mapStateToProps, {
     signIn,
-    displayRegistrationBlockTrue,
   })
 )(Login_);

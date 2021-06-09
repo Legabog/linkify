@@ -271,11 +271,17 @@
 }
 
 @media only screen  and (max-width:320px) {
+    .login__signin-block__description {
+        padding-top: 30px;
+    }
     .login__signin-block__buttons {
         display: block;
     }
     .login__signin-block__button-signup {
         margin-left: 0px;
         margin-top: 5px;
+    }
+    .login__signin-block__help {
+        padding-top: 20px;
     }
 }
