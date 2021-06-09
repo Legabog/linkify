@@ -5,12 +5,6 @@ import { withRouter } from "react-router-dom";
 import "./RegistrationRoute.css";
 
 import is from "is_js";
-
-import {
-  displayRegistrationBlockTrue,
-  displayRegistrationBlockFalse,
-} from "redux/registration-block-reducer";
-
 import { signUp } from "redux/auth-reducer";
 
 import { RegistrationBlockHeader } from "./components/RegistrationBlockHeader";
@@ -208,49 +202,28 @@ const RegistrationRoute_ = (props) => {
   };
 
   const validationResult = () => {
-    if (nameValidator()) {
-      return null;
-    } else {
-      if (surnameValidator()) {
-        return null;
-      } else {
-        if (telephoneValidator()) {
-          return null;
-        } else {
-          if (emailValidator()) {
-            return null;
-          } else {
-            if (passwordValidator()) {
-              return null;
-            } else {
-              if (birthdayValidator()) {
-                return null;
-              } else {
-                if (sex === 0) {
-                  return null;
-                } else {
-                  if (confirmPasswordValidator()) {
-                    return null;
-                  } else {
-                    props.signUp(
-                      name,
-                      surname,
-                      telephone,
-                      email,
-                      password,
-                      bday,
-                      mday,
-                      yday,
-                      sex,
-                      props.history
-                    );
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    if (
+      !nameValidator() &&
+      !surnameValidator() &&
+      !telephoneValidator() &&
+      !emailValidator() &&
+      !passwordValidator() &&
+      !birthdayValidator() &&
+      sex !== 0 &&
+      !confirmPasswordValidator()
+    ) {
+      props.signUp(
+        name,
+        surname,
+        telephone,
+        email,
+        password,
+        bday,
+        mday,
+        yday,
+        sex,
+        props.history
+      );
     }
   };
 
@@ -289,82 +262,69 @@ const RegistrationRoute_ = (props) => {
   //
 
   return (
-    <div
-      className="registration-block__wrapper"
-      // style={{
-      //   visibility: `${props.visibilityRegistrationBlock}`,
-      //   opacity: `${props.opacityRegistrationBlock}`,
-      // }}
-    >
-      <div className="registration-block__main-wrapper">
-        <div className="registration-block__main-block">
-          <div className="registration-block">
-            <RegistrationBlockHeader
-              displayRegistrationBlockFalse={
-                props.displayRegistrationBlockFalse
-              }
-              setDefaultInputsValues={setDefaultInputsValues}
-            />
-            <hr />
-            <RegistrationBlockBody
-              {...props}
-              name={name}
-              inputNameHandler={inputNameHandler}
-              checkNameField={checkNameField}
-              checkedName={checkedName}
-              nameValidator={nameValidator}
-              // -------------------------
-              surname={surname}
-              inputSurnameHandler={inputSurnameHandler}
-              checkSurnameField={checkSurnameField}
-              checkedSurname={checkedSurname}
-              surnameValidator={surnameValidator}
-              // ------------------------
-              telephone={telephone}
-              inputTelephoneHandler={inputTelephoneHandler}
-              checkTelephoneField={checkTelephoneField}
-              checkedTelephone={checkedTelephone}
-              telephoneValidator={telephoneValidator}
-              // ------------------------
-              email={email}
-              inputEmailHandler={inputEmailHandler}
-              checkEmailField={checkEmailField}
-              checkedEmail={checkedEmail}
-              emailValidator={emailValidator}
-              // ------------------------
-              password={password}
-              inputPasswordHandler={inputPasswordHandler}
-              checkPasswordField={checkPasswordField}
-              checkedPassword={checkedPassword}
-              passwordValidator={passwordValidator}
-              // ------------------------
-              confirmPasword={confirmPasword}
-              inputConfirmPasswordHandler={inputConfirmPasswordHandler}
-              checkConfirmPasswordField={checkConfirmPasswordField}
-              checkedConfirmPassword={checkedConfirmPassword}
-              confirmPasswordValidator={confirmPasswordValidator}
-              // ------------------------
-              bday={bday}
-              mday={mday}
-              yday={yday}
-              bdayHandler={bdayHandler}
-              mdayHandler={mdayHandler}
-              ydayHandler={ydayHandler}
-              checkedBirthdayInput={checkedBirthdayInput}
-              birthdayValidator={birthdayValidator}
-              checkBirthdayField={checkBirthdayField}
-              // ------------------------
-              sex={sex}
-              sexHandler={sexHandler}
-              validSexInput={validSexInput}
-              validSex={validSex}
-              sexValidator={sexValidator}
-              // ------------------------
-              validationInputsFields={validationInputsFields}
-              validationResult={validationResult}
-            />
-          </div>
-        </div>
+    <div className="registration-block-wrapper">
+      <div className="registration-block">
+        <RegistrationBlockHeader
+          setDefaultInputsValues={setDefaultInputsValues}
+          {...props}
+        />
+        <RegistrationBlockBody
+          {...props}
+          name={name}
+          inputNameHandler={inputNameHandler}
+          checkNameField={checkNameField}
+          checkedName={checkedName}
+          nameValidator={nameValidator}
+          // -------------------------
+          surname={surname}
+          inputSurnameHandler={inputSurnameHandler}
+          checkSurnameField={checkSurnameField}
+          checkedSurname={checkedSurname}
+          surnameValidator={surnameValidator}
+          // ------------------------
+          telephone={telephone}
+          inputTelephoneHandler={inputTelephoneHandler}
+          checkTelephoneField={checkTelephoneField}
+          checkedTelephone={checkedTelephone}
+          telephoneValidator={telephoneValidator}
+          // ------------------------
+          email={email}
+          inputEmailHandler={inputEmailHandler}
+          checkEmailField={checkEmailField}
+          checkedEmail={checkedEmail}
+          emailValidator={emailValidator}
+          // ------------------------
+          password={password}
+          inputPasswordHandler={inputPasswordHandler}
+          checkPasswordField={checkPasswordField}
+          checkedPassword={checkedPassword}
+          passwordValidator={passwordValidator}
+          // ------------------------
+          confirmPasword={confirmPasword}
+          inputConfirmPasswordHandler={inputConfirmPasswordHandler}
+          checkConfirmPasswordField={checkConfirmPasswordField}
+          checkedConfirmPassword={checkedConfirmPassword}
+          confirmPasswordValidator={confirmPasswordValidator}
+          // ------------------------
+          bday={bday}
+          mday={mday}
+          yday={yday}
+          bdayHandler={bdayHandler}
+          mdayHandler={mdayHandler}
+          ydayHandler={ydayHandler}
+          checkedBirthdayInput={checkedBirthdayInput}
+          birthdayValidator={birthdayValidator}
+          checkBirthdayField={checkBirthdayField}
+          // ------------------------
+          sex={sex}
+          sexHandler={sexHandler}
+          validSexInput={validSexInput}
+          validSex={validSex}
+          sexValidator={sexValidator}
+          // ------------------------
+          validationInputsFields={validationInputsFields}
+          validationResult={validationResult}
+        />
       </div>
     </div>
   );
@@ -373,18 +333,11 @@ const RegistrationRoute_ = (props) => {
 const mapStateToProps = (state) => ({
   registrationFetching: state.authReducer.registrationFetching,
   registrationError: state.authReducer.registrationError,
-  // registration block reducer
-  visibilityRegistrationBlock:
-    state.registrationBlockReducer.visibilityRegistrationBlock,
-  opacityRegistrationBlock:
-    state.registrationBlockReducer.opacityRegistrationBlock,
 });
 
 export const RegistrationRoute = compose(
   withRouter,
   connect(mapStateToProps, {
     signUp,
-    displayRegistrationBlockTrue,
-    displayRegistrationBlockFalse,
   })
 )(RegistrationRoute_);

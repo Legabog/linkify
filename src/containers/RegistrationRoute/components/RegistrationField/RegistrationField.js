@@ -5,7 +5,6 @@ import "./RegistrationField.css";
 import { RegistrationFieldError } from "pres-components/RegistrationFieldError";
 
 export const RegistrationField = (props) => {
-
   const [displayError, setDisplayError] = useState("none");
 
   const toggleDisplayError = (display) => {
@@ -37,11 +36,9 @@ export const RegistrationField = (props) => {
           props.onFocus(false);
         }}
         style={{
-          border:
-            props.checked && props.validator() ? "1px solid red" : null,
+          border: props.checked && props.validator() ? "1px solid red" : null,
         }}
       />
-
       <ErrorIcon
         className="registration-block__input__error-icon"
         style={{

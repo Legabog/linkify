@@ -2,7 +2,6 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import registrationBlockReducer from "./registration-block-reducer";
 import userReducer from "./user-reducer";
 import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
@@ -21,7 +20,6 @@ import weatherReducer from "./weather-reducer";
 import terminalReducer from "./terminal-reducer";
 
 let rootReducer = combineReducers({
-  registrationBlockReducer,
   userReducer,
   usersReducer,
   authReducer,

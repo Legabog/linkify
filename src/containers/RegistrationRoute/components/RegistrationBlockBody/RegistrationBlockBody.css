@@ -1,11 +1,10 @@
 .registration-block__body {
     display: flex;
     width: 100%;
+    padding-top: 20px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
     background-color: #fff;
 }
 

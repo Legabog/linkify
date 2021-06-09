@@ -23,6 +23,17 @@ export const GenderField = (props) => {
       : setDisplayGenderInfo("none");
   };
 
+  const clickHelpButton = (e) => {
+    e.preventDefault();
+    focusComponent("gender-field__help-button");
+  }
+
+  const clickErrorButton = () => {
+    toggleDisplayGenderError();
+    props.validSexInput(true);
+    focusComponent("gender-field-input-female");
+  }
+
   const focusComponent = (id) => {
     document.getElementById(`${id}`).focus();
   };
@@ -35,10 +46,7 @@ export const GenderField = (props) => {
           id="gender-field__help-button"
           onBlur={toggleDisplayGenderInfo}
           onFocus={toggleDisplayGenderInfo}
-          onClick={(e) => {
-            e.preventDefault();
-            focusComponent("gender-field__help-button");
-          }}
+          onClick={clickHelpButton}
         >
           <HelpOutlinedIcon />
         </IconButton>
@@ -47,11 +55,7 @@ export const GenderField = (props) => {
           style={{
             display: !props.validSex && props.sexValidator() ? null : "none",
           }}
-          onClick={() => {
-            toggleDisplayGenderError();
-            props.validSexInput(true);
-            focusComponent("gender-field-input-female");
-          }}
+          onClick={clickErrorButton}
         />
       </div>
       <div className="gender-field__inputs">

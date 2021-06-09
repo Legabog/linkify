@@ -13,12 +13,9 @@ export const RegistrationFieldError = (props) => {
           <div className="registration-block__field-error__content">
             {props.error_text}
           </div>
-          <i
-            className="registration-block__field-error__icon"
-          ></i>
+          <i className="registration-block__field-error__icon"></i>
         </div>
       </div>
     </div>
   );
 };
-

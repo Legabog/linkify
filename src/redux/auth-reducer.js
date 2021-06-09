@@ -1,5 +1,4 @@
 import { authApi } from "api/auth-api";
-import { displayRegistrationBlockFalse } from "redux/registration-block-reducer";
 import db from "utils/firebase/firebase";
 import { setActiveUser, setUser } from "./user-reducer";
 
@@ -249,7 +248,6 @@ export const signUp = (
             authApi
               .verifyEmail(data.idToken)
               .then(() => {
-                dispatch(displayRegistrationBlockFalse());
                 history.push("/confirm_email");
               })
               .catch(() => {

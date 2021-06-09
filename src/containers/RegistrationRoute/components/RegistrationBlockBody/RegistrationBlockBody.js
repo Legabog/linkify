@@ -14,7 +14,6 @@ export const RegistrationBlockBody = (props) => {
   return (
     <div className="registration-block__body">
       <RegistrationBlockError registrationError={props.registrationError} />
-
       <div className="registration-block__body__group">
         <RegistrationField
           {...props}
