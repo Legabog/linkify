@@ -1,0 +1,73 @@
+.login-signin-block {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.login-signin-block__inputs-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login-signin-block__inputs {
+  width: 100%;
+  padding-right: 15px;
+}
+
+@media only screen  and (max-width:750px) {
+  .login-signin-block {
+      width: 100%;
+  }
+  .login-signin-block {
+      padding: 30px 30px;
+  }
+}
+
+@media only screen  and (max-width:400px) {
+  .login-signin-block {
+      padding: 30px 10px;
+  }
+  .login-signin-block {
+      width: 80%;
+  }
+  .login-signin-block__button-signin {
+      padding: 15px 20px;
+  }
+  .login-signin-block__button-signup {
+      padding: 12px 20px;
+  }
+}
+
+@media only screen  and (max-width:380px) {
+  .login-signin-block {
+      padding: 20px 0px;
+  }
+  .login-signin-block__button-signin {
+      padding: 10px 15px;
+  }
+  .login-signin-block__button-signup {
+      padding: 7px 5px;
+  }
+}
+
+@media only screen  and (max-width:320px) {
+  .login-signin-block__description {
+      padding-top: 30px;
+  }
+  .login-signin-block__buttons {
+      display: block;
+  }
+  .login-signin-block__button-signup {
+      margin-left: 0px;
+      margin-top: 5px;
+  }
+  .login-signin-block__help {
+      padding-top: 20px;
+  }
+}

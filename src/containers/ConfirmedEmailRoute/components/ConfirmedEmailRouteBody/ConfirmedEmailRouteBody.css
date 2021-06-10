@@ -1,0 +1,35 @@
+.confirmed-email-route-body {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7FC8FF;
+}
+
+.confirmed-email-route-body > span {
+  font-size: 16px;
+}
+
+@media only screen  and (max-width:650px) {
+  .confirmed-email-route-header {
+      padding: 0 20px;
+  }
+  .confirmed-email-route-header > h1 {
+      font-size: 32px;
+  }
+  .confirmed-email-route-footer > a {
+      padding: 30px 20px;
+  }
+  .confirmed-email-route-body {
+      padding: 0 20px;
+  }
+}
+
+@media only screen  and (max-width:500px) {
+  .confirmed-email-route-body > span {
+      font-size: 16px;
+  }
+  .confirmed-email-route-body {
+      padding: 0 12px;
+  }
+}

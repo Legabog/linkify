@@ -1,6 +1,6 @@
 .birthday-field {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .birthday-field__description {
@@ -10,28 +10,9 @@
     position: relative;
 }
 
-.birthday-field__description > button {
-    width: 10px;
-    height: 10px;
-    padding-left: 12px;
-}
-
-.birthday-field__description svg {
-    width: 15.6px;
-    height: 15.6px;
-}
-
-
-.birthday-field__error-icon {
-    position: absolute;
-    margin-left: 30%;
-    cursor: pointer;
-    color: red;
-}
-
 .birthday-field__selects {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -51,9 +32,9 @@
     font-size: 17px;
     border: 2px solid #f8f8f8;
     color: #1d2129;
-    padding-top: 15px;
+    padding-top: 10px;
     padding-left: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 .birthday-field__block__select:focus {

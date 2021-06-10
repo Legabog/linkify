@@ -1,11 +1,6 @@
 import { useState } from "react";
-import HelpOutlinedIcon from "@material-ui/icons/HelpOutlined";
-import ErrorIcon from "@material-ui/icons/Error";
-import { IconButton } from "@material-ui/core";
 import "./BirthdayField.css";
 
-import { RegistrationFieldError } from "pres-components/RegistrationFieldError";
-import { RegistrationFormInformation } from "pres-components/RegistrationFormInformation";
 import { useTranslation } from "react-i18next";
 
 export const BirthdayField = (props) => {
@@ -40,70 +35,27 @@ export const BirthdayField = (props) => {
   const [MonthPicker] = useState(setMonthPicker());
   const [YearPicker] = useState(setYearPicker());
 
-  const [displayBirthdayError, setDisplayBirthdayError] = useState("none");
-  const [displayBirthdayInfo, setDisplayBirthdayInfo] = useState("none");
-
-  const toggleDisplayBirthdayError = (display) => {
-    setDisplayBirthdayError(display);
-  };
-
-  const toggleDisplayBirthdayInfo = () => {
-    displayBirthdayInfo === "none"
-      ? setDisplayBirthdayInfo()
-      : setDisplayBirthdayInfo("none");
-  };
-
-  const clickHelpButton = (e) => {
-    e.preventDefault();
-    focusComponent("birthday-field__help-button");
+  const onBlurSelect = () => {
+    props.checkBirthdayField(true)
   }
 
-  const clickErrorButton = () => {
-    toggleDisplayBirthdayError();
-    focusComponent("birthday-field__select-day");
+  const onFocusSelect = () => {
+    props.checkBirthdayField(false)
   }
-
-  const focusComponent = (id) => {
-    document.getElementById(`${id}`).focus();
-  };
 
   return (
     <div className="birthday-field">
       <div className="birthday-field__description">
         {t("unauthorized.registration-block.body.field-birthday.description")}
-        <IconButton
-          id="birthday-field__help-button"
-          onBlur={toggleDisplayBirthdayInfo}
-          onFocus={toggleDisplayBirthdayInfo}
-          onClick={clickHelpButton}
-        >
-          <HelpOutlinedIcon />
-        </IconButton>
-        <ErrorIcon
-          className="birthday-field__error-icon"
-          style={{
-            display:
-              props.checkedBirthdayInput && props.birthdayValidator()
-                ? null
-                : "none",
-          }}
-          onClick={clickErrorButton}
-        />
       </div>
-
       <div className="birthday-field__selects">
         <div className="birthday-field__block">
           <select
             className="birthday-field__block__select"
             id="birthday-field__select-day"
             onClick={props.bdayHandler}
-            onBlur={() => {
-              props.checkBirthdayField(true);
-              toggleDisplayBirthdayError("none");
-            }}
-            onFocus={() => {
-              props.checkBirthdayField(false);
-            }}
+            onBlur={onBlurSelect}
+            onFocus={onFocusSelect}
             style={{
               border:
                 props.checkedBirthdayInput && props.birthdayValidator()
@@ -129,13 +81,8 @@ export const BirthdayField = (props) => {
             className="birthday-field__block__select"
             id="birthday-field__select-month"
             onClick={props.mdayHandler}
-            onBlur={() => {
-              props.checkBirthdayField(true);
-              toggleDisplayBirthdayError("none");
-            }}
-            onFocus={() => {
-              props.checkBirthdayField(false);
-            }}
+            onBlur={onBlurSelect}
+            onFocus={onFocusSelect}
             style={{
               border:
                 props.checkedBirthdayInput && props.birthdayValidator()
@@ -163,13 +110,8 @@ export const BirthdayField = (props) => {
             className="birthday-field__block__select"
             id="birthday-field__select-year"
             onClick={props.ydayHandler}
-            onBlur={() => {
-              props.checkBirthdayField(true);
-              toggleDisplayBirthdayError("none");
-            }}
-            onFocus={() => {
-              props.checkBirthdayField(false);
-            }}
+            onBlur={onBlurSelect}
+            onFocus={onFocusSelect}
             style={{
               border:
                 props.checkedBirthdayInput && props.birthdayValidator()
@@ -190,32 +132,6 @@ export const BirthdayField = (props) => {
           </select>
         </div>
       </div>
-      <RegistrationFieldError
-        display={displayBirthdayError}
-        // error
-        error_text={t(
-          "unauthorized.registration-block.body.field-birthday.error"
-        )}
-        error_marginLeft={"-300px"}
-        error_marginTop={"-50px"}
-        error_backgroundPosition={"-49px -157px"}
-        error_height={"22px"}
-        error_width={"11px"}
-        error_top={"11px"}
-        error_right={"7px"}
-      />
-      <RegistrationFormInformation
-        info_text={t(
-          "unauthorized.registration-block.body.field-birthday.help"
-        )}
-        info_marginTop={"-80px"}
-        info_marginLeft={
-          navigator.language.slice(0, 2) === "en" ? "-290px" : "-270px"
-        }
-        info_e_marginTop={"-160px"}
-        display={displayBirthdayInfo}
-        toggleDisplayBirthdayInfo={toggleDisplayBirthdayInfo}
-      />
     </div>
   );
 };

@@ -3,18 +3,19 @@ import "./RegistrationButton.css";
 
 export const RegistrationButton = (props) => {
   const { t } = useTranslation();
+  const clickHandler = () => {
+    props.validationInputsFields();
+    props.validationResult();
+  };
+
   return (
     <div className="registration-block__registration-button">
-      <button
-        type="submit"
+      <div
         className="registration-block-registration-button"
-        onClick={() => {
-          props.validationInputsFields();
-          props.validationResult();
-        }}
+        onClick={clickHandler}
       >
-        {t("unauthorized.registration-block.body.registration-button")}
-      </button>
+        <span>{t("unauthorized.registration-block.body.registration-button")}</span>
+      </div>
       <span
         className="registration-block__loader"
         style={{

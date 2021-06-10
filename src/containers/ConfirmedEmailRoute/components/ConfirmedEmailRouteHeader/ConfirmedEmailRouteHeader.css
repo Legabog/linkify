@@ -1,0 +1,46 @@
+.confirmed-email-route-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmed-email-route-header > h1 {
+  color: #7FC8FF;
+  padding-left: 20px;
+}
+
+@media only screen  and (max-width:650px) {
+  .confirmed-email-route-header {
+      padding: 0 20px;
+  }
+  .confirmed-email-route-header > h1 {
+      font-size: 32px;
+  }
+  .confirmed-email-route-footer > a {
+      padding: 30px 20px;
+  }
+  .confirmed-email-route-body {
+      padding: 0 20px;
+  }
+}
+
+@media only screen  and (max-width:500px) {
+  .confirmed-email-route-header > svg {
+      width: 150px;
+  }
+  .confirmed-email-route-header > h1 {
+      font-size: 26px;
+  }
+  .confirmed-email-route-header {
+      padding: 0 12px;
+  }
+}
+
+@media only screen  and (max-width:350px) {
+  .confirmed-email-route-header > svg {
+      width: 100px;
+  }
+  .confirmed-email-route-header > h1 {
+      padding-left: 10px;
+  }
+}

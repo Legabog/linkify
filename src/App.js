@@ -17,7 +17,7 @@ import { Welcome } from "containers/Welcome";
 import { About } from "containers/About";
 import { Profile } from "containers/Profile";
 import { MusicPlayerPanel } from "containers/MusicPlayerPanel";
-import { ErrorRoute } from "pres-components/ErrorRoute";
+import { ErrorRoute } from "containers/ErrorRoute";
 import { Preloader } from "pres-components/Preloader";
 import { ToastContainer } from "containers/ToastContainer";
 // ---------Not logged in user
@@ -46,10 +46,10 @@ const MusicPlayer = lazy(() =>
 const LoginRoute = lazy(() => import("containers/LoginRoute"));
 const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"));
 const ConfirmEmailRoute = lazy(() =>
-  import("pres-components/ConfirmEmailRoute")
+  import("containers/ConfirmEmailRoute")
 );
 const ConfirmedEmailRoute = lazy(() =>
-  import("pres-components/ConfirmedEmailRoute")
+  import("containers/ConfirmedEmailRoute")
 );
 
 const App = (props) => {

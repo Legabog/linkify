@@ -1,7 +1,7 @@
 .registration-block__field-error {
     position: absolute;
     width: 100%;
-    margin-top: 55px;
+    margin-top: 46px;
     z-index: 400;
     opacity: 1;
     outline: none;
@@ -14,7 +14,8 @@
 }
 
 .registration-block__field-error__body {
-    padding-right: 18px;
+    padding-right: 3px;
+    padding-left: 3px;
 }
 
 .registration-block__field-error__content {
@@ -22,7 +23,6 @@
     box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
     color: #fff;
     font-size: 12px;
-    max-width: 300px;
     padding: 13px;
     position: relative;
 }

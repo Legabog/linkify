@@ -1,0 +1,36 @@
+.login-help {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.login-help > span {
+  color: rgb(187,189,201);
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+
+.login-help > span > a {
+  color: #4E6482;
+  font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.login-help > a:hover {
+  text-decoration: underline;
+}
+
+@media only screen  and (max-width:320px) {
+  .login-help {
+      padding-top: 20px;
+  }
+}

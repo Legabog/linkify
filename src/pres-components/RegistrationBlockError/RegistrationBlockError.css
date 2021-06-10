@@ -1,16 +1,15 @@
 .registration-block__error {
-    margin-top: 16px;
-    margin-left: 16px;
-    margin-right: 16px;
+    width: 80%;
+    margin-bottom: 10px;
     background: #ffebe8;
     border: 1px solid #dd3c10;
     line-height: 15px;
     overflow: hidden;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
+    color: #4E6482;
 }
 
 .registration-block__error__description {
-    padding: 7px 3px;
     line-height: 15px;
 }

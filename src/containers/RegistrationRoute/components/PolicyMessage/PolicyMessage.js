@@ -5,7 +5,7 @@ export const PolicyMessage = (props) => {
   const { t } = useTranslation();
   return (
     <div className="policy-message">
-      <p>{t("unauthorized.registration-block.body.policy-message.p")}</p>
+      <span>{t("unauthorized.registration-block.body.policy-message.p")}</span>
     </div>
   );
 };

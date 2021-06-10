@@ -42,21 +42,6 @@ export const GenderField = (props) => {
     <div className="gender-field">
       <div className="gender-field__description">
         {t("unauthorized.registration-block.body.field-gender.description")}
-        <IconButton
-          id="gender-field__help-button"
-          onBlur={toggleDisplayGenderInfo}
-          onFocus={toggleDisplayGenderInfo}
-          onClick={clickHelpButton}
-        >
-          <HelpOutlinedIcon />
-        </IconButton>
-        <ErrorIcon
-          className="gender-field-error"
-          style={{
-            display: !props.validSex && props.sexValidator() ? null : "none",
-          }}
-          onClick={clickErrorButton}
-        />
       </div>
       <div className="gender-field__inputs">
         <div

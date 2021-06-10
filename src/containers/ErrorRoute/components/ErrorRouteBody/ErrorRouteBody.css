@@ -1,0 +1,21 @@
+.error-route-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7FC8FF;
+}
+
+@media only screen  and (max-width:650px) {
+  .error-route-body {
+      padding: 0 20px;
+  }
+}
+
+@media only screen  and (max-width:500px) {
+  .error-route-body > span {
+      font-size: 16px;
+  }
+  .error-route-body {
+      padding: 0 12px;
+  }
+}

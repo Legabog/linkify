@@ -1,17 +1,11 @@
 .policy-message {
-    padding-left: 16px;
-    position: relative;
-    width: 400px;
+    width: 520px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.policy-message > p {
-    width: auto;
-    color: #777;
-    font-size: 11px;
-    margin: 1em 0;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.policy-message > span {
+    color: rgb(187,189,201);
 }

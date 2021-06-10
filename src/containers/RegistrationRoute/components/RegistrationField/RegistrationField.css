@@ -11,9 +11,9 @@
     border: 2px solid #f8f8f8;
     color: #1d2129;
     height: 22px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
     padding-right: 25px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .registration-block__input__error-icon:hover {
-    cursor: pointer;
+    cursor: help;
 }
 
 .registration-block__input__error-icon:active {
