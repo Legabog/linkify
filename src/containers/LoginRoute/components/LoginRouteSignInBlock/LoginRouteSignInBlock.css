@@ -1,0 +1,72 @@
+.login-route-signin-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px;
+}
+
+.login-route-signin-block__inputs-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login-route-signin-block__inputs {
+  width: 100%;
+  padding-right: 15px;
+}
+
+@media only screen  and (max-width:600px) {
+  .login-route {
+      margin: 0px 10px;
+  }
+}
+
+@media only screen  and (max-width:400px) {
+  .login-route-signin-block {
+      padding: 30px 10px;
+  }
+  .login-route-signin-block {
+      width: 80%;
+  }
+  .login-route-signin-block__button-signin {
+      padding: 15px 20px;
+  }
+  .login-route-signin-block__button-signup {
+      padding: 12px 20px;
+  }
+}
+
+@media only screen  and (max-width:380px) {
+  .login-route-signin-block {
+      padding: 20px 0px;
+  }
+  .login-route-signin-block__button-signin {
+      padding: 10px 15px;
+  }
+  .login-route-signin-block__button-signup {
+      padding: 7px 5px;
+  }
+}
+
+@media only screen  and (max-width:320px) {
+  .login-route-signin-block__logo {
+      padding-top: 0px;
+  }
+  .login-route-signin-block__description {
+      padding-top: 30px;
+  }
+  .login-route-signin-block__buttons {
+      display: block;
+  }
+  .login-route-signin-block__button-signup {
+      margin-left: 0px;
+      margin-top: 5px;
+  }
+  .login-route-signin-block__help {
+      display: none;
+  }
+}

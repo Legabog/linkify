@@ -31,6 +31,33 @@ export const LoginSignInBlock = (props) => {
     passwordBlurHandler,
   ] = useInput("");
 
+  const inputsArray = [
+    {
+      input_type: "text",
+      input_name: "email",
+      input_id: "login-email",
+      input_ref: emailRef,
+      input_placeholder: t("unauthorized.login.signin-block.login-input"),
+      input_value: email,
+      inputChangeHandler: emailChangeHandler,
+      inputFocusHandler: emailFocusHandler,
+      inputBlurHandler: emailBlurHandler,
+      inputFocus: emailFocus,
+    },
+    {
+      input_type: "password",
+      input_name: "password",
+      input_id: "login-password",
+      input_ref: passwordRef,
+      input_placeholder: t("unauthorized.login.signin-block.password-input"),
+      input_value: password,
+      inputChangeHandler: passwordChangeHandler,
+      inputFocusHandler: passwordFocusHandler,
+      inputBlurHandler: passwordBlurHandler,
+      inputFocus: passwordFocus,
+    },
+  ];
+
   return (
     <div className="login-signin-block">
       <LinkifyLogo />
@@ -46,32 +73,9 @@ export const LoginSignInBlock = (props) => {
       />
       <div className="login-signin-block__inputs-wrapper">
         <div className="login-signin-block__inputs">
-          <LoginInput
-            input_type={"text"}
-            input_name={"email"}
-            input_id={"login-email"}
-            input_ref={emailRef}
-            input_placeholder={t("unauthorized.login.signin-block.login-input")}
-            input_value={email}
-            inputChangeHandler={emailChangeHandler}
-            inputFocusHandler={emailFocusHandler}
-            inputBlurHandler={emailBlurHandler}
-            inputFocus={emailFocus}
-          />
-          <LoginInput
-            input_type={"password"}
-            input_name={"passwird"}
-            input_id={"login-password"}
-            input_ref={passwordRef}
-            input_placeholder={t(
-              "unauthorized.login.signin-block.password-input"
-            )}
-            input_value={password}
-            inputChangeHandler={passwordChangeHandler}
-            inputFocusHandler={passwordFocusHandler}
-            inputBlurHandler={passwordBlurHandler}
-            inputFocus={passwordFocus}
-          />
+          {inputsArray.map((e, index) => (
+            <LoginInput key={`login-input_${index}`} inputData={e} />
+          ))}
         </div>
       </div>
       <LoginRestorePassword

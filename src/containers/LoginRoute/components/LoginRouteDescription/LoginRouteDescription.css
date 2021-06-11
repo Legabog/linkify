@@ -1,0 +1,21 @@
+
+.login-route-description {
+  padding-top: 30px;
+  display: flex;
+  align-self: start;
+  align-items: center;
+}
+
+.login-route-description > h2 {
+  color: #4E6482;
+}
+
+.login-route-description > span {
+  color: rgb(187,189,201);
+}
+
+@media only screen  and (max-width:320px) {
+  .login-route-description {
+      padding-top: 30px;
+  }
+}

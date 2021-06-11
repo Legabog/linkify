@@ -1,0 +1,96 @@
+.login-route-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.login-route-buttons > a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-route-button-signin {
+  padding: 15px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #7FC8FF;
+}
+
+.login-route-button-signin > span {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.login-route-button-signin:hover {
+  cursor: pointer;
+}
+
+.login-route-button-signin:active {
+  transform: scale(0.95);
+}
+
+.login-route-button-signup {
+  margin-left: 15px;
+  width: 100%;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 3px solid #7FC8FF;
+}
+
+.login-route-button-signup > span {
+  white-space: nowrap;
+  color: #7FC8FF;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.login-route-button-signup:hover {
+  cursor: pointer;
+}
+
+.login-route-button-signup:active {
+  transform: scale(0.95);
+}
+
+@media only screen  and (max-width:400px) {
+  .login-route-button-signin {
+      padding: 15px 20px;
+  }
+  .login-route-button-signup {
+      padding: 12px 20px;
+  }
+}
+
+@media only screen  and (max-width:380px) {
+  .login-route-button-signin {
+      padding: 10px 15px;
+  }
+  .login-route-button-signup {
+      padding: 7px 5px;
+  }
+}
+
+@media only screen  and (max-width:320px) {
+  .login-route-buttons {
+      display: block;
+  }
+  .login-route-button-signup {
+      margin-left: 0px;
+      margin-top: 5px;
+  }
+}
