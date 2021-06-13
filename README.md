@@ -27,7 +27,7 @@ The first versions of this social network were built by using the UI and style f
 
 You can set up the project locally on your machine with these steps:
 
-1. **Clone the "master" branch in the repositorys.**
+1. **Clone the "master" branch in the repository.**
 
    ```shell
    git clone -b master https://github.com/Legabog/linkify.git
