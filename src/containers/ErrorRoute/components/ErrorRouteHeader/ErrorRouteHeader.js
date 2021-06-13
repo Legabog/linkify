@@ -1,12 +1,51 @@
 import { useTranslation } from "react-i18next";
-import "./ErrorRouteHeader.css";
+import styled from "styled-components";
+
+const Wrapper = styled.div``;
+
+const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 650px) {
+    & > svg {
+      width: 270px;
+    }
+  }
+`;
+
+const TitleWrpper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen  and (max-width:650px) {
+    padding: 0 20px;
+  }
+  @media only screen  and (max-width:500px) {
+    padding: 0 12px;
+  }
+`;
+
+const Title = styled.h1`
+  color: #7fc8ff;
+  font-size: 44px;
+
+  @media only screen and (max-width: 650px) {
+    font-size: 32px;
+  }
+  @media only screen  and (max-width:500px) {
+    font-size: 26px;
+  }
+`;
 
 export const ErrorRouteHeader = (props) => {
   const { t } = useTranslation();
 
   return (
-    <div className="error-route-header">
-      <div className="error-route-header__logo">
+    <Wrapper>
+      <Logo>
         <svg
           width="416"
           height="178"
@@ -121,10 +160,10 @@ export const ErrorRouteHeader = (props) => {
             fill="#7FC8FF"
           />
         </svg>
-      </div>
-      <div className="error-route-header__title">
-        <h1>{t("unauthorized.error-route.header.h1")}</h1>
-      </div>
-    </div>
+      </Logo>
+      <TitleWrpper>
+        <Title>{t("unauthorized.error-route.header.h1")}</Title>
+      </TitleWrpper>
+    </Wrapper>
   );
 };

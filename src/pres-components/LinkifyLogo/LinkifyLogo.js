@@ -1,8 +1,20 @@
-import "./LinkifyLogo.css";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  align-self: start;
+`;
+
+const Title = styled.span`
+  padding-left: 15px;
+  color: #4e6482;
+  font-weight: 700;
+`;
 
 export const LinkifyLogo = () => {
   return (
-    <div className="linkify-logo">
+    <Wrapper>
       <svg
         width="40"
         height="40"
@@ -15,7 +27,7 @@ export const LinkifyLogo = () => {
           fill="#2E81F4"
         />
       </svg>
-      <span>Linkify</span>
-    </div>
+      <Title>Linkify</Title>
+    </Wrapper>
   );
 };
