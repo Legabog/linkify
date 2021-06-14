@@ -5,7 +5,7 @@ export const LoginInput = (props) => {
     <>
       <input
         className="signin-block-input"
-        type={props.inputData.input_text}
+        type={props.inputData.input_type}
         name={props.inputData.input_name}
         id={props.inputData.input_id}
         ref={props.inputData.input_ref}

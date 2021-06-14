@@ -15,6 +15,10 @@ const Logo = styled.div`
   }
 `;
 
+const Svg = styled.svg.attrs({
+  
+})
+
 const TitleWrpper = styled.div`
   display: flex;
   justify-content: center;

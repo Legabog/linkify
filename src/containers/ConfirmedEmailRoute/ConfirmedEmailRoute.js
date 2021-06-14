@@ -1,17 +1,30 @@
-import "./ConfirmedEmailRoute.css";
+import styled from "styled-components";
 
-import { useTranslation } from "react-i18next";
+import {
+  ConfirmedEmailRouteBody,
+  ConfirmedEmailRouteFooter,
+  ConfirmedEmailRouteHeader,
+} from "containers/ConfirmedEmailRoute/components";
 
-import { ConfirmedEmailRouteBody, ConfirmedEmailRouteFooter, ConfirmedEmailRouteHeader } from "containers/ConfirmedEmailRoute/components";
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #d6f6ff;
+`;
+
+const StyledConfirmedEmailRoute = styled.div``;
 
 export const ConfirmedEmailRoute = (props) => {
   return (
-    <div className="confirmed-email-route-wrapper">
-      <div className="confirmed-email-route">
+    <Wrapper>
+      <StyledConfirmedEmailRoute>
         <ConfirmedEmailRouteHeader />
-        <ConfirmedEmailRouteBody />
-        <ConfirmedEmailRouteFooter />
-      </div>
-    </div>
+        {/* <ConfirmedEmailRouteBody />
+        <ConfirmedEmailRouteFooter /> */}
+      </StyledConfirmedEmailRoute>
+    </Wrapper>
   );
 };

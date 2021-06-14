@@ -1,9 +1,18 @@
+import styled from "styled-components";
+
 import { Preloader } from "pres-components/Preloader";
-import "./Root.css";
+
+const Wrapper = styled.div`
+  background-color: #f1f2f5;
+  min-height: 100vh;
+  & audio {
+    display: none;
+  }
+`;
 
 export const Root = (props) => {
   return (
-    <div className="app">
+    <Wrapper>
       {props.Fetching ? (
         <Preloader />
       ) : (
@@ -13,6 +22,6 @@ export const Root = (props) => {
           {props.leftBottomComponent}
         </>
       )}
-    </div>
+    </Wrapper>
   );
 };

@@ -15,7 +15,7 @@ const animation = keyframes`
   }  
 `;
 
-const PreloaderMain = styled.div`
+const StyledPreloader = styled.div`
   width: 80px;
   height: 80px;
   position: absolute;
@@ -36,7 +36,7 @@ const PreloaderMain = styled.div`
 export const Preloader = (props) => {
   return (
     <Wrapper>
-      <PreloaderMain />
+      <StyledPreloader />
     </Wrapper>
   );
 };
