@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  ${(props) => (props.adaptive ? props.adaptive : null)}
+  ${(p) => p.adaptive}
 `;
 
 var Svg = styled.svg.attrs({
@@ -20,6 +20,7 @@ var Svg = styled.svg.attrs({
   xmlSpace: "preserve",
 })`
   width: 20%;
+  padding-left: 20px;
 `;
 
 const PathsArray = [
@@ -60,34 +61,38 @@ const Path = styled.path`
 
 const Title = styled.h1`
   color: #7fc8ff;
-  padding-left: 20px;
+  padding-left: 40px;
+  font-size: 36px;
 `;
 
 const adaptive = css`
-  @media only screen and (max-width: 650px) {
-    & {
-      padding: 0 20px;
-    }
+  @media only screen and (max-width: 850px) {
     ${Title} {
+      padding-left: 30px;
       font-size: 32px;
     }
   }
-  @media only screen and (max-width: 500px) {
-    & {
-      padding: 0 12px;
+  @media only screen and (max-width: 740px) {
+    ${Title} {
+      padding-left: 20px;
+      font-size: 30px;
     }
-    /* ${Svg} {
-      width: 150px;
-    } */
+  }
+  @media only screen and (max-width: 500px) {
+    ${Svg} {
+      width: 30%;
+    }
     ${Title} {
       font-size: 26px;
+      padding-left: 20px;
     }
   }
   @media only screen and (max-width: 350px) {
-    /* ${Svg} {
-      width: 100px;
-    } */
+    ${Svg} {
+      width: 35%;
+    }
     ${Title} {
+      font-size: 22px;
       padding-left: 10px;
     }
   }

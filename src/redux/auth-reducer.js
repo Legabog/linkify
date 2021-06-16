@@ -1,4 +1,4 @@
-import { authApi } from "api/auth-api";
+import { authApi } from "api";
 import db from "utils/firebase/firebase";
 import { setActiveUser, setUser } from "./user-reducer";
 

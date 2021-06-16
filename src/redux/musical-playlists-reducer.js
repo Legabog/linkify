@@ -1,4 +1,4 @@
-import { musicApi } from "api/music-api";
+import { musicApi } from "api";
 
 const SWITCH_STATE_OF_PLAYLISTS = "SWITCH_STATE_OF_PLAYLISTS";
 const ADD_TRACK_TO_PLAYLIST = "ADD_TRACK_TO_PLAYLIST";

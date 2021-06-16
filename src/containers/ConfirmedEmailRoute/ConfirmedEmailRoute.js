@@ -22,8 +22,8 @@ export const ConfirmedEmailRoute = (props) => {
     <Wrapper>
       <StyledConfirmedEmailRoute>
         <ConfirmedEmailRouteHeader />
-        {/* <ConfirmedEmailRouteBody />
-        <ConfirmedEmailRouteFooter /> */}
+        <ConfirmedEmailRouteBody />
+        <ConfirmedEmailRouteFooter />
       </StyledConfirmedEmailRoute>
     </Wrapper>
   );

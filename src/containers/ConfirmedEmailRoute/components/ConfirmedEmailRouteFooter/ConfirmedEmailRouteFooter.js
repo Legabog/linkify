@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,12 +13,14 @@ const Wrapper = styled.div`
 
 const Button = styled.div`
   padding: 12px 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   background-color: #fff;
   border: 3px solid #7fc8ff;
+
   & > a {
     display: flex;
     align-items: center;
@@ -43,30 +45,11 @@ const TextButton = styled.span`
   text-overflow: ellipsis;
 `;
 
-const adaptive = css`
-  @media only screen and (max-width: 650px) {
-    & > a {
-      padding: 30px 20px;
-    }
-  }
-  @media only screen and (max-width: 500px) {
-    & > a {
-      padding: 30px 12px;
-    }
-    ${Button} {
-      padding: 6px 10px;
-    }
-    ${TextButton} {
-      font-size: 14px;
-    }
-  }
-`;
-
 export const ConfirmedEmailRouteFooter = (props) => {
   const { t } = useTranslation();
 
   return (
-    <Wrapper adaptive={adaptive}>
+    <Wrapper>
       <Button>
         <NavLink to={"/"}>
           <TextButton>

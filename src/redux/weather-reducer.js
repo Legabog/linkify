@@ -1,5 +1,4 @@
-import { addressApi } from "api/address-api";
-import { weatherApi } from "api/weather-api";
+import { addressApi, weatherApi } from "api";
 
 const WEATHER_TOGGLE_FETCH = "WEATHER_TOGGLE_FETCH";
 const WEATHER_SET_COORDINATES = "WEATHER_SET_COORDINATES";

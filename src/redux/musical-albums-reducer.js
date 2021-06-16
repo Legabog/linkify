@@ -1,4 +1,4 @@
-import { musicApi } from "api/music-api";
+import { musicApi } from "api";
 
 const SET_MUSIC_ALBUMS_DATA = "SET_MUSIC_ALBUMS_DATA";
 const TOGGLE_MUSICAL_ALBUMS_FETCHING = "TOGGLE_MUSICAL_ALBUMS_FETCHING";
