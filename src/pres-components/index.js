@@ -1,4 +1,5 @@
 export { LinkifyLogo } from "./LinkifyLogo"
+export { Button } from "./Button"
 export { BackDrop } from "./BackDrop"
 export { ChangeAvatarSimplePreloader } from "./ChangeAvatarSimplePreloader"
 export { CirclePreloader } from "./CirclePreloader"
