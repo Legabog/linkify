@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-export const ErrorRouteFooter = (props) => {
+export const ConfirmEmailRouteFooter = (props) => {
   const { t } = useTranslation();
 
   return (
@@ -21,7 +21,7 @@ export const ErrorRouteFooter = (props) => {
         buttonStyle="primary"
         insideElements={
           <NavLink to={"/"}>
-            {t("unauthorized.error-route.button-back.navLink")}
+           {t("unauthorized.confirm-email-route.button-back.navLink")}
           </NavLink>
         }
       />

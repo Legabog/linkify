@@ -1,22 +1,23 @@
-import { useTranslation } from "react-i18next";
 import styled, { css } from "styled-components";
 
+import { useTranslation } from "react-i18next";
+
 const Wrapper = styled.div`
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 10px;
+  padding: 15px 20px;
 
   ${(p) => p.adaptive}
 `;
 
 const Text = styled.span`
   color: #7fc8ff;
+  font-size: 20px;
 `;
 
 const adaptive = css`
-  @media only screen and (max-width: 650px) {
-  }
   @media only screen and (max-width: 500px) {
     ${Text} {
       font-size: 16px;
@@ -24,12 +25,15 @@ const adaptive = css`
   }
 `;
 
-export const ErrorRouteBody = (props) => {
+export const ConfirmEmailRouteBody = (props) => {
   const { t } = useTranslation();
 
   return (
     <Wrapper adaptive={adaptive}>
-      <Text>{t("unauthorized.error-route.body.h2")}</Text>
+      <Text>
+        {t("unauthorized.confirm-email-route.body.h2-1")}&nbsp;
+        {t("unauthorized.confirm-email-route.body.h2-2")}
+      </Text>
     </Wrapper>
   );
 };

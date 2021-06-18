@@ -1,3 +1,3 @@
-export { ConfirmRouteHeader } from "./ConfirmRouteHeader"
-export { ConfirmRouteBody } from "./ConfirmRouteBody"
-export { ConfirmRouteFooter } from "./ConfirmRouteFooter"
+export { ConfirmEmailRouteHeader } from "./ConfirmEmailRouteHeader";
+export { ConfirmEmailRouteBody } from "./ConfirmEmailRouteBody";
+export { ConfirmEmailRouteFooter } from "./ConfirmEmailRouteFooter";

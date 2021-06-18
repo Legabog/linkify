@@ -1,19 +1,30 @@
-import "./ConfirmEmailRoute.css";
+import styled from "styled-components";
 
 import {
-  ConfirmRouteBody,
-  ConfirmRouteFooter,
-  ConfirmRouteHeader,
-} from "containers/ConfirmEmailRoute/components";
+  ConfirmEmailRouteBody,
+  ConfirmEmailRouteFooter,
+  ConfirmEmailRouteHeader,
+} from "./components";
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #d6f6ff;
+`;
+
+const Container = styled.div``;
 
 export const ConfirmEmailRoute = (props) => {
   return (
-    <div className="confirm-email-route-wrapper">
-      <div className="confirm-email-route">
-        <ConfirmRouteHeader />
-        <ConfirmRouteBody />
-        <ConfirmRouteFooter />
-      </div>
-    </div>
+    <Wrapper>
+      <Container>
+        <ConfirmEmailRouteHeader />
+        <ConfirmEmailRouteBody />
+        <ConfirmEmailRouteFooter />
+      </Container>
+    </Wrapper>
   );
 };

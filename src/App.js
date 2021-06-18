@@ -23,7 +23,6 @@ import { ToastContainer } from "containers/ToastContainer";
 // ---------Not logged in user
 import { Login } from "containers/Login";
 import { Users } from "containers/Users";
-import i18n from "i18n";
 // -----Lazy components
 const Weather = lazy(() => import("containers/Weather"));
 const Terminal = lazy(() => import("containers/Terminal"));
@@ -46,16 +45,12 @@ const MusicPlayer = lazy(() =>
 );
 const LoginRoute = lazy(() => import("containers/LoginRoute"));
 const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"));
-const ConfirmEmailRoute = lazy(() =>
-  import("containers/ConfirmEmailRoute")
-);
+const ConfirmEmailRoute = lazy(() => import("containers/ConfirmEmailRoute"));
 const ConfirmedEmailRoute = lazy(() =>
   import("containers/ConfirmedEmailRoute")
 );
 
 const App = (props) => {
-  console.log(i18n.getDataByLanguage("en"))
-
   useEffect(() => {
     props.autoLogin(props.history);
     // eslint-disable-next-line

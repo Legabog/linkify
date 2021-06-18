@@ -6,7 +6,7 @@ import { Button } from "pres-components/Button";
 
 const Wrapper = styled.div`
   width: 100%;
-  padding-top: 15px;
+  padding-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -15,16 +15,16 @@ const Wrapper = styled.div`
   background-color: #d6f6ff;
 `;
 
-const StyledConfirmedEmailRoute = styled.div``;
+const Container = styled.div``;
 
 export const ConfirmedEmailRoute = (props) => {
   return (
     <Wrapper>
-      <StyledConfirmedEmailRoute>
+      <Container>
         <ConfirmedEmailRouteHeader />
         <ConfirmedEmailRouteBody />
         <ConfirmedEmailRouteFooter />
-      </StyledConfirmedEmailRoute>
+      </Container>
     </Wrapper>
   );
 };
