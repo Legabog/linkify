@@ -41,7 +41,6 @@ export const Routes = {
   GROUPS: `/groups`,
   FRIENDS: `/friends`,
   // Unauthorized user
-  SIGNIN: `/signin`,
   SIGNUP: `/signup`,
   CONFIRM_EMAIL: `/confirm_email`,
   CONFIRMED_EMAIL: `/confirmed_email`,

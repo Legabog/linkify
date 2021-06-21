@@ -1004,32 +1004,12 @@
         "span": "This social network helps you always stay in touch and communicate with your friends"
       },
       "signin-block": {
+        "error-info": "Invalid data. Sign up for an account.",
         "login-input": "Email",
         "password-input": "Password",
         "login-button": "LOGIN",
         "restore-password": "Forgot Password",
         "registration-button": "SIGNUP",
-        "help": {
-          "navLink": "Create a page",
-          "description": "of a celebrity, music band or company"
-        }
-      }
-    },
-    "login-route": {
-      "description": {
-        "h2": "Social network",
-        "span": "Logging into the social network"
-      },
-      "signin-block": {
-        "login-input": "Email",
-        "password-input": "Password",
-        "login-button": "LOGIN",
-        "restore-password": "Forgot Password",
-        "registration-button": "SIGNUP",
-        "error-info": {
-          "description": "Invalid data.",
-          "navLink": "Sign up for an account."
-        },
         "help": {
           "navLink": "Create a page",
           "description": "of a celebrity, music band or company"

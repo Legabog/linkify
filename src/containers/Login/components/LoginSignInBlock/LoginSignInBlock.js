@@ -1,16 +1,164 @@
-import "./LoginSignInBlock.css";
+import { NavLink } from "react-router-dom";
+import styled, { css } from "styled-components";
 
 import { useTranslation } from "react-i18next";
 import { useInput } from "hooks/useInput";
 
-import { LinkifyLogo } from "pres-components/LinkifyLogo";
-import { LoginDescription } from "containers/Login/components/LoginDescription";
-import { LoginInput } from "containers/Login/components/LoginInput";
-import { LoginRestorePassword } from "containers/Login/components/LoginRestorePassword";
-import { LoginButtons } from "containers/Login/components/LoginButtons";
-import { LoginHelp } from "containers/Login/components/LoginHelp";
+import WarningRoundedIcon from "@material-ui/icons/WarningRounded";
+import { LinkifyLogo, Input, Button } from "pres-components";
 
-export const LoginSignInBlock = (props) => {
+const Wrapper = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+
+  ${(p) => p.adaptive}
+`;
+
+const Description = styled.div`
+  display: flex;
+  align-self: start;
+  align-items: center;
+
+  & h2 {
+    padding-top: 50px;
+    color: #4e6482;
+  }
+  & span {
+    padding-top: 20px;
+    color: rgb(187, 189, 201);
+  }
+`;
+
+const InputsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+`;
+
+const Inputs = styled.div`
+  width: 100%;
+  padding-right: 15px;
+`;
+
+const ErrorWrapper = styled.div`
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+
+  ${(p) =>
+    css`
+      display: ${p.loginError ? "flex" : "none"};
+    `}
+`;
+
+const Error = styled.div`
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > svg {
+    color: #f62a54;
+  }
+`;
+
+const ErrorText = styled.span`
+  padding-left: 10px;
+  color: #f62a54;
+
+  & > a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #f62a54;
+  }
+`;
+
+const RestorePassword = styled.div`
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+
+  & > a {
+    color: #4e6482;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+`;
+
+const Buttons = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 30px;
+`;
+
+const HelpWrapper = styled.div`
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+`;
+
+const Help = styled.span`
+  color: rgb(187, 189, 201);
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+
+  & > a {
+    color: #4e6482;
+    font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+`;
+
+const adaptive = css`
+  @media only screen and (max-width: 750px) {
+    width: 100%;
+    padding: 30px 30px;
+  }
+  @media only screen and (max-width: 400px) {
+    padding: 30px 10px;
+    width: 80%;
+
+    ${Description} h2 {
+      padding-top: 20px;
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    padding: 20px 0px;
+
+    ${Description} span {
+      display: none;
+    }
+
+    ${Buttons} {
+      padding-top: 20px;
+      display: block;
+    }
+  }
+`;
+
+export const LoginSignInBlock = ({ signIn, loginError, history }) => {
   const { t } = useTranslation();
 
   const [
@@ -31,7 +179,7 @@ export const LoginSignInBlock = (props) => {
     passwordBlurHandler,
   ] = useInput("");
 
-  const inputsArray = [
+  const inputsOptions = [
     {
       input_type: "text",
       input_name: "email",
@@ -43,6 +191,7 @@ export const LoginSignInBlock = (props) => {
       inputFocusHandler: emailFocusHandler,
       inputBlurHandler: emailBlurHandler,
       inputFocus: emailFocus,
+      inputError: loginError,
     },
     {
       input_type: "password",
@@ -55,39 +204,76 @@ export const LoginSignInBlock = (props) => {
       inputFocusHandler: passwordFocusHandler,
       inputBlurHandler: passwordBlurHandler,
       inputFocus: passwordFocus,
+      inputError: loginError,
     },
   ];
 
+  const loginButtonSignInHandler = () => {
+    signIn(email, password);
+  };
+
+  const loginButtonSignUpHandler = () => {
+    history.push("/signup");
+  };
+
   return (
-    <div className="login-signin-block">
+    <Wrapper adaptive={adaptive}>
       <LinkifyLogo />
-      <LoginDescription
-        tag={"h2"}
-        text={t("unauthorized.login.description.h2")}
-        padding_top={"50px"}
-      />
-      <LoginDescription
-        tag={"span"}
-        text={t("unauthorized.login.description.span")}
-        padding_top={"20px"}
-      />
-      <div className="login-signin-block__inputs-wrapper">
-        <div className="login-signin-block__inputs">
-          {inputsArray.map((e, index) => (
-            <LoginInput key={`login-input_${index}`} inputData={e} />
+      <Description>
+        <h2>{t("unauthorized.login.description.h2")}</h2>
+      </Description>
+      <Description>
+        <span>{t("unauthorized.login.description.span")}</span>
+      </Description>
+      <ErrorWrapper loginError={loginError}>
+        <Error>
+          <WarningRoundedIcon />
+          <ErrorText>
+            {t("unauthorized.login.signin-block.error-info")}
+          </ErrorText>
+        </Error>
+      </ErrorWrapper>
+      <InputsWrapper>
+        <Inputs>
+          {inputsOptions.map((e, index) => (
+            <Input key={`login-input_${index}`} inputData={e} />
           ))}
-        </div>
-      </div>
-      <LoginRestorePassword
-        text={t("unauthorized.login.signin-block.restore-password")}
-      />
-      <LoginButtons
-        {...props}
-        email={email}
-        password={password}
-        signIn={props.signIn}
-      />
-      <LoginHelp />
-    </div>
+        </Inputs>
+      </InputsWrapper>
+      <RestorePassword>
+        <NavLink to="">
+          {t("unauthorized.login.signin-block.restore-password")}
+        </NavLink>
+      </RestorePassword>
+      <Buttons>
+        <Button
+          buttonStyle="classic"
+          clickHandler={loginButtonSignInHandler}
+          insideElements={
+            <span>{t("unauthorized.login.signin-block.login-button")}</span>
+          }
+        />
+        <Button
+          buttonStyle="primary"
+          clickHandler={loginButtonSignUpHandler}
+          customStyle={css`
+            margin-left: 15px;
+          `}
+          insideElements={
+            <span>
+              {t("unauthorized.login.signin-block.registration-button")}
+            </span>
+          }
+        />
+      </Buttons>
+      <HelpWrapper>
+        <Help>
+          <NavLink to={"/signup"}>
+            {t("unauthorized.login.signin-block.help.navLink")}
+          </NavLink>
+          &nbsp; {t("unauthorized.login.signin-block.help.description")}
+        </Help>
+      </HelpWrapper>
+    </Wrapper>
   );
 };

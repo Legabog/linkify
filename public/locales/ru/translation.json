@@ -997,32 +997,12 @@
         "span": "Эта социальная сеть поможет вам всегда оставаться на связи с вашими друзьями"
       },
       "signin-block": {
+        "error-info" : "Неверные данные. Зарегистрируйтесь.",
         "login-input": "Электронный адрес",
         "password-input": "Пароль",
         "login-button": "ВОЙТИ",
         "restore-password": "Забыли пароль",
         "registration-button": "СОЗДАТЬ АКАУНТ",
-        "help": {
-          "navLink": "Создайте страницу",
-          "description": "знаменитости, музыкальной группы или компании"
-        }
-      }
-    },
-    "login-route": {
-      "description": {
-        "h2": "Социальная сеть",
-        "span": "Вход в Социальную сеть"
-      },
-      "signin-block": {
-        "login-input": "Электронный адрес",
-        "password-input": "Пароль",
-        "login-button": "ВОЙТИ",
-        "restore-password": "Забыли пароль",
-        "registration-button": "СОЗДАТЬ АКАУНТ",
-        "error-info": {
-          "description": "Неверные данные.",
-          "navLink": "Зарегистрируйтесь."
-        },
         "help": {
           "navLink": "Создайте страницу",
           "description": "знаменитости, музыкальной группы или компании"

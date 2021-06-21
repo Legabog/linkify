@@ -105,7 +105,7 @@ export const toggleLoginError = (error) => {
   };
 };
 
-export const signIn = (email, password, history, URL) => {
+export const signIn = (email, password) => {
   return async (dispatch) => {
     const signInData = {
       email,
@@ -132,10 +132,8 @@ export const signIn = (email, password, history, URL) => {
       })
       .then(() => {
         dispatch(toggleLoginError(false));
-        history.push("/");
       })
       .catch((e) => {
-        history.push(`${URL}`);
         dispatch(toggleLoginError(true));
       })
       .finally(() => dispatch(toggleFetching(false)));

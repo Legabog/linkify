@@ -43,7 +43,6 @@ const OwnPlayListsRouter = lazy(() =>
 const MusicPlayer = lazy(() =>
   import("containers/Music/components/MusicPlayer")
 );
-const LoginRoute = lazy(() => import("containers/LoginRoute"));
 const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"));
 const ConfirmEmailRoute = lazy(() => import("containers/ConfirmEmailRoute"));
 const ConfirmedEmailRoute = lazy(() =>
@@ -398,17 +397,6 @@ const App = (props) => {
                 render={() => (
                   <>
                     <Login />
-                  </>
-                )}
-              />
-              <Route
-                path={Routes.SIGNIN}
-                exact
-                render={() => (
-                  <>
-                    <Suspense fallback={<Preloader />}>
-                      <LoginRoute />
-                    </Suspense>
                   </>
                 )}
               />
