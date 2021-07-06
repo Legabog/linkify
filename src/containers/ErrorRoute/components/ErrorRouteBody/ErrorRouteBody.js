@@ -15,8 +15,6 @@ const Text = styled.span`
 `;
 
 const adaptive = css`
-  @media only screen and (max-width: 650px) {
-  }
   @media only screen and (max-width: 500px) {
     ${Text} {
       font-size: 16px;

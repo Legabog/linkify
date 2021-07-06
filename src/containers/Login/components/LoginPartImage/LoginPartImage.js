@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 600px;
+  height: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   object-fit: cover;

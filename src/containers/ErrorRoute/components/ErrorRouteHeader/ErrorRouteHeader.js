@@ -113,7 +113,12 @@ const Title = styled.h1`
 `;
 
 const adaptive = css`
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 900px) {
+    ${Svg} {
+      width: 350px;
+    }
+  }
+  @media only screen and (max-width: 700px) {
     ${Svg} {
       width: 270px;
     }

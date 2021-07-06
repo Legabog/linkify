@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
+  overflow: auto;
 
   ${(p) => p.adaptive}
 `;
@@ -155,6 +156,10 @@ const adaptive = css`
       padding-top: 20px;
       display: block;
     }
+  }
+  @media only screen and (max-height: 500px) and (orientation: landscape) {
+    /* height: 100%; */
+    /* overflow: auto; */
   }
 `;
 

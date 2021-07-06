@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { useTranslation } from "react-i18next";
 import { Button } from "pres-components/Button";
@@ -10,18 +10,28 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${p => p.adaptive}
+`;
+
+const adaptive = css`
+  @media only screen and (max-height: 320px) and (orientation: landscape) {
+    padding-top: 0px;
+  }
 `;
 
 export const ConfirmEmailRouteFooter = (props) => {
   const { t } = useTranslation();
 
   return (
-    <Wrapper>
+    <Wrapper adaptive={adaptive}>
       <Button
         buttonStyle="primary"
         insideElements={
           <NavLink to={"/"}>
-           {t("unauthorized.confirm-email-route.button-back.navLink")}
+            <span>
+              {t("unauthorized.confirm-email-route.button-back.navLink")}
+            </span>
           </NavLink>
         }
       />

@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { signIn } from "redux/auth-reducer";
 
@@ -20,15 +20,39 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
+  height: 600px;
   justify-content: center;
   background-color: #ffff;
   border-radius: 20px;
   margin: 0px 10px;
 `;
 
+const adaptive = css`
+  @media only screen and (max-height: 620px) and (orientation: landscape) {
+    ${Container} {
+      height: 500px;
+    }
+  }
+  @media only screen and (max-height: 520px) and (orientation: landscape) {
+    ${Container} {
+      height: 400px;
+    }
+  }
+  @media only screen and (max-height: 420px) and (orientation: landscape) {
+    ${Container} {
+      height: 300px;
+    }
+  }
+  @media only screen and (max-height: 320px) and (orientation: landscape) {
+    ${Container} {
+      height: 260px;
+    }
+  }
+`
+
 const Login_ = (props) => {
   return (
-    <Wrapper>
+    <Wrapper adaptive={adaptive}>
       <Container>
         <LoginSignInBlock {...props} />
         <LoginPartImage />
@@ -38,7 +62,7 @@ const Login_ = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  loginError: state.authReducer.loginError
+  loginError: state.authReducer.loginError,
 });
 
 export const Login = compose(
