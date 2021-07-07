@@ -1,5 +1,12 @@
 import styled, { css } from "styled-components";
 
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Component = styled.input`
   font-size: 17px;
   width: 100%;
@@ -19,20 +26,23 @@ const Component = styled.input`
     box-shadow: ${p.inputFocus ? "0 0 0 2px #e7f3ff" : null};
   `}
 `;
+
 export const Input = ({ inputData }) => {
   return (
-    <Component
-      type={inputData.input_type}
-      name={inputData.input_name}
-      id={inputData.input_id}
-      ref={inputData.input_ref}
-      placeholder={inputData.input_placeholder}
-      value={inputData.input_value}
-      onChange={inputData.inputChangeHandler}
-      onFocus={inputData.inputFocusHandler}
-      onBlur={inputData.inputBlurHandler}
-      inputFocus={inputData.inputFocus}
-      inputError={inputData.inputError}
-    />
+    <Wrapper>
+      <Component
+        type={inputData.input_type}
+        name={inputData.input_name}
+        id={inputData.input_id}
+        ref={inputData.input_ref}
+        placeholder={inputData.input_placeholder}
+        value={inputData.input_value}
+        onChange={inputData.inputChangeHandler}
+        onFocus={inputData.inputFocusHandler}
+        onBlur={inputData.inputBlurHandler}
+        inputFocus={inputData.inputFocus}
+        inputError={inputData.inputError}
+      />
+    </Wrapper>
   );
 };

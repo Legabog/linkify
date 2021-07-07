@@ -10,14 +10,16 @@ import { LinkifyLogo, Input, Button } from "pres-components";
 const Wrapper = styled.div`
   width: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 30px;
+  height: 100%;
   overflow: auto;
 
   ${(p) => p.adaptive}
 `;
+
+const SecondaryWrapper = styled.div``;
 
 const Description = styled.div`
   display: flex;
@@ -37,14 +39,10 @@ const Description = styled.div`
 const InputsWrapper = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 20px;
-`;
-
-const Inputs = styled.div`
-  width: 100%;
-  padding-right: 15px;
 `;
 
 const ErrorWrapper = styled.div`
@@ -135,18 +133,16 @@ const Help = styled.span`
 const adaptive = css`
   @media only screen and (max-width: 750px) {
     width: 100%;
-    padding: 30px 30px;
   }
   @media only screen and (max-width: 400px) {
-    padding: 30px 10px;
-    width: 80%;
+    width: 90%;
 
     ${Description} h2 {
       padding-top: 20px;
     }
   }
   @media only screen and (max-width: 380px) {
-    padding: 20px 0px;
+    padding: 0px 0px;
 
     ${Description} span {
       display: none;
@@ -157,9 +153,19 @@ const adaptive = css`
       display: block;
     }
   }
-  @media only screen and (max-height: 500px) and (orientation: landscape) {
-    /* height: 100%; */
-    /* overflow: auto; */
+  @media only screen and (max-height: 580px) and (orientation: landscape) {
+    ${SecondaryWrapper} {
+      height: 100%;
+    }
+    ${Help} {
+      padding-bottom: 20px;
+    }
+  }
+`;
+
+const customLogoStyle = css`
+  @media only screen and (max-height: 580px) and (orientation: landscape) {
+    padding-top: 20px;
   }
 `;
 
@@ -223,62 +229,62 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
 
   return (
     <Wrapper adaptive={adaptive}>
-      <LinkifyLogo />
-      <Description>
-        <h2>{t("unauthorized.login.description.h2")}</h2>
-      </Description>
-      <Description>
-        <span>{t("unauthorized.login.description.span")}</span>
-      </Description>
-      <ErrorWrapper loginError={loginError}>
-        <Error>
-          <WarningRoundedIcon />
-          <ErrorText>
-            {t("unauthorized.login.signin-block.error-info")}
-          </ErrorText>
-        </Error>
-      </ErrorWrapper>
-      <InputsWrapper>
-        <Inputs>
+      <SecondaryWrapper>
+        <LinkifyLogo customStyle={customLogoStyle} />
+        <Description>
+          <h2>{t("unauthorized.login.description.h2")}</h2>
+        </Description>
+        <Description>
+          <span>{t("unauthorized.login.description.span")}</span>
+        </Description>
+        <ErrorWrapper loginError={loginError}>
+          <Error>
+            <WarningRoundedIcon />
+            <ErrorText>
+              {t("unauthorized.login.signin-block.error-info")}
+            </ErrorText>
+          </Error>
+        </ErrorWrapper>
+        <InputsWrapper>
           {inputsOptions.map((e, index) => (
             <Input key={`login-input_${index}`} inputData={e} />
           ))}
-        </Inputs>
-      </InputsWrapper>
-      <RestorePassword>
-        <NavLink to="">
-          {t("unauthorized.login.signin-block.restore-password")}
-        </NavLink>
-      </RestorePassword>
-      <Buttons>
-        <Button
-          buttonStyle="classic"
-          clickHandler={loginButtonSignInHandler}
-          insideElements={
-            <span>{t("unauthorized.login.signin-block.login-button")}</span>
-          }
-        />
-        <Button
-          buttonStyle="primary"
-          clickHandler={loginButtonSignUpHandler}
-          customStyle={css`
-            margin-left: 15px;
-          `}
-          insideElements={
-            <span>
-              {t("unauthorized.login.signin-block.registration-button")}
-            </span>
-          }
-        />
-      </Buttons>
-      <HelpWrapper>
-        <Help>
-          <NavLink to={"/signup"}>
-            {t("unauthorized.login.signin-block.help.navLink")}
+        </InputsWrapper>
+        <RestorePassword>
+          <NavLink to="">
+            {t("unauthorized.login.signin-block.restore-password")}
           </NavLink>
-          &nbsp; {t("unauthorized.login.signin-block.help.description")}
-        </Help>
-      </HelpWrapper>
+        </RestorePassword>
+        <Buttons>
+          <Button
+            buttonStyle="classic"
+            clickHandler={loginButtonSignInHandler}
+            insideElements={
+              <span>{t("unauthorized.login.signin-block.login-button")}</span>
+            }
+          />
+          <Button
+            buttonStyle="primary"
+            clickHandler={loginButtonSignUpHandler}
+            customStyle={css`
+              margin-left: 15px;
+            `}
+            insideElements={
+              <span>
+                {t("unauthorized.login.signin-block.registration-button")}
+              </span>
+            }
+          />
+        </Buttons>
+        <HelpWrapper>
+          <Help>
+            <NavLink to={"/signup"}>
+              {t("unauthorized.login.signin-block.help.navLink")}
+            </NavLink>
+            &nbsp; {t("unauthorized.login.signin-block.help.description")}
+          </Help>
+        </HelpWrapper>
+      </SecondaryWrapper>
     </Wrapper>
   );
 };

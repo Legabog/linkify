@@ -3,9 +3,7 @@ import part_image from "assets/backgrounds/login-background/login-background.jpg
 
 const Wrapper = styled.div`
   width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  height: 100%;
 
   ${(p) => p.adaptive}
 `;
@@ -16,7 +14,6 @@ const Image = styled.img`
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   object-fit: cover;
-  padding-left: 30px;
 `;
 
 const adaptive = css`

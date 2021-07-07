@@ -20,35 +20,28 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
-  height: 600px;
+  height: 90%;
   justify-content: center;
+  align-items: center;
   background-color: #ffff;
   border-radius: 20px;
-  margin: 0px 10px;
+  margin-left: 30px;
+  margin-right: 30px;
 `;
 
 const adaptive = css`
-  @media only screen and (max-height: 620px) and (orientation: landscape) {
+  @media only screen and (max-width: 400px) {
     ${Container} {
-      height: 500px;
+      margin-left: 15px;
+      margin-right: 15px;
     }
   }
-  @media only screen and (max-height: 520px) and (orientation: landscape) {
+  @media only screen and (max-width: 320px) {
     ${Container} {
-      height: 400px;
+      height: 95%;
     }
   }
-  @media only screen and (max-height: 420px) and (orientation: landscape) {
-    ${Container} {
-      height: 300px;
-    }
-  }
-  @media only screen and (max-height: 320px) and (orientation: landscape) {
-    ${Container} {
-      height: 260px;
-    }
-  }
-`
+`;
 
 const Login_ = (props) => {
   return (
