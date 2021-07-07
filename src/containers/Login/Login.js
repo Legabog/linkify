@@ -30,15 +30,12 @@ const Container = styled.div`
 `;
 
 const adaptive = css`
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     ${Container} {
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-  }
-  @media only screen and (max-width: 320px) {
-    ${Container} {
-      height: 95%;
+      height: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      border-radius: 0px;
     }
   }
 `;
