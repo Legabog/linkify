@@ -239,7 +239,7 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
         </Description>
         <ErrorWrapper loginError={loginError}>
           <Error>
-            <WarningRoundedIcon />
+            <WarningRoundedIcon/>
             <ErrorText>
               {t("unauthorized.login.signin-block.error-info")}
             </ErrorText>

@@ -43,7 +43,7 @@ describe("ConfirmEmailRoute", () => {
       ).toBeDefined()
     );
   });
-  it("footer should have button with i18n locales, button is a route to '/'", async () => {
+  it("footer should have button with i18n locales", async () => {
     const history = createMemoryHistory();
     const { getByText } = render(
       <Suspense fallback="Loading...">
@@ -60,9 +60,5 @@ describe("ConfirmEmailRoute", () => {
         getByText("unauthorized.confirm-email-route.button-back.navLink")
       ).toBeDefined()
     );
-
-    expect(
-      getByText("unauthorized.confirm-email-route.button-back.navLink").href
-    ).toMatch("/");
   });
-});
+})

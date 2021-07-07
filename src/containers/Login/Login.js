@@ -32,6 +32,7 @@ const Container = styled.div`
 const adaptive = css`
   @media only screen and (max-width: 600px) {
     ${Container} {
+      width: 100%;
       height: 100%;
       margin-left: 0px;
       margin-right: 0px;

@@ -37,7 +37,7 @@ describe("ErrorRoute", () => {
       expect(getByText("unauthorized.error-route.body.h2")).toBeDefined()
     );
   });
-  it("footer should have button with i18n locales, button is a route to '/'", async () => {
+  it("footer should have button with i18n locales", async () => {
     const history = createMemoryHistory();
     const { getByText } = render(
       <Suspense fallback="Loading...">
@@ -55,8 +55,5 @@ describe("ErrorRoute", () => {
       ).toBeDefined()
     );
 
-    expect(
-      getByText("unauthorized.error-route.button-back.navLink").href
-    ).toMatch("/");
   });
 });

@@ -25,7 +25,7 @@ const adaptive = css`
 export const LoginPartImage = (props) => {
   return (
     <Wrapper adaptive={adaptive}>
-      <Image src={part_image} alt="part-iamge" />
+      <Image src={part_image} alt="part-image" />
     </Wrapper>
   );
 };
