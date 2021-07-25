@@ -44,12 +44,7 @@ i18n
     detection: options,
     interpolation: {
       escapeValue: false,
-    },
-    
-    // resources: {
-    //   en: { translation: en },
-    //   ru: { translation: ru },
-    // },
+    }
   });
 
 export default i18n;

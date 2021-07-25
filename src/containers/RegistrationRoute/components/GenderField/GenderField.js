@@ -48,7 +48,7 @@ export const GenderField = (props) => {
           className="gender-field__input"
           style={{
             border:
-              !props.validSex && props.sexValidator() ? "1px solid red" : null,
+              props.validSex && !props.sexValidator() ? "1px solid red" : null,
           }}
         >
           <label
@@ -77,7 +77,7 @@ export const GenderField = (props) => {
           className="gender-field__input"
           style={{
             border:
-              !props.validSex && props.sexValidator() ? "1px solid red" : null,
+              props.validSex && !props.sexValidator() ? "1px solid red" : null,
           }}
         >
           <label
@@ -102,7 +102,7 @@ export const GenderField = (props) => {
           className="gender-field__input"
           style={{
             border:
-              !props.validSex && props.sexValidator() ? "1px solid red" : null,
+              props.validSex && !props.sexValidator() ? "1px solid red" : null,
           }}
         >
           <label

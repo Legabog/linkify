@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import registration_preloader from "assets/images/registration-preloader.gif"
 import "./RegistrationButton.css";
 
 export const RegistrationButton = (props) => {
@@ -24,7 +25,7 @@ export const RegistrationButton = (props) => {
       >
         <img
           className="registration-block-loader"
-          src="https://static.xx.fbcdn.net/rsrc.php/v3/yA/r/vF9DX0rAdyp.gif"
+          src={registration_preloader}
           alt="loader"
         />
       </span>

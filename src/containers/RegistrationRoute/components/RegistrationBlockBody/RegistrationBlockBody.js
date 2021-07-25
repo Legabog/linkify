@@ -1,20 +1,39 @@
-import "./RegistrationBlockBody.css";
-
-import { RegistrationField } from "../RegistrationField";
-import { BirthdayField } from "../BirthdayField";
-import { GenderField } from "../GenderField";
-import { PolicyMessage } from "../PolicyMessage";
-import { RegistrationButton } from "../RegistrationButton";
-import { RegistrationBlockError } from "pres-components/RegistrationBlockError";
+import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+
+import {
+  RegistrationField,
+  BirthdayField,
+  GenderField,
+  PolicyMessage,
+  RegistrationButton,
+} from "../";
+import { RegistrationBlockError } from "pres-components/RegistrationBlockError";
+
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+`;
+
+const Group = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 
 export const RegistrationBlockBody = (props) => {
   const { t } = useTranslation();
 
   return (
-    <div className="registration-block__body">
+    <Container>
       <RegistrationBlockError registrationError={props.registrationError} />
-      <div className="registration-block__body__group">
+      <Group>
         <RegistrationField
           {...props}
           type={"text"}
@@ -23,11 +42,10 @@ export const RegistrationBlockBody = (props) => {
             "unauthorized.registration-block.body.field-1.placeholder"
           )}
           value={props.name}
-          inputHandler={props.inputNameHandler}
-          onFocus={props.checkNameField}
+          valueHandler={props.nameHandler}
           checked={props.checkedName}
-          validator={props.nameValidator}
-          // error
+          checkHandler={props.checkNameHandler}
+          fieldType={"name"}
           error_text={t("unauthorized.registration-block.body.field-1.error")}
         />
 
@@ -39,16 +57,15 @@ export const RegistrationBlockBody = (props) => {
             "unauthorized.registration-block.body.field-2.placeholder"
           )}
           value={props.surname}
-          inputHandler={props.inputSurnameHandler}
-          onFocus={props.checkSurnameField}
+          valueHandler={props.surnameHandler}
           checked={props.checkedSurname}
-          validator={props.surnameValidator}
-          // error
+          checkHandler={props.checkSurnameHandler}
+          fieldType={"surname"}
           error_text={t("unauthorized.registration-block.body.field-2.error")}
         />
-      </div>
+      </Group>
 
-      <div className="registration-block__body__group">
+      <Group>
         <RegistrationField
           {...props}
           type={"text"}
@@ -57,11 +74,10 @@ export const RegistrationBlockBody = (props) => {
             "unauthorized.registration-block.body.field-3.placeholder"
           )}
           value={props.telephone}
-          inputHandler={props.inputTelephoneHandler}
-          onFocus={props.checkTelephoneField}
+          valueHandler={props.telephoneHandler}
           checked={props.checkedTelephone}
-          validator={props.telephoneValidator}
-          // error
+          checkHandler={props.checkTelephoneHandler}
+          fieldType={"telephone"}
           error_text={t("unauthorized.registration-block.body.field-3.error")}
         />
 
@@ -73,16 +89,15 @@ export const RegistrationBlockBody = (props) => {
             "unauthorized.registration-block.body.field-4.placeholder"
           )}
           value={props.email}
-          inputHandler={props.inputEmailHandler}
-          onFocus={props.checkEmailField}
+          valueHandler={props.emailHandler}
           checked={props.checkedEmail}
-          validator={props.emailValidator}
-          // error
+          checkHandler={props.checkEmailHandler}
+          fieldType={"email"}
           error_text={t("unauthorized.registration-block.body.field-4.error")}
         />
-      </div>
+      </Group>
 
-      <div className="registration-block__body__group">
+      <Group>
         <RegistrationField
           {...props}
           type={"password"}
@@ -91,11 +106,10 @@ export const RegistrationBlockBody = (props) => {
             "unauthorized.registration-block.body.field-5.placeholder"
           )}
           value={props.password}
-          inputHandler={props.inputPasswordHandler}
-          onFocus={props.checkPasswordField}
+          valueHandler={props.passwordHandler}
           checked={props.checkedPassword}
-          validator={props.passwordValidator}
-          // error
+          checkHandler={props.checkPasswordHandler}
+          fieldType={"password"}
           error_text={t("unauthorized.registration-block.body.field-5.error")}
         />
 
@@ -106,20 +120,22 @@ export const RegistrationBlockBody = (props) => {
           placeholder={t(
             "unauthorized.registration-block.body.field-6.placeholder"
           )}
-          value={props.confirmPasword}
-          inputHandler={props.inputConfirmPasswordHandler}
-          onFocus={props.checkConfirmPasswordField}
+          value={{
+            confirmpassword: props.confirmPasword,
+            password: props.password,
+          }}
+          valueHandler={props.confirmPasswordHandler}
           checked={props.checkedConfirmPassword}
-          validator={props.confirmPasswordValidator}
-          // error
+          checkHandler={props.checkConfirmPasswordHandler}
+          fieldType={"confirmPassword"}
           error_text={t("unauthorized.registration-block.body.field-6.error")}
         />
-      </div>
+      </Group>
 
       <BirthdayField {...props} />
       <GenderField {...props} />
       <PolicyMessage />
       <RegistrationButton {...props} />
-    </div>
+    </Container>
   );
 };

@@ -1,216 +1,133 @@
-import { useState } from "react";
+import styled, { css } from "styled-components";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
-import "./RegistrationRoute.css";
 
-import is from "is_js";
 import { signUp } from "redux/auth-reducer";
+import { useRegistrationInput } from "hooks/useRegistrationInput";
+import { registrationInputValidation } from "utils/validation/registrationInputValidation";
 
-import { RegistrationBlockHeader } from "./components/RegistrationBlockHeader";
-import { RegistrationBlockBody } from "./components/RegistrationBlockBody";
+import { RegistrationBlockHeader, RegistrationBlockBody } from "./components";
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #d6f6ff;
+
+  ${(p) => p.adaptive}
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0px 30px;
+  background-color: #fff;
+`;
+
+const adaptive = css`
+  @media only screen and (max-width: 600px) {
+    ${Container} {
+      width: 100%;
+      height: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      border-radius: 0px;
+    }
+  }
+`;
 
 const RegistrationRoute_ = (props) => {
-  // ----------Name input
-  const [name, setName] = useState("");
-  const [checkedName, setCheckedName] = useState(false);
-
-  const checkNameField = (boolean) => {
-    setCheckedName(boolean);
-  };
-  //
-
-  // ---------Surname input
-  const [surname, setSurname] = useState("");
-  const [checkedSurname, setCheckedSurname] = useState(false);
-
-  const checkSurnameField = (boolean) => {
-    setCheckedSurname(boolean);
-  };
-  //
-
-  // ----------Telephone input
-  const [telephone, setTelephone] = useState("");
-  const [checkedTelephone, setCheckedTelephone] = useState(false);
-
-  const checkTelephoneField = (boolean) => {
-    if (
-      !boolean &&
-      (is.empty(telephone) ||
-        telephone.trim().split("")[0] !== "+" ||
-        telephone.trim().split("")[1] !== "7")
-    ) {
-      setTelephone("+7");
-    }
-    setCheckedTelephone(boolean);
-  };
-  //
-
-  // ----------Email input
-
-  const [email, setEmail] = useState("");
-  const [checkedEmail, setCheckedEmail] = useState(false);
-
-  const checkEmailField = (boolean) => {
-    setCheckedEmail(boolean);
-  };
-  //
-
-  // ----------Password input
-  const [password, setPassword] = useState("");
-  const [checkedPassword, setCheckedPassword] = useState(false);
-
-  const checkPasswordField = (boolean) => {
-    setCheckedPassword(boolean);
-  };
-  //
-
-  // -----------Confirm password input
-  const [confirmPasword, setConfirmPassword] = useState("");
-  const [checkedConfirmPassword, setCheckedConfirmPassword] = useState(false);
-
-  const checkConfirmPasswordField = (boolean) => {
-    setCheckedConfirmPassword(boolean);
-  };
-  //
-  // ----------Birthday input
-
-  const [bday, setBday] = useState("00");
-  const [mday, setMday] = useState("00");
-  const [yday, setYday] = useState("0000");
-  const [checkedBirthdayInput, setCheckedBirthday] = useState(false);
-
-  const checkBirthdayField = (boolean) => {
-    setCheckedBirthday(boolean);
-  };
-  //
-
-  // ---------Gender input
-
-  const [sex, setSex] = useState(0);
-  const [validSex, setValidSex] = useState(true);
-
-  const validSexInput = (boolean) => {
-    setValidSex(boolean);
-  };
-  //
-
-  // --------Inputs handlers
-  const inputNameHandler = (e) => {
-    setName(e.target.value);
-  };
-
-  const inputSurnameHandler = (e) => {
-    setSurname(e.target.value);
-  };
-
-  const inputTelephoneHandler = (e) => {
-    setTelephone(e.target.value.replace(/[^0-9+]/, ""));
-  };
-
-  const inputEmailHandler = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const inputPasswordHandler = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const inputConfirmPasswordHandler = (e) => {
-    setConfirmPassword(e.target.value);
-  };
-
-  // ---------Selects handlers
-
-  const bdayHandler = (e) => {
-    setBday(e.target.value);
-  };
-
-  const mdayHandler = (e) => {
-    setMday(e.target.value);
-  };
-
-  const ydayHandler = (e) => {
-    setYday(e.target.value);
-  };
-
-  const sexHandler = (e) => {
-    setSex(e);
-  };
-
-  //----------Validation of inputs
-
-  const spacesValidator = (inputValue) => {
-    return inputValue.trim() !== "";
-  };
-
-  const nameValidator = () => {
-    return is.empty(name) || !spacesValidator(name);
-  };
-
-  const surnameValidator = () => {
-    return is.empty(surname) || !spacesValidator(surname);
-  };
-
-  const telephoneValidator = () => {
-    return (
-      is.empty(telephone) ||
-      !spacesValidator(telephone) ||
-      telephone.trim().split("")[0] !== "+" ||
-      telephone.trim().split("")[1] !== "7" ||
-      telephone.trim().split("").length !== 12
-    );
-  };
-
-  const emailValidator = () => {
-    return is.empty(email) || !spacesValidator(email) || !is.email(email);
-  };
-
-  const passwordValidator = () => {
-    return (
-      is.empty(password) ||
-      !spacesValidator(password) ||
-      password.trim().split("").length < 6
-    );
-  };
-
-  const confirmPasswordValidator = () => {
-    return is.empty(password) || confirmPasword !== password;
-  };
-
-  const birthdayValidator = () => {
-    return bday === "00" || mday === "00" || yday === "0000";
-  };
-
-  const sexValidator = () => {
-    return sex !== 1 && sex !== 2 && sex !== -1;
-  };
+  const [name, nameHandler, checkedName, checkNameHandler, setDefaultName] =
+    useRegistrationInput("", "name");
+  const [
+    surname,
+    surnameHandler,
+    checkedSurname,
+    checkSurnameHandler,
+    setDefaultSurname,
+  ] = useRegistrationInput("", "surname");
+  const [
+    telephone,
+    telephoneHandler,
+    checkedTelephone,
+    checkTelephoneHandler,
+    setDefaultTelephone,
+  ] = useRegistrationInput("", "telephone");
+  const [
+    email,
+    emailHandler,
+    checkedEmail,
+    checkEmailHandler,
+    setDefaultEmail,
+  ] = useRegistrationInput("", "email");
+  const [
+    password,
+    passwordHandler,
+    checkedPassword,
+    checkPasswordHandler,
+    setDefaultPassword,
+  ] = useRegistrationInput("", "password");
+  const [
+    confirmPassword,
+    confirmPasswordHandler,
+    checkedConfirmPassword,
+    checkConfirmPasswordHandler,
+    setDefaultConfirmPassword,
+  ] = useRegistrationInput("", "confirmPassword");
+  const [
+    birthday,
+    birthdayHandler,
+    checkedBirthday,
+    checkBirthdayHandler,
+    setDefaultBirthday,
+  ] = useRegistrationInput({ day: "00", month: "00", year: "000" }, "birthday");
+  const [sex, sexHandler, checkedSex, checkSexHandler, setDefaultSex] =
+    useRegistrationInput(0, "sex");
 
   const validationInputsFields = () => {
-    nameValidator() ? checkNameField(true) : checkNameField(false);
-    surnameValidator() ? checkSurnameField(true) : checkSurnameField(false);
-    telephoneValidator()
-      ? checkTelephoneField(true)
-      : checkTelephoneField(false);
-    emailValidator() ? checkEmailField(true) : checkEmailField(false);
-    passwordValidator() ? checkPasswordField(true) : checkPasswordField(false);
-    confirmPasswordValidator()
-      ? checkConfirmPasswordField(true)
-      : checkConfirmPasswordField(false);
-    birthdayValidator() ? checkBirthdayField(true) : checkBirthdayField(false);
-    sexValidator() ? validSexInput(false) : validSexInput(true);
+    registrationInputValidation(name, "name")
+      ? checkNameHandler(true)
+      : checkNameHandler(false);
+    registrationInputValidation(surname, "surname")
+      ? checkSurnameHandler(true)
+      : checkSurnameHandler(false);
+    registrationInputValidation(telephone, "telephone")
+      ? checkTelephoneHandler(true)
+      : checkTelephoneHandler(false);
+    registrationInputValidation(email, "email")
+      ? checkEmailHandler(true)
+      : checkEmailHandler(false);
+    registrationInputValidation(password, "password")
+      ? checkPasswordHandler(true)
+      : checkPasswordHandler(false);
+    registrationInputValidation(confirmPassword, "confirmPassword")
+      ? checkConfirmPasswordHandler(true)
+      : checkConfirmPasswordHandler(false);
+    registrationInputValidation(birthday, "name")
+      ? checkBirthdayHandler(true)
+      : checkBirthdayHandler(false);
+    registrationInputValidation(sex, "name")
+      ? checkSexHandler(true)
+      : checkSexHandler(false);
   };
 
   const validationResult = () => {
     if (
-      !nameValidator() &&
-      !surnameValidator() &&
-      !telephoneValidator() &&
-      !emailValidator() &&
-      !passwordValidator() &&
-      !birthdayValidator() &&
-      sex !== 0 &&
-      !confirmPasswordValidator()
+      !registrationInputValidation(name, "name") &&
+      !registrationInputValidation(name, "name") &&
+      !registrationInputValidation(surname, "surname") &&
+      !registrationInputValidation(telephone, "telephone") &&
+      !registrationInputValidation(email, "email") &&
+      !registrationInputValidation(password, "password") &&
+      !registrationInputValidation(confirmPassword, "confirmPassword") &&
+      !registrationInputValidation(birthday, "name") &&
+      !registrationInputValidation(sex, "name")
     ) {
       props.signUp(
         name,
@@ -218,52 +135,29 @@ const RegistrationRoute_ = (props) => {
         telephone,
         email,
         password,
-        bday,
-        mday,
-        yday,
+        birthday.day,
+        birthday.month,
+        birthday.year,
         sex,
         props.history
       );
     }
   };
 
-  // ----------Set default input values
   const setDefaultInputsValues = () => {
-    setName("");
-    setCheckedName(false);
-
-    setSurname("");
-    setCheckedSurname(false);
-
-    setTelephone("");
-    setCheckedTelephone(false);
-
-    setEmail("");
-    setCheckedEmail(false);
-
-    setPassword("");
-    setCheckedPassword(false);
-
-    setConfirmPassword("");
-    setCheckedConfirmPassword(false);
-
-    document.getElementById("birthday-field__select-day").selectedIndex = 0;
-    document.getElementById("birthday-field__select-month").selectedIndex = 0;
-    document.getElementById("birthday-field__select-year").selectedIndex = 0;
-    setCheckedBirthday(false);
-
-    sexHandler(0);
-    document.getElementById("gender-field-input-female").checked = false;
-    document.getElementById("gender-field-input-male").checked = false;
-    document.getElementById("gender-field-input-other").checked = false;
-    setValidSex(true);
+    setDefaultName();
+    setDefaultSurname();
+    setDefaultTelephone();
+    setDefaultEmail();
+    setDefaultPassword();
+    setDefaultConfirmPassword();
+    setDefaultBirthday();
+    setDefaultSex();
   };
 
-  //
-
   return (
-    <div className="registration-block-wrapper">
-      <div className="registration-block">
+    <Wrapper adaptive={adaptive}>
+      <Container>
         <RegistrationBlockHeader
           setDefaultInputsValues={setDefaultInputsValues}
           {...props}
@@ -271,62 +165,54 @@ const RegistrationRoute_ = (props) => {
         <RegistrationBlockBody
           {...props}
           name={name}
-          inputNameHandler={inputNameHandler}
-          checkNameField={checkNameField}
+          nameHandler={nameHandler}
           checkedName={checkedName}
-          nameValidator={nameValidator}
+          checkNameHandler={checkNameHandler}
           // -------------------------
           surname={surname}
-          inputSurnameHandler={inputSurnameHandler}
-          checkSurnameField={checkSurnameField}
+          surnameHandler={surnameHandler}
           checkedSurname={checkedSurname}
-          surnameValidator={surnameValidator}
+          checkSurnameHandler={checkSurnameHandler}
           // ------------------------
           telephone={telephone}
-          inputTelephoneHandler={inputTelephoneHandler}
-          checkTelephoneField={checkTelephoneField}
+          telephoneHandler={telephoneHandler}
           checkedTelephone={checkedTelephone}
-          telephoneValidator={telephoneValidator}
+          checkTelephoneHandler={checkTelephoneHandler}
           // ------------------------
           email={email}
-          inputEmailHandler={inputEmailHandler}
-          checkEmailField={checkEmailField}
+          emailHandler={emailHandler}
           checkedEmail={checkedEmail}
-          emailValidator={emailValidator}
+          checkEmailHandler={checkEmailHandler}
           // ------------------------
           password={password}
-          inputPasswordHandler={inputPasswordHandler}
-          checkPasswordField={checkPasswordField}
+          passwordHandler={passwordHandler}
           checkedPassword={checkedPassword}
-          passwordValidator={passwordValidator}
+          checkPasswordHandler={checkPasswordHandler}
           // ------------------------
-          confirmPasword={confirmPasword}
-          inputConfirmPasswordHandler={inputConfirmPasswordHandler}
-          checkConfirmPasswordField={checkConfirmPasswordField}
+          confirmPassword={confirmPassword}
           checkedConfirmPassword={checkedConfirmPassword}
-          confirmPasswordValidator={confirmPasswordValidator}
+          confirmPasswordHandler={confirmPasswordHandler}
+          checkConfirmPasswordHandler={checkConfirmPasswordHandler}
           // ------------------------
-          bday={bday}
-          mday={mday}
-          yday={yday}
-          bdayHandler={bdayHandler}
-          mdayHandler={mdayHandler}
-          ydayHandler={ydayHandler}
-          checkedBirthdayInput={checkedBirthdayInput}
-          birthdayValidator={birthdayValidator}
-          checkBirthdayField={checkBirthdayField}
+          day={birthday.day}
+          month={birthday.month}
+          year={birthday.year}
+          dayHandler={birthdayHandler[0]}
+          monthHandler={birthdayHandler[1]}
+          yearHandler={birthdayHandler[2]}
+          checkedBirthday={checkedBirthday}
+          checkBirthdayHandler={checkBirthdayHandler}
           // ------------------------
           sex={sex}
           sexHandler={sexHandler}
-          validSexInput={validSexInput}
-          validSex={validSex}
-          sexValidator={sexValidator}
+          checkedSex={checkedSex}
+          checkSexHandler={checkSexHandler}
           // ------------------------
           validationInputsFields={validationInputsFields}
           validationResult={validationResult}
         />
-      </div>
-    </div>
+      </Container>
+    </Wrapper>
   );
 };
 
