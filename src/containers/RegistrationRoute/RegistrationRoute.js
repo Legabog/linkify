@@ -86,10 +86,9 @@ const RegistrationRoute_ = (props) => {
     checkedBirthday,
     checkBirthdayHandler,
     setDefaultBirthday,
-  ] = useRegistrationInput({ day: "00", month: "00", year: "000" }, "birthday");
+  ] = useRegistrationInput({ day: "00", month: "00", year: "0000" }, "birthday");
   const [sex, sexHandler, checkedSex, checkSexHandler, setDefaultSex] =
     useRegistrationInput(0, "sex");
-
   const validationInputsFields = () => {
     registrationInputValidation(name, "name")
       ? checkNameHandler(true)
@@ -106,13 +105,13 @@ const RegistrationRoute_ = (props) => {
     registrationInputValidation(password, "password")
       ? checkPasswordHandler(true)
       : checkPasswordHandler(false);
-    registrationInputValidation(confirmPassword, "confirmPassword")
+    registrationInputValidation({password, confirmPassword}, "confirmPassword")
       ? checkConfirmPasswordHandler(true)
       : checkConfirmPasswordHandler(false);
-    registrationInputValidation(birthday, "name")
+    registrationInputValidation(birthday, "birthday")
       ? checkBirthdayHandler(true)
       : checkBirthdayHandler(false);
-    registrationInputValidation(sex, "name")
+    registrationInputValidation(sex, "sex")
       ? checkSexHandler(true)
       : checkSexHandler(false);
   };
@@ -120,14 +119,13 @@ const RegistrationRoute_ = (props) => {
   const validationResult = () => {
     if (
       !registrationInputValidation(name, "name") &&
-      !registrationInputValidation(name, "name") &&
       !registrationInputValidation(surname, "surname") &&
       !registrationInputValidation(telephone, "telephone") &&
       !registrationInputValidation(email, "email") &&
       !registrationInputValidation(password, "password") &&
-      !registrationInputValidation(confirmPassword, "confirmPassword") &&
-      !registrationInputValidation(birthday, "name") &&
-      !registrationInputValidation(sex, "name")
+      !registrationInputValidation({password, confirmPassword}, "confirmPassword") &&
+      !registrationInputValidation(birthday, "birthday") &&
+      !registrationInputValidation(sex, "sex")
     ) {
       props.signUp(
         name,
@@ -197,9 +195,10 @@ const RegistrationRoute_ = (props) => {
           day={birthday.day}
           month={birthday.month}
           year={birthday.year}
-          dayHandler={birthdayHandler[0]}
-          monthHandler={birthdayHandler[1]}
-          yearHandler={birthdayHandler[2]}
+          dayHandler={birthdayHandler()[0]}
+          monthHandler={birthdayHandler()[1]}
+          yearHandler={birthdayHandler()[2]}
+          birthdayObject={birthday}
           checkedBirthday={checkedBirthday}
           checkBirthdayHandler={checkBirthdayHandler}
           // ------------------------

@@ -121,7 +121,7 @@ export const RegistrationBlockBody = (props) => {
             "unauthorized.registration-block.body.field-6.placeholder"
           )}
           value={{
-            confirmpassword: props.confirmPasword,
+            confirmPassword: props.confirmPassword,
             password: props.password,
           }}
           valueHandler={props.confirmPasswordHandler}

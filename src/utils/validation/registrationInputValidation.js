@@ -28,7 +28,7 @@ export const registrationInputValidation = (value, fieldType) => {
           value.trim().split("").length < 6
         );
       case "confirmPassword":
-        return is.empty(value.confirmpassword) || value.confirmpassword !== value.password;  
+        return is.empty(value.password) || value.confirmPassword !== value.password;  
       case "birthday":
         return value.day === "00" || value.month === "00" || value.year === "0000";    
       case "sex":
