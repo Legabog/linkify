@@ -48,7 +48,6 @@ export const RegistrationBlockBody = (props) => {
           fieldType={"name"}
           error_text={t("unauthorized.registration-block.body.field-1.error")}
         />
-
         <RegistrationField
           {...props}
           type={"text"}
@@ -64,7 +63,6 @@ export const RegistrationBlockBody = (props) => {
           error_text={t("unauthorized.registration-block.body.field-2.error")}
         />
       </Group>
-
       <Group>
         <RegistrationField
           {...props}
@@ -80,7 +78,6 @@ export const RegistrationBlockBody = (props) => {
           fieldType={"telephone"}
           error_text={t("unauthorized.registration-block.body.field-3.error")}
         />
-
         <RegistrationField
           {...props}
           type={"text"}
@@ -96,7 +93,6 @@ export const RegistrationBlockBody = (props) => {
           error_text={t("unauthorized.registration-block.body.field-4.error")}
         />
       </Group>
-
       <Group>
         <RegistrationField
           {...props}
@@ -131,7 +127,6 @@ export const RegistrationBlockBody = (props) => {
           error_text={t("unauthorized.registration-block.body.field-6.error")}
         />
       </Group>
-
       <BirthdayField {...props} />
       <GenderField {...props} />
       <PolicyMessage />

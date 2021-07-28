@@ -1,12 +1,12 @@
+import styled from "styled-components";
 import { useState } from "react";
-import HelpOutlinedIcon from "@material-ui/icons/HelpOutlined";
-import ErrorIcon from "@material-ui/icons/Error";
-import { IconButton } from "@material-ui/core";
 import "./GenderField.css";
 
 import { RegistrationFieldError } from "pres-components/RegistrationFieldError";
 import { RegistrationFormInformation } from "pres-components/RegistrationFormInformation";
 import { useTranslation } from "react-i18next";
+
+const Wrapper = styled.div``
 
 export const GenderField = (props) => {
   const { t } = useTranslation();
@@ -22,17 +22,6 @@ export const GenderField = (props) => {
       ? setDisplayGenderInfo()
       : setDisplayGenderInfo("none");
   };
-
-  const clickHelpButton = (e) => {
-    e.preventDefault();
-    focusComponent("gender-field__help-button");
-  }
-
-  const clickErrorButton = () => {
-    toggleDisplayGenderError();
-    props.validSexInput(true);
-    focusComponent("gender-field-input-female");
-  }
 
   const focusComponent = (id) => {
     document.getElementById(`${id}`).focus();
@@ -126,7 +115,6 @@ export const GenderField = (props) => {
       </div>
       <RegistrationFieldError
         display={displayGenderError}
-        // error
         error_text={t(
           "unauthorized.registration-block.body.field-gender.error"
         )}

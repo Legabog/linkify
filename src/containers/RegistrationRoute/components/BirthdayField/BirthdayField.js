@@ -49,10 +49,7 @@ const Option = styled.option``;
 
 export const BirthdayField = (props) => {
   const { t } = useTranslation();
-  console.log(
-    props.checkedBirthday &&
-      registrationInputValidation(props.birthdayObject, "birthday")
-  );
+
   const setDayPicker = () => {
     const dayPickerArr = [];
     for (let i = 1; i <= 31; i++) {
@@ -60,7 +57,6 @@ export const BirthdayField = (props) => {
     }
     return dayPickerArr;
   };
-
   const setMonthPicker = () => {
     const monthPickerArr = [];
     for (let i = 1; i <= 12; i++) {
@@ -68,7 +64,6 @@ export const BirthdayField = (props) => {
     }
     return monthPickerArr;
   };
-
   const setYearPicker = () => {
     const yearPickerArr = [];
     const nowYear = new Date().getFullYear();
@@ -82,9 +77,8 @@ export const BirthdayField = (props) => {
   const [monthPicker] = useState(setMonthPicker());
   const [yearPicker] = useState(setYearPicker());
 
-  const onBlurSelect = () => props.checkBirthdayHandler(true);
-
   const onFocusSelect = () => props.checkBirthdayHandler(false);
+  const onBlurSelect = () => props.checkBirthdayHandler(true);
 
   return (
     <Wrapper>
