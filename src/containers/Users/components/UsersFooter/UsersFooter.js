@@ -1,11 +1,11 @@
-import "./UsersFooter.css"
+import './UsersFooter.css';
 
-import Pagination from '@material-ui/lab/Pagination';
+import Pagination from '@mui/lab/Pagination';
 
 export const UsersFooter = (props) => {
   return (
-    <div className={"users-footer"}>
+    <div className={'users-footer'}>
       <Pagination count={10} />
     </div>
-  )
-}
+  );
+};

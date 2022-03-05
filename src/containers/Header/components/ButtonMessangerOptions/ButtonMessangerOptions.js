@@ -1,21 +1,21 @@
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import "./ButtonMessangerOptions.css";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import './ButtonMessangerOptions.css';
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 export const ButtonMessangerOptions = (props) => {
   // ----------Help Link
   const [helpButtonOpacity, setHelpButtonOpacity] = useState(0);
-  const [helpButtonVisibility, setHelpButtonVisibility] = useState("hidden");
+  const [helpButtonVisibility, setHelpButtonVisibility] = useState('hidden');
 
   const turnOnLinkHelp = () => {
     setHelpButtonOpacity(1);
-    setHelpButtonVisibility("visible");
+    setHelpButtonVisibility('visible');
   };
 
   const turnOffLinkHelp = () => {
     setHelpButtonOpacity(0);
-    setHelpButtonVisibility("hidden");
+    setHelpButtonVisibility('hidden');
   };
 
   const toggleHelpLink = (boolean) => {
@@ -35,14 +35,14 @@ export const ButtonMessangerOptions = (props) => {
         toggleHelpLink(false);
       }}
     >
-      <NavLink to={"/messages"}>
-        <div className="menu__header__button__messanger">
+      <NavLink to={'/messages'}>
+        <div className='menu__header__button__messanger'>
           <MoreHorizIcon />
         </div>
       </NavLink>
 
       <div
-        className="menu__header__options__help"
+        className='menu__header__options__help'
         style={{
           opacity: helpButtonOpacity,
           visibility: helpButtonVisibility,
@@ -53,4 +53,3 @@ export const ButtonMessangerOptions = (props) => {
     </div>
   );
 };
-

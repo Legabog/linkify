@@ -1,24 +1,24 @@
-import "./ProfileEditDetailsBody.css";
+import './ProfileEditDetailsBody.css';
 
-import WorkIcon from "@material-ui/icons/Work";
-import SchoolIcon from "@material-ui/icons/School";
-import LocationCityIcon from "@material-ui/icons/LocationCity";
-import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
-import FavoriteRoundedIcon from "@material-ui/icons/FavoriteRounded";
+import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 
-import { ProfileEditDetailsBodySection } from "../ProfileEditDetailsBodySection";
-import { useTranslation } from "react-i18next";
+import { ProfileEditDetailsBodySection } from '../ProfileEditDetailsBodySection';
+import { useTranslation } from 'react-i18next';
 
 export const ProfileEditDetailsBody = (props) => {
   const { t } = useTranslation();
   return (
-    <div className={"profile-edit-details-body"}>
-      <div className={"profile-edit-details-body__description"}>
-        <div className={"profile-edit-details-body__description-main"}>
-          <span>{t("authorized.profile.edit-details.body.main")}</span>
+    <div className={'profile-edit-details-body'}>
+      <div className={'profile-edit-details-body__description'}>
+        <div className={'profile-edit-details-body__description-main'}>
+          <span>{t('authorized.profile.edit-details.body.main')}</span>
         </div>
-        <div className={"profile-edit-details-body__description-secondary"}>
-          <span>{t("authorized.profile.edit-details.body.secondary")}</span>
+        <div className={'profile-edit-details-body__description-secondary'}>
+          <span>{t('authorized.profile.edit-details.body.secondary')}</span>
         </div>
       </div>
       <ProfileEditDetailsBodySection
@@ -27,23 +27,20 @@ export const ProfileEditDetailsBody = (props) => {
             ? null
             : props.fullUserInfoAbout.WorkAndEducation.WorkPlace
         }
-        navLink={"/profile/about_work_and_education"}
-        titleBold={t(
-          "authorized.profile.edit-details.body.section-1.title-bold"
-        )}
-        title={t("authorized.profile.edit-details.body.section-1.title")}
-
+        navLink={'/profile/about_work_and_education'}
+        titleBold={t('authorized.profile.edit-details.body.section-1.title-bold')}
+        title={t('authorized.profile.edit-details.body.section-1.title')}
         ativeInputPlaceholder1={t(
-          "authorized.about.right-section.component-2.section-1.input-placeholder-1"
+          'authorized.about.right-section.component-2.section-1.input-placeholder-1'
         )}
         ativeInputPlaceholder2={t(
-          "authorized.about.right-section.component-2.section-1.input-placeholder-2"
+          'authorized.about.right-section.component-2.section-1.input-placeholder-2'
         )}
         ativeInputPlaceholder3={t(
-          "authorized.about.right-section.component-2.section-1.input-placeholder-3"
+          'authorized.about.right-section.component-2.section-1.input-placeholder-3'
         )}
         ativeInputPlaceholder4={t(
-          "authorized.about.right-section.component-2.section-1.input-placeholder-4"
+          'authorized.about.right-section.component-2.section-1.input-placeholder-4'
         )}
         Icon={WorkIcon}
         {...props}
@@ -53,21 +50,16 @@ export const ProfileEditDetailsBody = (props) => {
 
       <ProfileEditDetailsBodySection
         componentArguments={
-          props.fullUserInfoAbout === null
-            ? null
-            : props.fullUserInfoAbout.WorkAndEducation.College
+          props.fullUserInfoAbout === null ? null : props.fullUserInfoAbout.WorkAndEducation.College
         }
-        navLink={"/profile/about_work_and_education"}
-        titleBold={t(
-          "authorized.profile.edit-details.body.section-2.title-bold"
-        )}
-        title={t("authorized.profile.edit-details.body.section-2.title")}
-
+        navLink={'/profile/about_work_and_education'}
+        titleBold={t('authorized.profile.edit-details.body.section-2.title-bold')}
+        title={t('authorized.profile.edit-details.body.section-2.title')}
         ativeInputPlaceholder1={t(
-          "authorized.about.right-section.component-2.section-3.input-placeholder-1"
+          'authorized.about.right-section.component-2.section-3.input-placeholder-1'
         )}
         ativeInputPlaceholder2={t(
-          "authorized.about.right-section.component-2.section-3.input-placeholder-2"
+          'authorized.about.right-section.component-2.section-3.input-placeholder-2'
         )}
         Icon={SchoolIcon}
         {...props}
@@ -77,18 +69,13 @@ export const ProfileEditDetailsBody = (props) => {
 
       <ProfileEditDetailsBodySection
         componentArguments={
-          props.fullUserInfoAbout === null
-            ? null
-            : props.fullUserInfoAbout.PlacesLived.CurrentCity
+          props.fullUserInfoAbout === null ? null : props.fullUserInfoAbout.PlacesLived.CurrentCity
         }
-        navLink={"/profile/about_places"}
-        titleBold={t(
-          "authorized.profile.edit-details.body.section-3.title-bold"
-        )}
-        title={t("authorized.profile.edit-details.body.section-3.title")}
-
+        navLink={'/profile/about_places'}
+        titleBold={t('authorized.profile.edit-details.body.section-3.title-bold')}
+        title={t('authorized.profile.edit-details.body.section-3.title')}
         ativeInputPlaceholder1={t(
-          "authorized.about.right-section.component-3.section-1.input-placeholder-1"
+          'authorized.about.right-section.component-3.section-1.input-placeholder-1'
         )}
         Icon={LocationCityIcon}
         {...props}
@@ -98,18 +85,13 @@ export const ProfileEditDetailsBody = (props) => {
 
       <ProfileEditDetailsBodySection
         componentArguments={
-          props.fullUserInfoAbout === null
-            ? null
-            : props.fullUserInfoAbout.PlacesLived.HomeTown
+          props.fullUserInfoAbout === null ? null : props.fullUserInfoAbout.PlacesLived.HomeTown
         }
-        navLink={"/profile/about_places"}
-        titleBold={t(
-          "authorized.profile.edit-details.body.section-4.title-bold"
-        )}
-        title={t("authorized.profile.edit-details.body.section-4.title")}
-
+        navLink={'/profile/about_places'}
+        titleBold={t('authorized.profile.edit-details.body.section-4.title-bold')}
+        title={t('authorized.profile.edit-details.body.section-4.title')}
         ativeInputPlaceholder1={t(
-          "authorized.about.right-section.component-3.section-2.input-placeholder-1"
+          'authorized.about.right-section.component-3.section-2.input-placeholder-1'
         )}
         Icon={HomeRoundedIcon}
         {...props}
@@ -123,14 +105,11 @@ export const ProfileEditDetailsBody = (props) => {
             ? null
             : props.fullUserInfoAbout.FamilyAndRelationships.Relationship
         }
-        navLink={"/profile/about_family_and_relationships"}
-        titleBold={t(
-          "authorized.profile.edit-details.body.section-5.title-bold"
-        )}
-        title={t("authorized.profile.edit-details.body.section-5.title")}
-
+        navLink={'/profile/about_family_and_relationships'}
+        titleBold={t('authorized.profile.edit-details.body.section-5.title-bold')}
+        title={t('authorized.profile.edit-details.body.section-5.title')}
         ativeInputPlaceholder1={t(
-          "authorized.about.right-section.component-5.section-1.input-placeholder-1"
+          'authorized.about.right-section.component-5.section-1.input-placeholder-1'
         )}
         Icon={FavoriteRoundedIcon}
         {...props}

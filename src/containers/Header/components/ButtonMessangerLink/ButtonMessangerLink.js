@@ -1,21 +1,21 @@
-import ZoomOutMapIcon from "@material-ui/icons/ZoomOutMap";
-import "./ButtonMessangerLink.css";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
+import './ButtonMessangerLink.css';
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 export const ButtonMessangerLink = (props) => {
   // ----------Help Link
   const [helpButtonOpacity, setHelpButtonOpacity] = useState(0);
-  const [helpButtonVisibility, setHelpButtonVisibility] = useState("hidden");
+  const [helpButtonVisibility, setHelpButtonVisibility] = useState('hidden');
 
   const turnOnLinkHelp = () => {
     setHelpButtonOpacity(1);
-    setHelpButtonVisibility("visible");
+    setHelpButtonVisibility('visible');
   };
 
   const turnOffLinkHelp = () => {
     setHelpButtonOpacity(0);
-    setHelpButtonVisibility("hidden");
+    setHelpButtonVisibility('hidden');
   };
 
   const toggleHelpLink = (boolean) => {
@@ -35,14 +35,14 @@ export const ButtonMessangerLink = (props) => {
         toggleHelpLink(false);
       }}
     >
-      <NavLink to={"/messages"}>
-        <div className="menu__header__button__messanger">
+      <NavLink to={'/messages'}>
+        <div className='menu__header__button__messanger'>
           <ZoomOutMapIcon />
         </div>
       </NavLink>
 
       <div
-        className="menu__header__link__help"
+        className='menu__header__link__help'
         style={{
           opacity: helpButtonOpacity,
           visibility: helpButtonVisibility,
@@ -53,4 +53,3 @@ export const ButtonMessangerLink = (props) => {
     </div>
   );
 };
-

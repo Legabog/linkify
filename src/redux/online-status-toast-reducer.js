@@ -1,25 +1,25 @@
-import { toastRef } from "utils/toastRef/toastRef";
+import { toastRef } from 'utils/toastRef/toastRef';
 
-import WifiIcon from "@material-ui/icons/Wifi";
-import WifiOffIcon from "@material-ui/icons/WifiOff";
+import WifiIcon from '@mui/icons-material/Wifi';
+import WifiOffIcon from '@mui/icons-material/WifiOff';
 
-const ADD_TO_TOAST_CONTAINER = "ADD_TO_TOAST_CONTAINER";
-const CLEAR_TOAST_CONTAINER = "CLEAR_TOAST_CONTAINER";
+const ADD_TO_TOAST_CONTAINER = 'ADD_TO_TOAST_CONTAINER';
+const CLEAR_TOAST_CONTAINER = 'CLEAR_TOAST_CONTAINER';
 
 let initialState = {
   toastState: [
     {
       id: 1,
-      className: "toast_online",
+      className: 'toast_online',
       Icon: WifiIcon,
-      description: "Your internet connection was restored.",
+      description: 'Your internet connection was restored.',
     },
     {
       id: 2,
-      className: "toast_offline",
+      className: 'toast_offline',
       Icon: WifiOffIcon,
-      description: "You are currently offline.",
-      button: "Refresh",
+      description: 'You are currently offline.',
+      button: 'Refresh',
     },
   ],
   list: null,
@@ -59,13 +59,8 @@ export const addAndDeleteToastAsync = (index) => {
   return (dispatch, getState) => {
     const updatedState = getState().onlineStatusToastReducer;
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-    if (
-      updatedState.list !== null &&
-      toastRef.current.className === "toast_online open"
-    ) {
-      delay(100).then(
-        () => (toastRef.current.className = "toast_online close")
-      );
+    if (updatedState.list !== null && toastRef.current.className === 'toast_online open') {
+      delay(100).then(() => (toastRef.current.className = 'toast_online close'));
       delay(300).then(() => {
         if (updatedState.list !== null) {
           dispatch(clearToastContainer());
@@ -74,13 +69,8 @@ export const addAndDeleteToastAsync = (index) => {
           });
         }
       });
-    } else if (
-      updatedState.list !== null &&
-      toastRef.current.className === "toast_offline open"
-    ) {
-      delay(100).then(
-        () => (toastRef.current.className = "toast_offline close")
-      );
+    } else if (updatedState.list !== null && toastRef.current.className === 'toast_offline open') {
+      delay(100).then(() => (toastRef.current.className = 'toast_offline close'));
       delay(300).then(() => {
         if (updatedState.list !== null) {
           dispatch(clearToastContainer());
@@ -99,29 +89,21 @@ export const effectAfterAddToast = () => {
   return (dispatch, getState) => {
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const updatedState = getState().onlineStatusToastReducer;
-    if (toastRef.current.className === "toast_online") {
-      delay(100).then(() => (toastRef.current.className = "toast_online open"));
+    if (toastRef.current.className === 'toast_online') {
+      delay(100).then(() => (toastRef.current.className = 'toast_online open'));
       delay(5000).then(() => {
-        if (
-          toastRef.current !== null &&
-          toastRef.current.className === "toast_online open"
-        ) {
-          delay(100).then(
-            () => (toastRef.current.className = "toast_online close")
-          );
+        if (toastRef.current !== null && toastRef.current.className === 'toast_online open') {
+          delay(100).then(() => (toastRef.current.className = 'toast_online close'));
 
           delay(300).then(() => {
-            if (
-              updatedState.list !== null &&
-              toastRef.current.className === "toast_online close"
-            ) {
+            if (updatedState.list !== null && toastRef.current.className === 'toast_online close') {
               dispatch(clearToastContainer());
             }
           });
         }
       });
     } else {
-      toastRef.current.className += " open";
+      toastRef.current.className += ' open';
     }
   };
 };
@@ -130,22 +112,15 @@ export const closeAndDeleteHandler = () => {
   return (dispatch, getState) => {
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const updatedState = getState().onlineStatusToastReducer;
-    if (toastRef.current.className === "toast_online open") {
-      delay(100).then(
-        () => (toastRef.current.className = "toast_online close")
-      );
+    if (toastRef.current.className === 'toast_online open') {
+      delay(100).then(() => (toastRef.current.className = 'toast_online close'));
       delay(300).then(() => {
-        if (
-          updatedState.list !== null &&
-          toastRef.current.className === "toast_online close"
-        ) {
+        if (updatedState.list !== null && toastRef.current.className === 'toast_online close') {
           dispatch(clearToastContainer());
         }
       });
     } else {
-      delay(100).then(
-        () => (toastRef.current.className = "toast_offline close")
-      );
+      delay(100).then(() => (toastRef.current.className = 'toast_offline close'));
       delay(300).then(() => {
         if (updatedState.list !== null) {
           dispatch(clearToastContainer());

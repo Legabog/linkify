@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import "./PlayList.css";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import './PlayList.css';
 
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const PlayList = (props) => {
   const [hover, toggleHover] = useState(0);
@@ -25,7 +25,7 @@ export const PlayList = (props) => {
             }}
           >
             <div
-              className={"playlist"}
+              className={'playlist'}
               onClick={() => {
                 let i = 0;
 
@@ -49,15 +49,15 @@ export const PlayList = (props) => {
                 }
               }}
             >
-              <img src={props.img} alt="description" />
-              <div className={"playlist__description"}>
+              <img src={props.img} alt='description' />
+              <div className={'playlist__description'}>
                 <h3>{props.name}</h3>
               </div>
-              <div className={"playlist__arrow-right"}>
+              <div className={'playlist__arrow-right'}>
                 {hover ? (
-                  <ArrowForwardIosIcon style={{ color: "#F62A54" }} />
+                  <ArrowForwardIosIcon style={{ color: '#F62A54' }} />
                 ) : (
-                  <ArrowForwardIosIcon style={{ color: "#1877F2" }} />
+                  <ArrowForwardIosIcon style={{ color: '#1877F2' }} />
                 )}
               </div>
             </div>
@@ -73,16 +73,16 @@ export const PlayList = (props) => {
             setHover(0);
           }}
         >
-          <div className={"playlist"}>
-            <img src={props.img} alt="description" />
-            <div className={"playlist__description"}>
+          <div className={'playlist'}>
+            <img src={props.img} alt='description' />
+            <div className={'playlist__description'}>
               <h3>{props.name}</h3>
             </div>
-            <div className={"playlist__arrow-right"}>
+            <div className={'playlist__arrow-right'}>
               {hover ? (
-                <ArrowForwardIosIcon style={{ color: "#F62A54" }} />
+                <ArrowForwardIosIcon style={{ color: '#F62A54' }} />
               ) : (
-                <ArrowForwardIosIcon style={{ color: "#1877F2" }} />
+                <ArrowForwardIosIcon style={{ color: '#1877F2' }} />
               )}
             </div>
           </div>
@@ -91,4 +91,3 @@ export const PlayList = (props) => {
     </>
   );
 };
-

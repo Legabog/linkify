@@ -1,14 +1,14 @@
-import { StrictMode, Suspense } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "redux/root-reducer";
-import "./i18n";
-import App from "./App";
-import { createGlobalStyle } from "styled-components";
-import * as serviceWorker from "./serviceWorker";
+import { StrictMode, Suspense } from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createGlobalStyle } from 'styled-components';
 
-import { Preloader } from "pres-components/Preloader";
+import store from 'redux/root-reducer';
+import './i18n';
+import { Preloader } from 'pres-components/Preloader';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -33,8 +33,8 @@ const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
   <StrictMode>
-    <Suspense fallback={<Preloader />}>
-      <Provider store={store}>
+    <Suspense fallback={ <Preloader /> }>
+      <Provider store={ store }>
         <BrowserRouter>
           <GlobalStyle />
           <App />
@@ -42,7 +42,7 @@ ReactDOM.render(
       </Provider>
     </Suspense>
   </StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

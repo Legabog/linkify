@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./Weather.css";
 
 import { getCoordinatesAddressWeather, setUnitsOfMeasure } from "redux/weather-reducer";
@@ -39,7 +38,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const Weather = compose(
-  withRouter,
   connect(mapStateToProps, {
     getCoordinatesAddressWeather,
     setUnitsOfMeasure

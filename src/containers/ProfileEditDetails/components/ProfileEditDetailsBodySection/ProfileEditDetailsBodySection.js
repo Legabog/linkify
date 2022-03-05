@@ -1,32 +1,30 @@
-import { Fragment } from "react";
-import "./ProfileEditDetailsBodySection.css";
-import ControlPointIcon from "@material-ui/icons/ControlPoint";
-import SettingsIcon from "@material-ui/icons/Settings";
+import { Fragment } from 'react';
+import './ProfileEditDetailsBodySection.css';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import SettingsIcon from '@mui/icons-material/Settings';
 
-import _ from "lodash/core";
+import _ from 'lodash/core';
 
-import { ProfileEditDetailsAddButton } from "../ProfileEditDetailsAddButton";
-import { ProfileEditDetailsBodyNotNullSection } from "../ProfileEditDetailsBodyNotNullSection";
+import { ProfileEditDetailsAddButton } from '../ProfileEditDetailsAddButton';
+import { ProfileEditDetailsBodyNotNullSection } from '../ProfileEditDetailsBodyNotNullSection';
 
 export const ProfileEditDetailsBodySection = (props) => {
   return (
-    <div className={"profile-edit-details-body__section"}>
-      <div className={"profile-edit-details-body__section-title"}>
+    <div className={'profile-edit-details-body__section'}>
+      <div className={'profile-edit-details-body__section-title'}>
         <span>{props.titleBold}</span>
       </div>
 
-      {props.fullUserInfoAbout === null ? null : Array.isArray(
-          props.componentArguments
-        ) ? (
+      {props.fullUserInfoAbout === null ? null : Array.isArray(props.componentArguments) ? (
         props.componentArguments.length === 0 ? (
           <ProfileEditDetailsAddButton addIcon={ControlPointIcon} {...props} />
         ) : (
           props.componentArguments.map((e, index) => {
-            let resultTitle_1 = "";
-            let resultTitle_2 = "";
-            let resultTitle_3 = "";
-            let resultTitle_4 = "";
-            let resultTitle = "";
+            let resultTitle_1 = '';
+            let resultTitle_2 = '';
+            let resultTitle_3 = '';
+            let resultTitle_4 = '';
+            let resultTitle = '';
 
             for (const [, value] of Object.entries(e)) {
               if (props.ativeInputPlaceholder1) {
@@ -52,15 +50,12 @@ export const ProfileEditDetailsBodySection = (props) => {
                   index={index}
                   mainTitle={resultTitle}
                 />
-                <ProfileEditDetailsAddButton
-                  addIcon={ControlPointIcon}
-                  {...props}
-                />
+                <ProfileEditDetailsAddButton addIcon={ControlPointIcon} {...props} />
               </Fragment>
             );
           })
         )
-      ) : props.componentArguments === "" ? (
+      ) : props.componentArguments === '' ? (
         <ProfileEditDetailsAddButton addIcon={SettingsIcon} {...props} />
       ) : (
         <>

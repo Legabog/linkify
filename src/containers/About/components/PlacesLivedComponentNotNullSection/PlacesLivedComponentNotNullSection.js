@@ -1,54 +1,49 @@
-import { useState } from "react";
-import "./PlacesLivedComponentNotNullSection.css";
+import { useState } from 'react';
+import './PlacesLivedComponentNotNullSection.css';
 
-import PublicIcon from "@material-ui/icons/Public";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import AddIcon from "@material-ui/icons/Add";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
+import PublicIcon from '@mui/icons-material/Public';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 export const PlacesLivedComponentNotNullSection = (props) => {
-
-  const [editWindowVisibility, setEditWindowVisibility] = useState("hidden");
+  const [editWindowVisibility, setEditWindowVisibility] = useState('hidden');
   const [editWindowOpacity, setEditWindowOpacity] = useState(0);
 
   const toggleEditWindow = (boolean) => {
-    boolean
-      ? setEditWindowVisibility("visible")
-      : setEditWindowVisibility("hidden");
+    boolean ? setEditWindowVisibility('visible') : setEditWindowVisibility('hidden');
 
     boolean ? setEditWindowOpacity(1) : setEditWindowOpacity(0);
   };
 
   return (
     <>
-      <div className={"PlacesLivedComponentNotNullSection"}>
+      <div className={'PlacesLivedComponentNotNullSection'}>
         <props.Icon />
-        <div className={"PlacesLivedComponentNotNullSection__description"}>
+        <div className={'PlacesLivedComponentNotNullSection__description'}>
           <span>{props.mainTitle}</span>
         </div>
-        <div className={"PlacesLivedComponentNotNullSection__publicIcon"}>
+        <div className={'PlacesLivedComponentNotNullSection__publicIcon'}>
           <PublicIcon />
         </div>
-        <div className={"PlacesLivedComponentNotNullSection__edit"}>
+        <div className={'PlacesLivedComponentNotNullSection__edit'}>
           <MoreHorizIcon
             onClick={() => {
-              editWindowVisibility === "hidden"
-                ? toggleEditWindow(true)
-                : toggleEditWindow(false);
+              editWindowVisibility === 'hidden' ? toggleEditWindow(true) : toggleEditWindow(false);
             }}
           />
         </div>
       </div>
 
       <div
-        className={"PlacesLivedComponentNotNullSection__editWindow"}
+        className={'PlacesLivedComponentNotNullSection__editWindow'}
         style={{
           visibility: `${editWindowVisibility}`,
           opacity: `${editWindowOpacity}`,
         }}
       >
         <div
-          className={"PlacesLivedComponentNotNullSection__editWindowSection"}
+          className={'PlacesLivedComponentNotNullSection__editWindowSection'}
           onClick={() => {
             props.toggleActiveComponent(true);
             toggleEditWindow(false);
@@ -59,7 +54,7 @@ export const PlacesLivedComponentNotNullSection = (props) => {
         </div>
 
         <div
-          className={"PlacesLivedComponentNotNullSection__editWindowSection"}
+          className={'PlacesLivedComponentNotNullSection__editWindowSection'}
           onClick={() => {
             props.addReducer(
               [props.index],
@@ -77,4 +72,3 @@ export const PlacesLivedComponentNotNullSection = (props) => {
     </>
   );
 };
-

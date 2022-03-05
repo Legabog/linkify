@@ -1,21 +1,21 @@
-import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
-import "./ButtonMessangerNewMessage.css"
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
+import './ButtonMessangerNewMessage.css';
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 export const ButtonMessangerNewMessage = (props) => {
   // ----------Help Link
   const [helpButtonOpacity, setHelpButtonOpacity] = useState(0);
-  const [helpButtonVisibility, setHelpButtonVisibility] = useState("hidden");
+  const [helpButtonVisibility, setHelpButtonVisibility] = useState('hidden');
 
   const turnOnLinkHelp = () => {
     setHelpButtonOpacity(1);
-    setHelpButtonVisibility("visible");
+    setHelpButtonVisibility('visible');
   };
 
   const turnOffLinkHelp = () => {
     setHelpButtonOpacity(0);
-    setHelpButtonVisibility("hidden");
+    setHelpButtonVisibility('hidden');
   };
 
   const toggleHelpLink = (boolean) => {
@@ -35,14 +35,14 @@ export const ButtonMessangerNewMessage = (props) => {
         toggleHelpLink(false);
       }}
     >
-      <NavLink to={"/messages"}>
-        <div className="menu__header__button__messanger">
-        <CreateOutlinedIcon />
+      <NavLink to={'/messages'}>
+        <div className='menu__header__button__messanger'>
+          <CreateOutlinedIcon />
         </div>
       </NavLink>
 
       <div
-        className="menu__header__newMessage__help"
+        className='menu__header__newMessage__help'
         style={{
           opacity: helpButtonOpacity,
           visibility: helpButtonVisibility,

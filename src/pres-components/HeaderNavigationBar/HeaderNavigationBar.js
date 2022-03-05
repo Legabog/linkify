@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import "./HeaderNavigationBar.css";
+import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import './HeaderNavigationBar.css';
 
-import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import HomeIcon from "@material-ui/icons/Home";
-import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
-import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import HomeIcon from '@mui/icons-material/Home';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 
-import { HeaderNavigationBarHelp } from "pres-components/HeaderNavigationBarHelp";
-import { HeaderNavigationBarItem } from "pres-components/HeaderNavigationBarItem";
-import { useHelpMessage } from "hooks/useHelpMessage";
-import { useTranslation } from "react-i18next";
+import { HeaderNavigationBarHelp } from 'pres-components/HeaderNavigationBarHelp';
+import { HeaderNavigationBarItem } from 'pres-components/HeaderNavigationBarItem';
+import { useHelpMessage } from 'hooks/useHelpMessage';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderNavigationBar = (props) => {
   const { t } = useTranslation();
@@ -42,10 +42,10 @@ export const HeaderNavigationBar = (props) => {
   };
 
   const toggleActiveLinkAfterRender = () => {
-    const availableRoutes = ["/", "/friends", "/groups"];
+    const availableRoutes = ['/', '/friends', '/groups'];
 
     if (availableRoutes.includes(props.location.pathname)) {
-      toggleActiveLink(props.location.pathname)
+      toggleActiveLink(props.location.pathname);
     }
   };
 
@@ -54,10 +54,10 @@ export const HeaderNavigationBar = (props) => {
   });
 
   return (
-    <div className="header-navigation-bar">
-      <NavLink to={"/"}>
+    <div className='header-navigation-bar'>
+      <NavLink to={'/'}>
         <HeaderNavigationBarItem
-          link={"/"}
+          link={'/'}
           activeLink={activeLink}
           activeIcon={HomeIcon}
           Icon={HomeOutlinedIcon}
@@ -68,17 +68,15 @@ export const HeaderNavigationBar = (props) => {
       </NavLink>
 
       <HeaderNavigationBarHelp
-        title={t(
-          "authorized.header.header-center.header-navigation-bar.help-1"
-        )}
+        title={t('authorized.header.header-center.header-navigation-bar.help-1')}
         helpOpacity={helpHomeMessageOpacity}
         helpVisibility={helpHomeMessageVisibility}
-        helpMarginLeft={"-260px"}
+        helpMarginLeft={'-260px'}
       />
 
-      <NavLink to={"/friends"}>
+      <NavLink to={'/friends'}>
         <HeaderNavigationBarItem
-          link={"/friends"}
+          link={'/friends'}
           activeLink={activeLink}
           activeIcon={SupervisorAccountIcon}
           Icon={SupervisorAccountIcon}
@@ -89,17 +87,15 @@ export const HeaderNavigationBar = (props) => {
       </NavLink>
 
       <HeaderNavigationBarHelp
-        title={t(
-          "authorized.header.header-center.header-navigation-bar.help-2"
-        )}
+        title={t('authorized.header.header-center.header-navigation-bar.help-2')}
         helpOpacity={helpFriendsMessageOpacity}
         helpVisibility={helpFriendsMessageVisibility}
-        helpMarginLeft={"-10px"}
+        helpMarginLeft={'-10px'}
       />
 
-      <NavLink to={"/groups"}>
+      <NavLink to={'/groups'}>
         <HeaderNavigationBarItem
-          link={"/groups"}
+          link={'/groups'}
           activeLink={activeLink}
           activeIcon={SupervisedUserCircleIcon}
           Icon={SupervisedUserCircleIcon}
@@ -110,12 +106,10 @@ export const HeaderNavigationBar = (props) => {
       </NavLink>
 
       <HeaderNavigationBarHelp
-        title={t(
-          "authorized.header.header-center.header-navigation-bar.help-3"
-        )}
+        title={t('authorized.header.header-center.header-navigation-bar.help-3')}
         helpOpacity={helpGroupsMessageOpacity}
         helpVisibility={helpGroupsMessageVisibility}
-        helpMarginLeft={"240px"}
+        helpMarginLeft={'240px'}
       />
     </div>
   );

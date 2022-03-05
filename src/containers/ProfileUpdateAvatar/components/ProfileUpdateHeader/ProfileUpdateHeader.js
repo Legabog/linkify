@@ -1,21 +1,19 @@
-import "./ProfileUpdateHeader.css";
+import './ProfileUpdateHeader.css';
 
-import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
-import { IconButton } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
-import { useTranslation } from "react-i18next";
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { IconButton } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import { useTranslation } from 'react-i18next';
 
 export const ProfileUpdateHeader = (props) => {
   const { t } = useTranslation();
   return (
     <>
-      <div className={"profile-update-avatar-header"}>
-        <div className={"profile-update-avatar-header__title"}>
-          <span>
-            {t("authorized.profile.profile-update-avatar.header.title")}
-          </span>
+      <div className={'profile-update-avatar-header'}>
+        <div className={'profile-update-avatar-header__title'}>
+          <span>{t('authorized.profile.profile-update-avatar.header.title')}</span>
         </div>
-        <div className={"profile-update-avatar-header__close-icon"}>
+        <div className={'profile-update-avatar-header__close-icon'}>
           <IconButton
             onClick={() => {
               props.profileUpdateStateComponent === 0
@@ -29,15 +27,11 @@ export const ProfileUpdateHeader = (props) => {
       </div>
 
       {props.profileUpdateStateComponent === 0 ? (
-        <div className={"profile-update-avatar-header__controll-panel"}>
-          <label htmlFor="avatar-uploader">
-            <div className={"profile-update-avatar-header__upload-photo"}>
+        <div className={'profile-update-avatar-header__controll-panel'}>
+          <label htmlFor='avatar-uploader'>
+            <div className={'profile-update-avatar-header__upload-photo'}>
               <AddIcon />
-              <span>
-                {t(
-                  "authorized.profile.profile-update-avatar.header.upload-button"
-                )}
-              </span>
+              <span>{t('authorized.profile.profile-update-avatar.header.upload-button')}</span>
             </div>
           </label>
         </div>

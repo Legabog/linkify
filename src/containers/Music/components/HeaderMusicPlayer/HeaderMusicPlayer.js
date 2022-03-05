@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import "./HeaderMusicPlayer.css";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import './HeaderMusicPlayer.css';
 
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import { useTranslation } from "react-i18next";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderMusicPlayer = (props) => {
   const { t } = useTranslation();
@@ -14,9 +14,9 @@ export const HeaderMusicPlayer = (props) => {
   };
 
   return (
-    <div className={"music-player-header"}>
+    <div className={'music-player-header'}>
       <div
-        className={"music-player-header__button-back"}
+        className={'music-player-header__button-back'}
         onClick={() => {
           props.toggleSwitcher(1);
         }}
@@ -26,8 +26,8 @@ export const HeaderMusicPlayer = (props) => {
             props.musicAlbumsSwitcher === 1
               ? `/music-list/artists/${props.nameArtist}`
               : props.musicAlbumsSwitcher === 2
-              ? "/music-list/albums"
-              : "/music-list/"
+              ? '/music-list/albums'
+              : '/music-list/'
           }
           onMouseOver={() => {
             setHover(1);
@@ -37,16 +37,16 @@ export const HeaderMusicPlayer = (props) => {
           }}
         >
           {hover ? (
-            <ArrowBackIosIcon style={{ color: "#F62A54" }} />
+            <ArrowBackIosIcon style={{ color: '#F62A54' }} />
           ) : (
-            <ArrowBackIosIcon style={{ color: "#1877F2" }} />
+            <ArrowBackIosIcon style={{ color: '#1877F2' }} />
           )}
           <h3>
             {props.musicAlbumsSwitcher === 1
               ? props.nameArtist
               : props.musicAlbumsSwitcher === 2
-              ? t("authorized.music-player.music-player.header.h3_1")
-              : t("authorized.music-player.music-player.header.h3_2")}
+              ? t('authorized.music-player.music-player.header.h3_1')
+              : t('authorized.music-player.music-player.header.h3_2')}
           </h3>
         </NavLink>
       </div>

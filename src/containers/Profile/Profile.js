@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./Profile.css";
 
 import {
@@ -123,7 +122,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const Profile = compose(
-  withRouter,
   connect(mapStateToProps, {
     changeAvatar,
     changeAvatarPreHandler,

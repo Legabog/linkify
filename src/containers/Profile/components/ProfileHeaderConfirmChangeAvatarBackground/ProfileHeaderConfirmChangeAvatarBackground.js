@@ -1,50 +1,36 @@
-import "./ProfileHeaderConfirmChangeAvatarBackground.css";
+import './ProfileHeaderConfirmChangeAvatarBackground.css';
 
-import PublicIcon from "@material-ui/icons/Public";
-import { useTranslation } from "react-i18next";
+import PublicIcon from '@mui/icons-material/Public';
+import { useTranslation } from 'react-i18next';
 
 export const ProfileHeaderConfirmChangeAvatarBackground = (props) => {
   const { t } = useTranslation();
   return (
     <div
-      className={"confirmChangeAvatarBackground__wrapper"}
+      className={'confirmChangeAvatarBackground__wrapper'}
       style={{
         visibility: `${props.windowConfirmBackgroundVisibility}`,
         opacity: `${props.windowConfirmBackgroundOpacity}`,
       }}
     >
-      <div className={"confirmChangeAvatarBackground"}>
-        <div className={"confirmChangeAvatarBackground__description"}>
+      <div className={'confirmChangeAvatarBackground'}>
+        <div className={'confirmChangeAvatarBackground__description'}>
           <PublicIcon />
-          <span>
-            {t(
-              "authorized.profile.header.confirm-change-avatar-background.description"
-            )}
-          </span>
+          <span>{t('authorized.profile.header.confirm-change-avatar-background.description')}</span>
         </div>
 
-        <div className={"confirmChangeAvatarBackground__controlPanel"}>
+        <div className={'confirmChangeAvatarBackground__controlPanel'}>
           {props.fetchAvatarBackground ? (
             <>
-              <div
-                className={
-                  "confirmChangeAvatarBackground__controlPanel__cancelButton-disabled"
-                }
-              >
+              <div className={'confirmChangeAvatarBackground__controlPanel__cancelButton-disabled'}>
                 <span>
-                  {t(
-                    "authorized.profile.header.confirm-change-avatar-background.cancel-button"
-                  )}
+                  {t('authorized.profile.header.confirm-change-avatar-background.cancel-button')}
                 </span>
               </div>
 
-              <div
-                className={`confirmChangeAvatarBackground__controlPanel__saveButton-disabled`}
-              >
+              <div className={`confirmChangeAvatarBackground__controlPanel__saveButton-disabled`}>
                 <span>
-                  {t(
-                    "authorized.profile.header.confirm-change-avatar-background.save-button"
-                  )}
+                  {t('authorized.profile.header.confirm-change-avatar-background.save-button')}
                 </span>
               </div>
             </>
@@ -58,9 +44,7 @@ export const ProfileHeaderConfirmChangeAvatarBackground = (props) => {
                 }}
               >
                 <span>
-                  {t(
-                    "authorized.profile.header.confirm-change-avatar-background.cancel-button"
-                  )}
+                  {t('authorized.profile.header.confirm-change-avatar-background.cancel-button')}
                 </span>
               </div>
               <div
@@ -81,9 +65,7 @@ export const ProfileHeaderConfirmChangeAvatarBackground = (props) => {
                 }}
               >
                 <span>
-                  {t(
-                    "authorized.profile.header.confirm-change-avatar-background.save-button"
-                  )}
+                  {t('authorized.profile.header.confirm-change-avatar-background.save-button')}
                 </span>
               </div>
             </>

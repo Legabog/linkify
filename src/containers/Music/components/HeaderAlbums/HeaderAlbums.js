@@ -1,10 +1,10 @@
-import "./HeaderAlbums.css";
+import './HeaderAlbums.css';
 
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderAlbums = (props) => {
   const { t } = useTranslation();
@@ -15,10 +15,10 @@ export const HeaderAlbums = (props) => {
   };
 
   return (
-    <div className={"albums-header"}>
-      <div className={"albums-header__button-back"}>
+    <div className={'albums-header'}>
+      <div className={'albums-header__button-back'}>
         <NavLink
-          to="/music-list"
+          to='/music-list'
           onMouseOver={() => {
             setHover(1);
           }}
@@ -27,14 +27,14 @@ export const HeaderAlbums = (props) => {
           }}
         >
           {hover ? (
-            <ArrowBackIosIcon style={{ color: "#F62A54" }} />
+            <ArrowBackIosIcon style={{ color: '#F62A54' }} />
           ) : (
-            <ArrowBackIosIcon style={{ color: "#1877F2" }} />
+            <ArrowBackIosIcon style={{ color: '#1877F2' }} />
           )}
-          <h3>{t("authorized.music-player.albums.header.h3")}</h3>
+          <h3>{t('authorized.music-player.albums.header.h3')}</h3>
         </NavLink>
       </div>
-      <h1>{t("authorized.music-player.albums.header.h1")}</h1>
+      <h1>{t('authorized.music-player.albums.header.h1')}</h1>
     </div>
   );
 };

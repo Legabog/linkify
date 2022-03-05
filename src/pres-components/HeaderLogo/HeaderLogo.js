@@ -1,18 +1,18 @@
-import "./HeaderLogo.css";
-import { IconButton } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import { NavLink } from "react-router-dom";
+import './HeaderLogo.css';
+import { IconButton } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderLogo = (props) => {
   return (
-    <div className={props.isFocus ? "header__logo_active" : "header__logo"}>
+    <div className={props.isFocus ? 'header__logo_active' : 'header__logo'}>
       {props.isFocus ? (
         <IconButton onClick={props.onClick}>
           <ArrowBackIcon />
         </IconButton>
       ) : (
-        <NavLink to={"/"}>
+        <NavLink to={'/'}>
           <GitHubIcon />
         </NavLink>
       )}

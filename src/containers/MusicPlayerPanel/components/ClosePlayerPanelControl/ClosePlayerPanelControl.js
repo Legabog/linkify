@@ -1,26 +1,23 @@
-import "../MusicPlayerPanel.css";
+import '../MusicPlayerPanel.css';
 
-import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
-import SkipNextIcon from "@material-ui/icons/SkipNext";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import PauseIcon from "@material-ui/icons/Pause";
-import { audioRef } from "containers/MusicPlayerPanel/AudioRef";
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import { audioRef } from 'containers/MusicPlayerPanel/AudioRef';
 
 export const ClosePlayerPanelControl = (props) => {
   return (
     <>
-      <div className={"MusicPlayerPanel__open__controlPanel__wrapper"}>
-        <div className={"MusicPlayerPanel__open__controlPanel"}>
+      <div className={'MusicPlayerPanel__open__controlPanel__wrapper'}>
+        <div className={'MusicPlayerPanel__open__controlPanel'}>
           <button
             disabled={props.musicPlayerDisablerButtonNext}
             onClick={() => {
               if (props.musicPlayerActiveTrack !== null) {
                 switch (props.repeatState) {
                   case 0:
-                    if (
-                      props.musicPlayerActiveTrack !== null &&
-                      audioRef.current.currentTime > 3
-                    ) {
+                    if (props.musicPlayerActiveTrack !== null && audioRef.current.currentTime > 3) {
                       audioRef.current.currentTime = 0;
                     } else {
                       if (props.musicPlayerIndexOfPlayingTrack - 1 >= 0) {
@@ -65,10 +62,7 @@ export const ClosePlayerPanelControl = (props) => {
                     }
                     break;
                   case 1:
-                    if (
-                      props.musicPlayerActiveTrack !== null &&
-                      audioRef.current.currentTime > 3
-                    ) {
+                    if (props.musicPlayerActiveTrack !== null && audioRef.current.currentTime > 3) {
                       audioRef.current.currentTime = 0;
                     } else {
                       if (props.musicPlayerIndexOfPlayingTrack - 1 >= 0) {
@@ -127,7 +121,7 @@ export const ClosePlayerPanelControl = (props) => {
           </button>
 
           <button
-            style={{ marginLeft: "45px" }}
+            style={{ marginLeft: '45px' }}
             onClick={() => {
               if (props.musicPlayerActiveTrack !== null) {
                 if (props.musicPlayerIsPlaying) {
@@ -144,7 +138,7 @@ export const ClosePlayerPanelControl = (props) => {
           </button>
 
           <button
-            style={{ marginLeft: "45px" }}
+            style={{ marginLeft: '45px' }}
             disabled={props.musicPlayerDisablerButtonNext}
             onClick={() => {
               if (props.musicPlayerActiveTrack !== null) {
@@ -201,23 +195,19 @@ export const ClosePlayerPanelControl = (props) => {
                       props.nextTrack(
                         {
                           albumCover:
-                            props.musicPlayerPlayList.tracks[0].albumCover !==
-                            undefined
+                            props.musicPlayerPlayList.tracks[0].albumCover !== undefined
                               ? props.musicPlayerPlayList.tracks[0].albumCover
                               : props.musicPlayerPlayList.albumCover,
                           album:
-                            props.musicPlayerPlayList.tracks[0].albumTitle !==
-                            undefined
+                            props.musicPlayerPlayList.tracks[0].albumTitle !== undefined
                               ? props.musicPlayerPlayList.tracks[0].albumTitle
                               : props.musicPlayerPlayList.title,
                           author:
-                            props.musicPlayerPlayList.tracks[0].author !==
-                            undefined
+                            props.musicPlayerPlayList.tracks[0].author !== undefined
                               ? props.musicPlayerPlayList.tracks[0].author
                               : props.musicPlayerPlayList.author,
                           title: props.musicPlayerPlayList.tracks[0].title,
-                          trackUrl:
-                            props.musicPlayerPlayList.tracks[0].trackUrl,
+                          trackUrl: props.musicPlayerPlayList.tracks[0].trackUrl,
                         },
                         0
                       );

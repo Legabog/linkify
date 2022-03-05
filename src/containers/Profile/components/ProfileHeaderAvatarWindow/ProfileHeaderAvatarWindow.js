@@ -1,27 +1,27 @@
-import "./ProfileHeaderAvatarWindow.css";
+import './ProfileHeaderAvatarWindow.css';
 
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
-import { useTranslation } from "react-i18next";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import { useTranslation } from 'react-i18next';
 
 export const ProfileHeaderAvatarWindow = (props) => {
   const { t } = useTranslation();
   return (
     <div
-      className={"profile__header__avatar__window__wrapper"}
+      className={'profile__header__avatar__window__wrapper'}
       style={{
         visibility: props.windowAvatarVisibility,
         opacity: props.windowAvatarOpacity,
       }}
     >
-      <div className={"profile__header__avatar__window"}>
-        <div className={"profile__header__avatar__windowSection"}>
+      <div className={'profile__header__avatar__window'}>
+        <div className={'profile__header__avatar__windowSection'}>
           <AccountBoxIcon />
-          <span>{t("authorized.profile.header.avatar-window.section-1")}</span>
+          <span>{t('authorized.profile.header.avatar-window.section-1')}</span>
         </div>
 
         <div
-          className={"profile__header__avatar__windowSection"}
+          className={'profile__header__avatar__windowSection'}
           onClick={() => {
             props.toggleProfileUpdateAvatar(
               props.profileUpdateVisibility,
@@ -31,7 +31,7 @@ export const ProfileHeaderAvatarWindow = (props) => {
           }}
         >
           <PhotoLibraryIcon />
-          <span>{t("authorized.profile.header.avatar-window.section-2")}</span>
+          <span>{t('authorized.profile.header.avatar-window.section-2')}</span>
         </div>
       </div>
     </div>

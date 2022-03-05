@@ -1,7 +1,7 @@
-import "./SidebarRow.css";
-import { Avatar } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
-import { ChangeAvatarSimplePreloader } from "pres-components/ChangeAvatarSimplePreloader";
+import './SidebarRow.css';
+import { Avatar } from '@mui/material';
+import { NavLink } from 'react-router-dom';
+import { ChangeAvatarSimplePreloader } from 'pres-components/ChangeAvatarSimplePreloader';
 
 export const SidebarRow = ({
   src,
@@ -16,15 +16,15 @@ export const SidebarRow = ({
 }) => {
   return navLink ? (
     <NavLink to={navLink}>
-      <div className="sidebar-row" onClick={toggleAdditionalSections}>
+      <div className='sidebar-row' onClick={toggleAdditionalSections}>
         {fetchAvatar ? (
-          <ChangeAvatarSimplePreloader width={"32px"} height={"32px"} />
+          <ChangeAvatarSimplePreloader width={'32px'} height={'32px'} />
         ) : (
-          (src && <Avatar src={src} alt={"description"} />) ||
+          (src && <Avatar src={src} alt={'description'} />) ||
           (Icon && <Icon />) ||
           (Img && (
-            <div className={"sidebar-row__img"}>
-              <img src={Img} alt="description" />
+            <div className={'sidebar-row__img'}>
+              <img src={Img} alt='description' />
             </div>
           ))
         )}
@@ -36,34 +36,30 @@ export const SidebarRow = ({
     <>
       {Link ? (
         <a href={Link}>
-          <div className="sidebar-row" onClick={toggleAdditionalSections}>
-            {src && <Avatar src={src} alt={"description"} />}
+          <div className='sidebar-row' onClick={toggleAdditionalSections}>
+            {src && <Avatar src={src} alt={'description'} />}
             {Icon && <Icon />}
             {IconFromSprite ? (
-              <div className={"sidebar-row__icon-from-sprite"}>
-                {IconFromSprite}
-              </div>
+              <div className={'sidebar-row__icon-from-sprite'}>{IconFromSprite}</div>
             ) : null}
             {Img ? (
-              <div className={"sidebar-row__img"}>
-                <img src={Img} alt="description" />
+              <div className={'sidebar-row__img'}>
+                <img src={Img} alt='description' />
               </div>
             ) : null}
             <span>{title}</span>
           </div>
         </a>
       ) : (
-        <div className="sidebar-row" onClick={toggleAdditionalSections}>
-          {src && <Avatar src={src} alt={"description"} />}
+        <div className='sidebar-row' onClick={toggleAdditionalSections}>
+          {src && <Avatar src={src} alt={'description'} />}
           {Icon && <Icon />}
           {IconFromSprite ? (
-            <div className={"sidebar-row__icon-from-sprite"}>
-              {IconFromSprite}
-            </div>
+            <div className={'sidebar-row__icon-from-sprite'}>{IconFromSprite}</div>
           ) : null}
           {Img ? (
-            <div className={"sidebar-row__img"}>
-              <img src={Img} alt="description" />
+            <div className={'sidebar-row__img'}>
+              <img src={Img} alt='description' />
             </div>
           ) : null}
           <span>{title}</span>

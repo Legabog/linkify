@@ -1,19 +1,18 @@
-import { useRef } from "react";
-import "./OpenMusicPlayerVolumeBar.css";
+import { useRef } from 'react';
+import './OpenMusicPlayerVolumeBar.css';
 
-import MicOffIcon from "@material-ui/icons/MicOff";
-import MicIcon from "@material-ui/icons/Mic";
-import { audioRef } from "containers/MusicPlayerPanel/AudioRef";
+import MicOffIcon from '@mui/icons-material/MicOff';
+import MicIcon from '@mui/icons-material/Mic';
+import { audioRef } from 'containers/MusicPlayerPanel/AudioRef';
 
 export const OpenMusicPlayerVolumeBar = (props) => {
-
-  const volumeRangeRef = useRef()
+  const volumeRangeRef = useRef();
 
   return (
     <>
-      <div className={"music-player-panel_open__volume-wrapper"}>
-        <div className={"music-player-panel_open__volume"}>
-          <div className={"music-player-panel_open__mute"}>
+      <div className={'music-player-panel_open__volume-wrapper'}>
+        <div className={'music-player-panel_open__volume'}>
+          <div className={'music-player-panel_open__mute'}>
             <MicOffIcon
               onClick={() => {
                 if (props.musicPlayerActiveTrack !== null) {
@@ -25,12 +24,12 @@ export const OpenMusicPlayerVolumeBar = (props) => {
 
           <input
             disabled={props.musicPlayerActiveTrack !== null ? false : true}
-            id="volumeRange"
-            type="range"
+            id='volumeRange'
+            type='range'
             ref={volumeRangeRef}
-            min="0"
-            max="1"
-            step="0.01"
+            min='0'
+            max='1'
+            step='0.01'
             value={props.volume}
             style={{
               background: `-webkit-linear-gradient(left ,#1877F2 0%, #1877F2 ${
@@ -47,7 +46,7 @@ export const OpenMusicPlayerVolumeBar = (props) => {
             }}
             onChange={props.volumeHandler}
           />
-          <div className={"music-player-panel_open__unmute"}>
+          <div className={'music-player-panel_open__unmute'}>
             <MicIcon
               onClick={() => {
                 if (props.musicPlayerActiveTrack !== null) {

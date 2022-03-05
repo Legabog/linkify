@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./Header.css";
 
 import { logoutButton } from "redux/auth-reducer";
@@ -24,7 +23,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const Header = compose(
-  withRouter,
   connect(mapStateToProps, {
     logoutButton,
   })

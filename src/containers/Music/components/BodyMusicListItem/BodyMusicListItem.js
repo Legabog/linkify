@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import "./BodyMusicListItem.css";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import './BodyMusicListItem.css';
 
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const BodyMusicListItem = (props) => {
   const [hover, toggleHover] = useState(0);
@@ -14,7 +14,7 @@ export const BodyMusicListItem = (props) => {
   return (
     <>
       <div
-        className={"music-list-body__item"}
+        className={'music-list-body__item'}
         onMouseOver={() => {
           setHover(1);
         }}
@@ -23,12 +23,13 @@ export const BodyMusicListItem = (props) => {
         }}
       >
         <NavLink to={`/music-list/${props.link}`}>
-          <div className={"music-list-body__item"}>
+          <div className={'music-list-body__item'}>
             <h2>{props.title}</h2>
-            {hover 
-              ? <ArrowForwardIosIcon style={{color: "#F62A54"}}/>
-              : <ArrowForwardIosIcon style={{color: "#1877F2"}}/>
-            }
+            {hover ? (
+              <ArrowForwardIosIcon style={{ color: '#F62A54' }} />
+            ) : (
+              <ArrowForwardIosIcon style={{ color: '#1877F2' }} />
+            )}
           </div>
         </NavLink>
       </div>

@@ -1,55 +1,49 @@
-import { useState } from "react";
-import "./DetailsAboutYouComponentNotNullSection.css";
+import { useState } from 'react';
+import './DetailsAboutYouComponentNotNullSection.css';
 
-import PublicIcon from "@material-ui/icons/Public";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import AddIcon from "@material-ui/icons/Add";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
+import PublicIcon from '@mui/icons-material/Public';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 export const DetailsAboutYouComponentNotNullSection = (props) => {
-  const [editWindowVisibility, setEditWindowVisibility] = useState("hidden");
+  const [editWindowVisibility, setEditWindowVisibility] = useState('hidden');
   const [editWindowOpacity, setEditWindowOpacity] = useState(0);
 
   const toggleEditWindow = (boolean) => {
-    boolean
-      ? setEditWindowVisibility("visible")
-      : setEditWindowVisibility("hidden");
+    boolean ? setEditWindowVisibility('visible') : setEditWindowVisibility('hidden');
 
     boolean ? setEditWindowOpacity(1) : setEditWindowOpacity(0);
   };
 
   return (
     <>
-      <div className={"DetailsAboutYouComponentNotNullSection"}>
+      <div className={'DetailsAboutYouComponentNotNullSection'}>
         <props.Icon />
-        <div className={"DetailsAboutYouComponentNotNullSection__description"}>
+        <div className={'DetailsAboutYouComponentNotNullSection__description'}>
           <span>{props.mainTitle}</span>
         </div>
-        <div className={"DetailsAboutYouComponentNotNullSection__publicIcon"}>
+        <div className={'DetailsAboutYouComponentNotNullSection__publicIcon'}>
           <PublicIcon />
         </div>
-        <div className={"DetailsAboutYouComponentNotNullSection__edit"}>
+        <div className={'DetailsAboutYouComponentNotNullSection__edit'}>
           <MoreHorizIcon
             onClick={() => {
-              editWindowVisibility === "hidden"
-                ? toggleEditWindow(true)
-                : toggleEditWindow(false);
+              editWindowVisibility === 'hidden' ? toggleEditWindow(true) : toggleEditWindow(false);
             }}
           />
         </div>
       </div>
 
       <div
-        className={"DetailsAboutYouComponentNotNullSection__editWindow"}
+        className={'DetailsAboutYouComponentNotNullSection__editWindow'}
         style={{
           visibility: `${editWindowVisibility}`,
           opacity: `${editWindowOpacity}`,
         }}
       >
         <div
-          className={
-            "DetailsAboutYouComponentNotNullSection__editWindowSection"
-          }
+          className={'DetailsAboutYouComponentNotNullSection__editWindowSection'}
           onClick={() => {
             props.toggleActiveComponent(true);
             toggleEditWindow(false);
@@ -60,9 +54,7 @@ export const DetailsAboutYouComponentNotNullSection = (props) => {
         </div>
 
         <div
-          className={
-            "DetailsAboutYouComponentNotNullSection__editWindowSection"
-          }
+          className={'DetailsAboutYouComponentNotNullSection__editWindowSection'}
           onClick={() => {
             props.addReducer(
               [props.index],
@@ -80,4 +72,3 @@ export const DetailsAboutYouComponentNotNullSection = (props) => {
     </>
   );
 };
-

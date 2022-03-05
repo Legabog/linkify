@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "./ItemArtists.css";
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import './ItemArtists.css';
 
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const ItemArtists = (props) => {
   const [hover, toggleHover] = useState(0);
@@ -15,7 +15,7 @@ export const ItemArtists = (props) => {
     <>
       <NavLink to={`/music-list/artists/${props.nameArtist}`}>
         <div
-          className={"artists-body__item"}
+          className={'artists-body__item'}
           onMouseOver={() => {
             setHover(1);
           }}
@@ -25,13 +25,12 @@ export const ItemArtists = (props) => {
         >
           <h2>{props.nameArtist}</h2>
           {hover ? (
-            <ArrowForwardIosIcon style={{ color: "#F62A54" }} />
+            <ArrowForwardIosIcon style={{ color: '#F62A54' }} />
           ) : (
-            <ArrowForwardIosIcon style={{ color: "#1877F2" }} />
+            <ArrowForwardIosIcon style={{ color: '#1877F2' }} />
           )}
         </div>
       </NavLink>
     </>
   );
 };
-

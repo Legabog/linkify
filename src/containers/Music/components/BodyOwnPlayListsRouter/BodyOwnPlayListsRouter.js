@@ -1,22 +1,22 @@
-import { NavLink } from "react-router-dom";
-import "./BodyOwnPlayListsRouter.css";
+import { NavLink } from 'react-router-dom';
+import './BodyOwnPlayListsRouter.css';
 
-import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-import DefaultMusic from "assets/images/apple-theme/music.jpg";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import DefaultMusic from 'assets/images/apple-theme/music.jpg';
 
-import { BodyOwnPlayListsRouterTrackItem } from "../BodyOwnPlayListsRouterTrackItem";
-import { DeleteTrackPreloader } from "../DeleteTrackPreloader";
+import { BodyOwnPlayListsRouterTrackItem } from '../BodyOwnPlayListsRouterTrackItem';
+import { DeleteTrackPreloader } from '../DeleteTrackPreloader';
 
 export const BodyOwnPlayListsRouter = (props) => {
   return (
-    <div className={"bodyOwnPlayListsRouter"}>
-      <div className={"bodyOwnPlayListsRouter__playListImage"}>
-        <img src={props.img || DefaultMusic} alt="description" />
+    <div className={'bodyOwnPlayListsRouter'}>
+      <div className={'bodyOwnPlayListsRouter__playListImage'}>
+        <img src={props.img || DefaultMusic} alt='description' />
 
-        <div className={"bodyOwnPlayListsRouter__delete"}>
-          <NavLink to="/music-list/playlists/">
+        <div className={'bodyOwnPlayListsRouter__delete'}>
+          <NavLink to='/music-list/playlists/'>
             <DeleteOutlineIcon
-              style={{ color: "#F62A54" }}
+              style={{ color: '#F62A54' }}
               onClick={() => {
                 props.deleteOwnPlayList(props.id);
               }}
@@ -24,10 +24,10 @@ export const BodyOwnPlayListsRouter = (props) => {
           </NavLink>
         </div>
       </div>
-      <div className={"bodyOwnPlayListsRouter__playListTitle"}>
+      <div className={'bodyOwnPlayListsRouter__playListTitle'}>
         <h1>{props.title}</h1>
         <h2>{props.description}</h2>
-        <div className={"bodyOwnPlayListsRouter__playListTracks"}>
+        <div className={'bodyOwnPlayListsRouter__playListTracks'}>
           {props.ownPlayListsFetchingDeleteTrackFetching ? (
             <DeleteTrackPreloader />
           ) : (
@@ -47,9 +47,7 @@ export const BodyOwnPlayListsRouter = (props) => {
                 setMusicForPlayer={props.setMusicForPlayer}
                 setIndexOfTrack={props.setIndexOfTrack}
                 musicPlayerPlayList={props.musicPlayerPlayList}
-                musicPlayerIndexOfPlayingTrack={
-                  props.musicPlayerIndexOfPlayingTrack
-                }
+                musicPlayerIndexOfPlayingTrack={props.musicPlayerIndexOfPlayingTrack}
                 musicPlayerIsPlaying={props.musicPlayerIsPlaying}
                 musicPlayerActiveTrack={props.musicPlayerActiveTrack}
                 musicPlayerDisablerButtonPlay={props.musicPlayerDisablerButtonPlay}

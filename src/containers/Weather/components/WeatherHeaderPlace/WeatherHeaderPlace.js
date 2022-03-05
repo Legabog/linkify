@@ -1,10 +1,10 @@
-import "./WeatherHeaderPlace.css";
+import './WeatherHeaderPlace.css';
 
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export const WeatherHeaderPlace = (props) => {
   return (
-    <div className={"weather-header__place"}>
+    <div className={'weather-header__place'}>
       <LocationOnIcon />
       <span>
         {props.weatherAddress !== null

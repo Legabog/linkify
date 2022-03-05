@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { toastRef } from "utils/toastRef/toastRef";
-import "./Toast.css";
+import { useEffect } from 'react';
+import { toastRef } from 'utils/toastRef/toastRef';
+import './Toast.css';
 
-import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
-import { IconButton } from "@material-ui/core";
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { IconButton } from '@mui/material';
 
 export const Toast = (props) => {
   useEffect(() => {
@@ -15,10 +15,7 @@ export const Toast = (props) => {
       {<props.Icon /> ?? null}
       {<span>{props.description}</span> ?? null}
       {(
-        <div
-          className={"toast_offline__button"}
-          onClick={props.closeAndDeleteHandler}
-        >
+        <div className={'toast_offline__button'} onClick={props.closeAndDeleteHandler}>
           <span>{props.button}</span>
         </div>
       ) ?? null}

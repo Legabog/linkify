@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./MusicPlayerPanel.css";
 
 import {
@@ -144,7 +143,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const MusicPlayerPanel = compose(
-  withRouter,
   connect(mapStateToProps, {
     setMusicForPlayer,
     toggleIsPlaying,

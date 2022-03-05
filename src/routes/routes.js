@@ -5,7 +5,7 @@ export const getRoutesPath = (path, countBlocks) => {
   return `/${pathArray.slice(1, countBlocks + 1).join("/")}`;
 };
 
-export const Routes = {
+export const Routes_ = {
   MAIN: "/",
   // Authorized user
   // Music
@@ -47,34 +47,34 @@ export const Routes = {
 };
 
 export const authorizedUserRoutes = [
-  Routes.MAIN,
-  Routes.WELCOME,
-  Routes.MESSAGES,
-  Routes.GROUPS,
-  Routes.FRIENDS,
+  Routes_.MAIN,
+  Routes_.WELCOME,
+  Routes_.MESSAGES,
+  Routes_.GROUPS,
+  Routes_.FRIENDS,
 
-  Routes.MUSIC,
-  Routes.MUSIC_LIST,
-  Routes.MUSIC_LIST_ARTISTS,
-  Routes.MUSIC_LIST_ALBUMS,
-  Routes.MUSIC_LIST_PLAYLISTS,
-  Routes.MUSIC_LIST__CREATE_PLAYLIST,
-  Routes.MUSIC_PLAYER,
+  Routes_.MUSIC,
+  Routes_.MUSIC_LIST,
+  Routes_.MUSIC_LIST_ARTISTS,
+  Routes_.MUSIC_LIST_ALBUMS,
+  Routes_.MUSIC_LIST_PLAYLISTS,
+  Routes_.MUSIC_LIST__CREATE_PLAYLIST,
+  Routes_.MUSIC_PLAYER,
 
-  Routes.PROFILE,
-  Routes.PROFILE_ABOUT,
-  Routes.PROFILE_FRIENDS,
-  Routes.PROFILE_PHOTOS,
-  Routes.PROFILE_ARCHIVE,
-  Routes.PROFILE_VIDEOS,
+  Routes_.PROFILE,
+  Routes_.PROFILE_ABOUT,
+  Routes_.PROFILE_FRIENDS,
+  Routes_.PROFILE_PHOTOS,
+  Routes_.PROFILE_ARCHIVE,
+  Routes_.PROFILE_VIDEOS,
 ];
 
 export const unauthorizedUserRoutes = [
-  Routes.MAIN,
-  Routes.SIGNIN,
-  Routes.SIGNUP,
-  Routes.CONFIRM_EMAIL,
-  Routes.CONFIRMED_EMAIL,
+  Routes_.MAIN,
+  Routes_.SIGNIN,
+  Routes_.SIGNUP,
+  Routes_.CONFIRM_EMAIL,
+  Routes_.CONFIRMED_EMAIL,
 ];
 
 export class Route {
@@ -83,7 +83,7 @@ export class Route {
   }
 
   _routesByPath = new Map(
-    Object.values(Routes).map((routePath) => [routePath, new Route(routePath)])
+    Object.values(Routes_).map((routePath) => [routePath, new Route(routePath)])
   );
 
   _regexp = pathToRegexp(this._route);

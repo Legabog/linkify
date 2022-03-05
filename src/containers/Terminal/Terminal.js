@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./Terminal.css";
 
 import {
@@ -39,7 +38,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const Terminal = compose(
-  withRouter,
   connect(mapStateToProps, {
     minimizeTerminal,
     expandTerminal,

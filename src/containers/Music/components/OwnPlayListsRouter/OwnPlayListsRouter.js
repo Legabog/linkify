@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./OwnPlayListsRouter.css";
 
 import {
@@ -44,7 +43,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const OwnPlayListsRouter = compose(
-  withRouter,
   connect(mapStateToProps, {
     deleteOwnPlayList,
     deleteTrackFromPlayList,

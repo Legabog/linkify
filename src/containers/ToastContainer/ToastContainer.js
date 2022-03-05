@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./ToastContainer.css";
 
 import {
@@ -47,7 +46,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const ToastContainer = compose(
-  withRouter,
   connect(mapStateToProps, {
     addAndDeleteToastAsync,
     effectAfterAddToast,

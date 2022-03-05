@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./CreateAlbum.css"
 
 import {
@@ -24,7 +23,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const CreateAlbum = compose(
-  withRouter,
   connect(mapStateToProps, {
     createNewPlayList,
   })

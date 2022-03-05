@@ -1,14 +1,14 @@
-import * as React from "react";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import CloseIcon from "@material-ui/icons/Close";
-import AddIcon from "@material-ui/icons/Add";
-import "./BodyMusicPlayerActionSwitcher.css";
-import { useTranslation } from "react-i18next";
+import * as React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
+import './BodyMusicPlayerActionSwitcher.css';
+import { useTranslation } from 'react-i18next';
 
 export const BodyMusicPlayerActionSwitcher = (props) => {
   const { t } = useTranslation();
@@ -31,7 +31,7 @@ export const BodyMusicPlayerActionSwitcher = (props) => {
 
   return (
     <div
-      className={"action-switcher"}
+      className={'action-switcher'}
       onMouseOver={() => {
         setHover(1);
       }}
@@ -40,42 +40,39 @@ export const BodyMusicPlayerActionSwitcher = (props) => {
       }}
     >
       <Button
-        aria-controls="simple-menu"
-        aria-haspopup="true"
+        aria-controls='simple-menu'
+        aria-haspopup='true'
         onClick={handleClick}
         style={{
-          textTransform: "none",
-          color: "#fff",
-          transition: "none" || "none",
+          textTransform: 'none',
+          color: '#fff',
+          transition: 'none' || 'none',
         }}
       >
-        <div className={"action-switcher__icon"}>
+        <div className={'action-switcher__icon'}>
           {hover ? (
-            <MoreHorizIcon style={{ color: "#F62A54" }} />
+            <MoreHorizIcon style={{ color: '#F62A54' }} />
           ) : (
-            <MoreHorizIcon style={{ color: "#1877F2" }} />
+            <MoreHorizIcon style={{ color: '#1877F2' }} />
           )}
         </div>
       </Button>
       <Menu
-        id="simple-menu"
+        id='simple-menu'
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        style={{ width: "380px", marginLeft: "-20px" }}
+        style={{ width: '380px', marginLeft: '-20px' }}
       >
-        <div className={"action-switcher__root"}>
-          <div className={"action-switcher__description-header"}>
-            <img src={props.albumCover} alt="mini_album_cover" />
-            <div className={"action-switcher__title-and-author"}>
+        <div className={'action-switcher__root'}>
+          <div className={'action-switcher__description-header'}>
+            <img src={props.albumCover} alt='mini_album_cover' />
+            <div className={'action-switcher__title-and-author'}>
               <h3>{props.title}</h3>
               <p>{props.author}</p>
             </div>
-            <CloseIcon
-              onClick={handleClose}
-              style={{ color: "rgb(163, 163, 163)" }}
-            />
+            <CloseIcon onClick={handleClose} style={{ color: 'rgb(163, 163, 163)' }} />
           </div>
         </div>
         <MenuItem
@@ -91,16 +88,12 @@ export const BodyMusicPlayerActionSwitcher = (props) => {
           }}
         >
           <NavLink
-            style={{ color: "#4A76A8", textDecoration: "none" }}
+            style={{ color: '#4A76A8', textDecoration: 'none' }}
             to={`/music-list/playlists`}
           >
-            <div className={"action-switcher__add"}>
-              <AddIcon style={{ color: "rgb(163, 163, 163)" }} />
-              <h3>
-                {t(
-                  "authorized.music-player.music-player.body.action-switcher.h3"
-                )}
-              </h3>
+            <div className={'action-switcher__add'}>
+              <AddIcon style={{ color: 'rgb(163, 163, 163)' }} />
+              <h3>{t('authorized.music-player.music-player.body.action-switcher.h3')}</h3>
             </div>
           </NavLink>
         </MenuItem>

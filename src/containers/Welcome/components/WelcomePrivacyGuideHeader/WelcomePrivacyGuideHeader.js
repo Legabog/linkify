@@ -1,8 +1,8 @@
-import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
-import { IconButton } from "@material-ui/core";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import "./WelcomePrivacyGuideHeader.css";
-import { useTranslation } from "react-i18next";
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { IconButton } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './WelcomePrivacyGuideHeader.css';
+import { useTranslation } from 'react-i18next';
 
 export const WelcomePrivacyGuideHeader = (props) => {
   const { t } = useTranslation();
@@ -18,18 +18,18 @@ export const WelcomePrivacyGuideHeader = (props) => {
   };
 
   return (
-    <div className={"WelcomePrivacyGuideHeader"}>
+    <div className={'WelcomePrivacyGuideHeader'}>
       {props.arrowBack ? (
-        <div className={"WelcomePrivacyGuideHeader__backIcon"}>
+        <div className={'WelcomePrivacyGuideHeader__backIcon'}>
           <IconButton onClick={backButtonHandler}>
             <ArrowBackIcon />
           </IconButton>
         </div>
       ) : null}
-      <div className={"WelcomePrivacyGuideHeader__title"}>
-        <span>{t("authorized.welcome.privacy-guide.header.title")}</span>
+      <div className={'WelcomePrivacyGuideHeader__title'}>
+        <span>{t('authorized.welcome.privacy-guide.header.title')}</span>
       </div>
-      <div className={"WelcomePrivacyGuideHeader__closeIcon"}>
+      <div className={'WelcomePrivacyGuideHeader__closeIcon'}>
         <IconButton onClick={closeButtonHandler}>
           <CloseOutlinedIcon />
         </IconButton>

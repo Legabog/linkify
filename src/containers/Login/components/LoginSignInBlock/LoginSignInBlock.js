@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
-import { useTranslation } from "react-i18next";
-import { useInput } from "hooks/useInput";
+import { useTranslation } from 'react-i18next';
+import { useInput } from 'hooks/useInput';
 
-import WarningRoundedIcon from "@material-ui/icons/WarningRounded";
-import { LinkifyLogo, Input, Button } from "pres-components";
+import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
+import { LinkifyLogo, Input, Button } from 'pres-components';
 
 const Wrapper = styled.div`
   width: 50%;
@@ -52,7 +52,7 @@ const ErrorWrapper = styled.div`
 
   ${(p) =>
     css`
-      display: ${p.loginError ? "flex" : "none"};
+      display: ${p.loginError ? 'flex' : 'none'};
     `}
 `;
 
@@ -172,14 +172,8 @@ const customLogoStyle = css`
 export const LoginSignInBlock = ({ signIn, loginError, history }) => {
   const { t } = useTranslation();
 
-  const [
-    email,
-    emailRef,
-    emailChangeHandler,
-    emailFocus,
-    emailFocusHandler,
-    emailBlurHandler,
-  ] = useInput("");
+  const [email, emailRef, emailChangeHandler, emailFocus, emailFocusHandler, emailBlurHandler] =
+    useInput('');
 
   const [
     password,
@@ -188,15 +182,15 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
     passwordFocus,
     passwordFocusHandler,
     passwordBlurHandler,
-  ] = useInput("");
+  ] = useInput('');
 
   const inputsOptions = [
     {
-      input_type: "text",
-      input_name: "email",
-      input_id: "login-email",
+      input_type: 'text',
+      input_name: 'email',
+      input_id: 'login-email',
       input_ref: emailRef,
-      input_placeholder: t("unauthorized.login.signin-block.login-input"),
+      input_placeholder: t('unauthorized.login.signin-block.login-input'),
       input_value: email,
       inputChangeHandler: emailChangeHandler,
       inputFocusHandler: emailFocusHandler,
@@ -205,11 +199,11 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
       inputError: loginError,
     },
     {
-      input_type: "password",
-      input_name: "password",
-      input_id: "login-password",
+      input_type: 'password',
+      input_name: 'password',
+      input_id: 'login-password',
       input_ref: passwordRef,
-      input_placeholder: t("unauthorized.login.signin-block.password-input"),
+      input_placeholder: t('unauthorized.login.signin-block.password-input'),
       input_value: password,
       inputChangeHandler: passwordChangeHandler,
       inputFocusHandler: passwordFocusHandler,
@@ -224,7 +218,7 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
   };
 
   const loginButtonSignUpHandler = () => {
-    history.push("/signup");
+    history.push('/signup');
   };
 
   return (
@@ -232,17 +226,15 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
       <SecondaryWrapper>
         <LinkifyLogo customStyle={customLogoStyle} />
         <Description>
-          <h2>{t("unauthorized.login.description.h2")}</h2>
+          <h2>{t('unauthorized.login.description.h2')}</h2>
         </Description>
         <Description>
-          <span>{t("unauthorized.login.description.span")}</span>
+          <span>{t('unauthorized.login.description.span')}</span>
         </Description>
         <ErrorWrapper loginError={loginError}>
           <Error>
-            <WarningRoundedIcon/>
-            <ErrorText>
-              {t("unauthorized.login.signin-block.error-info")}
-            </ErrorText>
+            <WarningRoundedIcon />
+            <ErrorText>{t('unauthorized.login.signin-block.error-info')}</ErrorText>
           </Error>
         </ErrorWrapper>
         <InputsWrapper>
@@ -251,37 +243,27 @@ export const LoginSignInBlock = ({ signIn, loginError, history }) => {
           ))}
         </InputsWrapper>
         <RestorePassword>
-          <NavLink to="">
-            {t("unauthorized.login.signin-block.restore-password")}
-          </NavLink>
+          <NavLink to=''>{t('unauthorized.login.signin-block.restore-password')}</NavLink>
         </RestorePassword>
         <Buttons>
           <Button
-            buttonStyle="classic"
+            buttonStyle='classic'
             clickHandler={loginButtonSignInHandler}
-            insideElements={
-              <span>{t("unauthorized.login.signin-block.login-button")}</span>
-            }
+            insideElements={<span>{t('unauthorized.login.signin-block.login-button')}</span>}
           />
           <Button
-            buttonStyle="primary"
+            buttonStyle='primary'
             clickHandler={loginButtonSignUpHandler}
             customStyle={css`
               margin-left: 15px;
             `}
-            insideElements={
-              <span>
-                {t("unauthorized.login.signin-block.registration-button")}
-              </span>
-            }
+            insideElements={<span>{t('unauthorized.login.signin-block.registration-button')}</span>}
           />
         </Buttons>
         <HelpWrapper>
           <Help>
-            <NavLink to={"/signup"}>
-              {t("unauthorized.login.signin-block.help.navLink")}
-            </NavLink>
-            &nbsp; {t("unauthorized.login.signin-block.help.description")}
+            <NavLink to={'/signup'}>{t('unauthorized.login.signin-block.help.navLink')}</NavLink>
+            &nbsp; {t('unauthorized.login.signin-block.help.description')}
           </Help>
         </HelpWrapper>
       </SecondaryWrapper>

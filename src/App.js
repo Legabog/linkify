@@ -1,71 +1,62 @@
-import { lazy, Suspense, useEffect } from "react";
-import { Routes } from "routes/routes";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { Route, Switch, withRouter } from "react-router-dom";
-import _ from "lodash/core";
-import { autoLogin } from "redux/auth-reducer";
-// ---------Main Components
-import { Root } from "containers/Root";
-// --------Logged in user
-import { Header } from "containers/Header";
-import { Body } from "containers/Body";
-import { Sidebar } from "containers/Sidebar";
-import { Feed } from "containers/Feed";
-import { Widgets } from "containers/Widgets";
-import { Welcome } from "containers/Welcome";
-import { About } from "containers/About";
-import { Profile } from "containers/Profile";
-import { MusicPlayerPanel } from "containers/MusicPlayerPanel";
-import { ErrorRoute } from "containers/ErrorRoute";
-import { Preloader } from "pres-components/Preloader";
-import { ToastContainer } from "containers/ToastContainer";
-// ---------Not logged in user
-import { Login } from "containers/Login";
-import { Users } from "containers/Users";
-// -----Lazy components
-const Weather = lazy(() => import("containers/Weather"));
-const Terminal = lazy(() => import("containers/Terminal"));
-const Music = lazy(() => import("containers/Music"));
-const MusicList = lazy(() => import("containers/Music/components/MusicList"));
-const ArtistsList = lazy(() => import("containers/Music/components/Artists"));
-const ArtistItemRouter = lazy(() =>
-  import("containers/Music/components/ArtistItemRouter")
-);
-const AlbumsList = lazy(() => import("containers/Music/components/Albums"));
-const PlayLists = lazy(() => import("containers/Music/components/PlayLists"));
-const CreateAlbum = lazy(() =>
-  import("containers/Music/components/CreateAlbum")
-);
-const OwnPlayListsRouter = lazy(() =>
-  import("containers/Music/components/OwnPlayListsRouter")
-);
-const MusicPlayer = lazy(() =>
-  import("containers/Music/components/MusicPlayer")
-);
-const RegistrationRoute = lazy(() => import("containers/RegistrationRoute"));
-const ConfirmEmailRoute = lazy(() => import("containers/ConfirmEmailRoute"));
-const ConfirmedEmailRoute = lazy(() =>
-  import("containers/ConfirmedEmailRoute")
-);
+import { lazy, Suspense, useEffect } from 'react';
+import { Routes_ } from 'routes/routes';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { Route, Routes } from 'react-router-dom';
+import _ from 'lodash/core';
 
-const App = (props) => {
+import { autoLogin } from 'redux/auth-reducer';
+// ---------Main Components
+import { Root } from 'containers/Root';
+// --------Logged in user
+import { Header } from 'containers/Header';
+import { Body } from 'containers/Body';
+import { Sidebar } from 'containers/Sidebar';
+import { Feed } from 'containers/Feed';
+import { Widgets } from 'containers/Widgets';
+import { Welcome } from 'containers/Welcome';
+import { About } from 'containers/About';
+import { Profile } from 'containers/Profile';
+import { MusicPlayerPanel } from 'containers/MusicPlayerPanel';
+import { ErrorRoute } from 'containers/ErrorRoute';
+import { Preloader } from 'pres-components/Preloader';
+import { ToastContainer } from 'containers/ToastContainer';
+// ---------Not logged in user
+import { Login } from 'containers/Login';
+import { Users } from 'containers/Users';
+// -----Lazy components
+const Weather = lazy(() => import('containers/Weather'));
+const Terminal = lazy(() => import('containers/Terminal'));
+const Music = lazy(() => import('containers/Music'));
+const MusicList = lazy(() => import('containers/Music/components/MusicList'));
+const ArtistsList = lazy(() => import('containers/Music/components/Artists'));
+const ArtistItemRouter = lazy(() => import('containers/Music/components/ArtistItemRouter'));
+const AlbumsList = lazy(() => import('containers/Music/components/Albums'));
+const PlayLists = lazy(() => import('containers/Music/components/PlayLists'));
+const CreateAlbum = lazy(() => import('containers/Music/components/CreateAlbum'));
+const OwnPlayListsRouter = lazy(() => import('containers/Music/components/OwnPlayListsRouter'));
+const MusicPlayer = lazy(() => import('containers/Music/components/MusicPlayer'));
+const RegistrationRoute = lazy(() => import('containers/RegistrationRoute'));
+const ConfirmEmailRoute = lazy(() => import('containers/ConfirmEmailRoute'));
+const ConfirmedEmailRoute = lazy(() => import('containers/ConfirmedEmailRoute'));
+
+function App(props) {
   useEffect(() => {
     props.autoLogin(props.history);
     // eslint-disable-next-line
   }, [props.activeAccountEmail, props.token]);
 
-  if (!!localStorage.getItem("_token-id")) {
+  if (!!localStorage.getItem('_token-id')) {
     return (
       <Root
         rightBottomComponent={<MusicPlayerPanel />}
-        leftBottomComponent={<ToastContainer position={"bottom-left"} />}
+        leftBottomComponent={<ToastContainer position={'bottom-left'} />}
       >
-        <Switch>
+        <Routes>
           <Route
-            path={Routes.MAIN}
+            path={Routes_.MAIN}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Body>
@@ -74,13 +65,13 @@ const App = (props) => {
                   <Widgets />
                 </Body>
               </>
-            )}
+            }
           />
 
           <Route
-            path={Routes.MUSIC}
+            path={Routes_.MUSIC}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -89,12 +80,12 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.MUSIC_LIST}
+            path={Routes_.MUSIC_LIST}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -103,12 +94,12 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.MUSIC_LIST_ARTISTS}
+            path={Routes_.MUSIC_LIST_ARTISTS}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -117,12 +108,12 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.MUSIC_LIST_ALBUMS}
+            path={Routes_.MUSIC_LIST_ALBUMS}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -131,12 +122,12 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.MUSIC_LIST_PLAYLISTS}
+            path={Routes_.MUSIC_LIST_PLAYLISTS}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -145,12 +136,12 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
             exact
-            path={Routes.MUSIC_LIST_CREATE_PLAYLIST}
-            render={() => (
+            path={Routes_.MUSIC_LIST_CREATE_PLAYLIST}
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -159,14 +150,14 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           {props.musicAlbums.map((e) => (
             <Route
               key={_.uniqueId(`d-r1_${e}`)}
-              path={`${Routes.MUSIC_LIST_ARTISTS}/${e.author}`}
+              path={`${Routes_.MUSIC_LIST_ARTISTS}/${e.author}`}
               exact
-              render={() => (
+              element={
                 <>
                   <Suspense fallback={<Preloader />}>
                     <Header />
@@ -175,15 +166,15 @@ const App = (props) => {
                     </Body>
                   </Suspense>
                 </>
-              )}
+              }
             />
           ))}
           {props.musicAlbums.map((e) => (
             <Route
               key={_.uniqueId(`d-r2_${e}`)}
-              path={`${Routes.MUSIC_PLAYER}/${e.author}/${e.title}`}
+              path={`${Routes_.MUSIC_PLAYER}/${e.author}/${e.title}`}
               exact
-              render={() => (
+              element={
                 <>
                   <Suspense fallback={<Preloader />}>
                     <Header />
@@ -196,7 +187,7 @@ const App = (props) => {
                     </Body>
                   </Suspense>
                 </>
-              )}
+              }
             />
           ))}
           {props.ownPlayLists.map((e) => (
@@ -204,7 +195,7 @@ const App = (props) => {
               key={_.uniqueId(`d-r3_${e}`)}
               path={`/music-playlists/${e.title}/`}
               exact
-              render={() => (
+              element={
                 <>
                   <Suspense fallback={<Preloader />}>
                     <Header />
@@ -219,14 +210,13 @@ const App = (props) => {
                     </Body>
                   </Suspense>
                 </>
-              )}
+              }
             />
           ))}
-
           <Route
-            path={Routes.WELCOME}
+            path={Routes_.WELCOME}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Body>
@@ -235,13 +225,12 @@ const App = (props) => {
                   <Widgets />
                 </Body>
               </>
-            )}
+            }
           />
-
           <Route
-            path={Routes.WEATHER}
+            path={Routes_.WEATHER}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -250,23 +239,23 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.TERMINAL}
+            path={Routes_.TERMINAL}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Terminal />
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.USERS}
+            path={Routes_.USERS}
             exact
-            render={() => (
+            element={
               <>
                 <Suspense fallback={<Preloader />}>
                   <Header />
@@ -278,109 +267,108 @@ const App = (props) => {
                   </Body>
                 </Suspense>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.FRIENDS}
+            path={Routes_.FRIENDS}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Preloader />
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.GROUPS}
+            path={Routes_.GROUPS}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Preloader />
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.MESSAGES}
+            path={Routes_.MESSAGES}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Preloader />
               </>
-            )}
+            }
           />
-
           <Route
-            path={Routes.PROFILE}
+            path={Routes_.PROFILE}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Profile />
               </>
-            )}
+            }
           />
-          {Routes.PROFILE_ABOUT.map((e) => (
+          {Routes_.PROFILE_ABOUT.map((e) => (
             <Route
               key={_.uniqueId(`d-r4_${e}`)}
               path={e}
               exact
-              render={() => (
+              element={
                 <>
                   <Header />
                   <Profile />
                   <About />
                 </>
-              )}
+              }
             />
           ))}
           <Route
-            path={Routes.PROFILE_FRIENDS}
+            path={Routes_.PROFILE_FRIENDS}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Profile />
                 <h1>Friends</h1>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.PROFILE_PHOTOS}
+            path={Routes_.PROFILE_PHOTOS}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Profile />
                 <h1>Photos</h1>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.PROFILE_ARCHIVE}
+            path={Routes_.PROFILE_ARCHIVE}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Profile />
                 <h1>Archive</h1>
               </>
-            )}
+            }
           />
           <Route
-            path={Routes.PROFILE_VIDEOS}
+            path={Routes_.PROFILE_VIDEOS}
             exact
-            render={() => (
+            element={
               <>
                 <Header />
                 <Profile />
                 <h1>Videos</h1>
               </>
-            )}
+            }
           />
-          <Route render={() => <ErrorRoute />} />
-        </Switch>
+          <Route path='*' element={<ErrorRoute />} />
+        </Routes>
       </Root>
     );
   } else {
@@ -390,55 +378,49 @@ const App = (props) => {
           <Preloader />
         ) : (
           <>
-            <Switch>
+            <Routes>
+              <Route path={Routes_.MAIN} exact element={<Login />} />
               <Route
-                path={Routes.MAIN}
+                path={Routes_.SIGNUP}
                 exact
-                render={() => (
-                  <>
-                    <Login />
-                  </>
-                )}
-              />
-              <Route
-                path={Routes.SIGNUP}
-                exact
-                render={() => (
+                element={
                   <>
                     <Suspense fallback={<Preloader />}>
                       <RegistrationRoute />
                     </Suspense>
                   </>
-                )}
+                }
               />
               <Route
-                path={Routes.CONFIRM_EMAIL}
+                path={Routes_.CONFIRM_EMAIL}
                 exact
-                render={() => (
-                  <Suspense fallback={<Preloader />}>
-                    <ConfirmEmailRoute />
-                  </Suspense>
-                )}
+                element={
+                  <>
+                    <Suspense fallback={<Preloader />}>
+                      <ConfirmEmailRoute />
+                    </Suspense>
+                  </>
+                }
               />
-
               <Route
-                path={Routes.CONFIRMED_EMAIL}
+                path={Routes_.CONFIRMED_EMAIL}
                 exact
-                render={() => (
-                  <Suspense fallback={<Preloader />}>
-                    <ConfirmedEmailRoute />
-                  </Suspense>
-                )}
+                element={
+                  <>
+                    <Suspense fallback={<Preloader />}>
+                      <ConfirmedEmailRoute />
+                    </Suspense>
+                  </>
+                }
               />
-
-              <Route render={() => <ErrorRoute />} />
-            </Switch>
+              <Route path='*' element={<ErrorRoute />} />
+            </Routes>
           </>
         )}
       </Root>
     );
   }
-};
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -452,7 +434,6 @@ const mapStateToProps = (state) => {
 };
 
 export default compose(
-  withRouter,
   connect(mapStateToProps, {
     autoLogin,
   })

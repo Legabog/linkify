@@ -1,11 +1,11 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
-import { IconButton } from "@material-ui/core";
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { IconButton } from '@mui/material';
 
-import { LinkifyLogo } from "pres-components";
+import { LinkifyLogo } from 'pres-components';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -64,7 +64,7 @@ const customLinkifyLogo = css`
 export const RegistrationBlockHeader = (props) => {
   const { t } = useTranslation();
   const clickHandler = () => {
-    props.history.push("/");
+    props.history.push('/');
     props.setDefaultInputsValues();
   };
 
@@ -79,10 +79,10 @@ export const RegistrationBlockHeader = (props) => {
         </CloseIcon>
       </Container>
       <Description>
-        <h2>{t("unauthorized.registration-block.header.description-1")}</h2>
+        <h2>{t('unauthorized.registration-block.header.description-1')}</h2>
       </Description>
       <SubDescription>
-        <span>{t("unauthorized.registration-block.header.description-2")}</span>
+        <span>{t('unauthorized.registration-block.header.description-2')}</span>
       </SubDescription>
     </Wrapper>
   );

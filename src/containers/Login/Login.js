@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import { signIn } from "redux/auth-reducer";
@@ -57,7 +56,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const Login = compose(
-  withRouter,
   connect(mapStateToProps, {
     signIn,
   })

@@ -1,20 +1,20 @@
-import "./ProfileAddHobbiesBodyInput.css";
+import './ProfileAddHobbiesBodyInput.css';
 
-import SearchIcon from "@material-ui/icons/Search";
-import { useTranslation } from "react-i18next";
+import SearchIcon from '@mui/icons-material/Search';
+import { useTranslation } from 'react-i18next';
 
 export const ProfileAddHobbiesBodyInput = (props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
-    <div className={"profile-add-hobbies-body-search-input-wrapper"}>
-      <div className={"profile-add-hobbies-body-search-input"}>
+    <div className={'profile-add-hobbies-body-search-input-wrapper'}>
+      <div className={'profile-add-hobbies-body-search-input'}>
         <SearchIcon onClick={() => {}} />
         <input
-          type={"text"}
+          type={'text'}
           value={props.searchInput}
           onChange={props.changeSearchInputHandler}
-          id={"profile-add-hobbies-body-search-input"}
-          placeholder={t("authorized.profile.add-hobbies.body.state-2.input-placeholder")}
+          id={'profile-add-hobbies-body-search-input'}
+          placeholder={t('authorized.profile.add-hobbies.body.state-2.input-placeholder')}
         />
       </div>
     </div>

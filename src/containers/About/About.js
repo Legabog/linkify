@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import "./About.css";
 
 import {
@@ -76,7 +75,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const About = compose(
-  withRouter,
   connect(mapStateToProps, {
     overviewAddAWorkplace,
   overviewDeleteAWorkplace,

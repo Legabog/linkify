@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 
 import { signUp } from "redux/auth-reducer";
 import { useRegistrationInput } from "hooks/useRegistrationInput";
@@ -221,7 +220,6 @@ const mapStateToProps = (state) => ({
 });
 
 export const RegistrationRoute = compose(
-  withRouter,
   connect(mapStateToProps, {
     signUp,
   })

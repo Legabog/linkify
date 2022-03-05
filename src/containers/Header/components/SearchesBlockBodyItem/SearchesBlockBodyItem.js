@@ -1,12 +1,12 @@
-import "./SearchesBlockBodyItem.css";
+import './SearchesBlockBodyItem.css';
 
-import { IconButton } from "@material-ui/core";
+import { IconButton } from '@mui/material';
 
 export const SearchesBlockBodyItem = (props) => {
   return (
-    <div className="block__item">
-      <div className="block__item__border">
-        <div className="block__item__border__icon">
+    <div className='block__item'>
+      <div className='block__item__border'>
+        <div className='block__item__border__icon'>
           <props.Icon />
         </div>
         <span>{props.title}</span>
@@ -17,4 +17,3 @@ export const SearchesBlockBodyItem = (props) => {
     </div>
   );
 };
-
